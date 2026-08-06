@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# ML Models
+models/trained/*
+models/checkpoints/*
+
+# Data
+data/raw/*
+data/interim/*
+data/processed/*
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Experiments
+mlruns/
+
+# OS
+.DS_Store
+Thumbs.db
