@@ -1,8 +1,17 @@
-"""Storage engine for AlphaForge market datasets."""
+"""
+Storage Engine for AlphaForge.
+
+Handles:
+- Saving datasets
+- Loading datasets
+- Metadata generation
+- Metadata persistence
+"""
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+import json
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -15,30 +24,22 @@ logger = get_logger(__name__)
 
 
 class StorageEngine:
-    """Manage persistent storage of AlphaForge datasets."""
+    """
+    Handles persistent storage of datasets.
+    """
 
     def __init__(self, base_dir: Path = RAW_DATA_DIR) -> None:
-        """Initialize the storage engine.
-
-        Args:
-            base_dir: Directory used to store datasets.
-        """
         self.base_dir = Path(base_dir)
         self.base_dir.mkdir(parents=True, exist_ok=True)
 
+        self.metadata_dir = self.base_dir / "metadata"
+        self.metadata_dir.mkdir(parents=True, exist_ok=True)
+
         logger.info("StorageEngine initialized at %s", self.base_dir)
 
-    def _get_path(self, dataset_name: str) -> Path:
-        """Return the Parquet path for a dataset."""
-        safe_name = dataset_name.strip().lower()
-
-        if not safe_name:
-            raise ValueError("Dataset name cannot be empty.")
-
-        if any(char in safe_name for char in r'\/:*?"<>|'):
-            raise ValueError("Dataset name contains invalid characters.")
-
-        return self.base_dir / f"{safe_name}.parquet"
+    def _dataset_path(self, dataset_name: str) -> Path:
+        dataset_name = dataset_name.lower()
+        return self.base_dir / f"{dataset_name}.parquet"
 
     def save_dataset(
         self,
@@ -46,97 +47,115 @@ class StorageEngine:
         dataset_name: str,
         overwrite: bool = False,
     ) -> Path:
-        """Save a DataFrame as a Parquet dataset.
-
-        Args:
-            df: Dataset to save.
-            dataset_name: Dataset identifier.
-            overwrite: Whether an existing dataset may be replaced.
-
-        Returns:
-            Path of the saved dataset.
-
-        Raises:
-            ValueError: If the DataFrame is empty.
-            FileExistsError: If the dataset exists and overwrite is False.
-            RuntimeError: If saving fails.
         """
+        Save dataset as Parquet.
+        """
+
         if df.empty:
             raise ValueError("Cannot save an empty dataset.")
 
-        path = self._get_path(dataset_name)
+        path = self._dataset_path(dataset_name)
 
         if path.exists() and not overwrite:
             raise FileExistsError(
-                f"Dataset already exists: {path}. "
-                "Set overwrite=True to replace it."
+                f"Dataset '{dataset_name}' already exists."
             )
 
         logger.info("Saving dataset '%s'...", dataset_name)
 
-        try:
-            df.to_parquet(path, engine="pyarrow", index=True)
-        except Exception as error:
-            logger.exception("Failed to save dataset '%s'.", dataset_name)
-            raise RuntimeError(
-                f"Unable to save dataset '{dataset_name}'."
-            ) from error
+        df.to_parquet(
+            path,
+            engine="pyarrow",
+            index=True,
+        )
 
         logger.info("Dataset saved successfully: %s", path)
 
         return path
 
-    def load_dataset(self, dataset_name: str) -> pd.DataFrame:
-        """Load a stored Parquet dataset."""
-        path = self._get_path(dataset_name)
+    def load_dataset(
+        self,
+        dataset_name: str,
+    ) -> pd.DataFrame:
+        """
+        Load a dataset.
+        """
+
+        path = self._dataset_path(dataset_name)
 
         if not path.exists():
-            raise FileNotFoundError(f"Dataset not found: {path}")
+            raise FileNotFoundError(path)
 
         logger.info("Loading dataset '%s'...", dataset_name)
 
-        try:
-            df = pd.read_parquet(path, engine="pyarrow")
-        except Exception as error:
-            logger.exception("Failed to load dataset '%s'.", dataset_name)
-            raise RuntimeError(
-                f"Unable to load dataset '{dataset_name}'."
-            ) from error
+        df = pd.read_parquet(
+            path,
+            engine="pyarrow",
+        )
 
         logger.info("Loaded %d rows.", len(df))
 
         return df
 
-    def dataset_exists(self, dataset_name: str) -> bool:
-        """Check whether a dataset exists."""
-        return self._get_path(dataset_name).exists()
+    def dataset_exists(
+        self,
+        dataset_name: str,
+    ) -> bool:
+
+        return self._dataset_path(dataset_name).exists()
 
     def list_datasets(self) -> list[str]:
-        """Return available dataset names."""
-        return sorted(path.stem for path in self.base_dir.glob("*.parquet"))
+
+        return sorted(
+            p.stem
+            for p in self.base_dir.glob("*.parquet")
+        )
 
     def generate_metadata(
         self,
         df: pd.DataFrame,
         dataset_name: str,
     ) -> dict[str, Any]:
-        """Generate metadata describing a dataset."""
-        path = self._get_path(dataset_name)
+        """
+        Generate dataset metadata.
+        """
 
-        start_date = None
-        end_date = None
-
-        if not df.empty and isinstance(df.index, pd.DatetimeIndex):
-            start_date = df.index.min().isoformat()
-            end_date = df.index.max().isoformat()
+        path = self._dataset_path(dataset_name)
 
         return {
             "dataset_name": dataset_name,
             "rows": len(df),
             "columns": len(df.columns),
-            "start_date": start_date,
-            "end_date": end_date,
-            "save_timestamp": datetime.now(timezone.utc).isoformat(),
+            "column_names": list(df.columns),
+            "start_date": str(df.index.min()),
+            "end_date": str(df.index.max()),
+            "created_at": datetime.utcnow().isoformat(),
             "file_size_bytes": path.stat().st_size if path.exists() else None,
-            "column_names": [str(column) for column in df.columns],
         }
+
+    def save_metadata(
+        self,
+        dataset_name: str,
+        metadata: dict[str, Any],
+    ) -> Path:
+        """
+        Save metadata as JSON.
+        """
+
+        path = self.metadata_dir / f"{dataset_name.lower()}.json"
+
+        with open(
+            path,
+            "w",
+            encoding="utf-8",
+        ) as file:
+
+            json.dump(
+                metadata,
+                file,
+                indent=4,
+            )
+
+        logger.info("Metadata saved successfully: %s", path)
+
+        return path
