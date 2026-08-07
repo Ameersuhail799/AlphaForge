@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from time import perf_counter
+
 import pandas as pd
 
 from src.dataset.bundle import DatasetBundle
@@ -13,6 +15,11 @@ logger = get_logger(__name__)
 
 class Predictor:
     """Generate test-set predictions from a trained AlphaForge model."""
+
+    def __init__(self) -> None:
+        """Initialize prediction timing state."""
+
+        self.prediction_time_seconds = 0.0
 
     def predict(
         self,
@@ -31,11 +38,13 @@ class Predictor:
 
         logger.info("Generating model predictions...")
 
+        start_time = perf_counter()
         predictions = pd.Series(
             model.predict(bundle),
             index=bundle.X_test.index,
             name="prediction",
         )
+        self.prediction_time_seconds = perf_counter() - start_time
 
         logger.info("Model predictions generated successfully.")
 

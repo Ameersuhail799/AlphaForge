@@ -44,6 +44,7 @@ BACKTEST_DIR = REPORT_DIR / "backtests"
 EXPERIMENT_REPORT_DIR = REPORT_DIR / "experiments"
 FEATURE_IMPORTANCE_REPORT_DIR = REPORT_DIR / "feature_importance"
 ANALYSIS_REPORT_DIR = REPORT_DIR / "analysis"
+MODEL_COMPARISON_REPORT_PATH = REPORT_DIR / "model_comparison.csv"
 
 # ==========================================================
 # LOGGING

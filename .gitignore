@@ -43,6 +43,7 @@ mlruns/
 reports/experiments/*
 reports/feature_importance/*
 reports/analysis/*
+reports/model_comparison.csv
 
 # OS
 .DS_Store
