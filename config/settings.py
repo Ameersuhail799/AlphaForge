@@ -41,6 +41,9 @@ REPORT_DIR = PROJECT_ROOT / "reports"
 
 FIGURE_DIR = REPORT_DIR / "figures"
 BACKTEST_DIR = REPORT_DIR / "backtests"
+EXPERIMENT_REPORT_DIR = REPORT_DIR / "experiments"
+FEATURE_IMPORTANCE_REPORT_DIR = REPORT_DIR / "feature_importance"
+ANALYSIS_REPORT_DIR = REPORT_DIR / "analysis"
 
 # ==========================================================
 # LOGGING

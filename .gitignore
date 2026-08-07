@@ -40,6 +40,9 @@ data/processed/*
 
 # Experiments
 mlruns/
+reports/experiments/*
+reports/feature_importance/*
+reports/analysis/*
 
 # OS
 .DS_Store
