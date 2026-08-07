@@ -44,6 +44,10 @@ reports/experiments/*
 reports/feature_importance/*
 reports/analysis/*
 reports/model_comparison.csv
+reports/champion.json
+reports/model_leaderboard.csv
+reports/experiment_history.csv
+reports/research_report.md
 
 # OS
 .DS_Store

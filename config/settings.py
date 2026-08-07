@@ -45,6 +45,10 @@ EXPERIMENT_REPORT_DIR = REPORT_DIR / "experiments"
 FEATURE_IMPORTANCE_REPORT_DIR = REPORT_DIR / "feature_importance"
 ANALYSIS_REPORT_DIR = REPORT_DIR / "analysis"
 MODEL_COMPARISON_REPORT_PATH = REPORT_DIR / "model_comparison.csv"
+CHAMPION_REPORT_PATH = REPORT_DIR / "champion.json"
+LEADERBOARD_REPORT_PATH = REPORT_DIR / "model_leaderboard.csv"
+EXPERIMENT_HISTORY_REPORT_PATH = REPORT_DIR / "experiment_history.csv"
+RESEARCH_REPORT_PATH = REPORT_DIR / "research_report.md"
 
 # ==========================================================
 # LOGGING
