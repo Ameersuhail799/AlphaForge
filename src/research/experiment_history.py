@@ -88,6 +88,10 @@ class ExperimentHistory:
         for report_path in sorted(EXPERIMENT_REPORT_DIR.glob("*.json")):
             with report_path.open(encoding="utf-8") as file:
                 experiment = json.load(file)
+            # Skip files that are not individual experiment records
+            if not isinstance(experiment, dict) or "experiment_id" not in experiment:
+                logger.debug("Skipping non-experiment JSON: %s", report_path)
+                continue
 
             rows.append(
                 {
