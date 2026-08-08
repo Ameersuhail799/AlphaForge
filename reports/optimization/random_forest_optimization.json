@@ -1,0 +1,127 @@
+{
+  "best_parameters": {
+    "max_depth": 20,
+    "max_features": null,
+    "min_samples_leaf": 5,
+    "n_estimators": 100
+  },
+  "evaluated_combinations": [
+    {
+      "mean_fit_time": 0.6646053314208984,
+      "mean_score_time": 0.09935784339904785,
+      "mean_test_score": 1.0,
+      "params": {
+        "max_depth": 20,
+        "max_features": null,
+        "min_samples_leaf": 5,
+        "n_estimators": 100
+      },
+      "rank_test_score": 1,
+      "std_test_score": 0.0
+    },
+    {
+      "mean_fit_time": 0.9113283157348633,
+      "mean_score_time": 0.15003690719604493,
+      "mean_test_score": 0.9,
+      "params": {
+        "max_depth": 5,
+        "max_features": null,
+        "min_samples_leaf": 10,
+        "n_estimators": 200
+      },
+      "rank_test_score": 2,
+      "std_test_score": 0.20000000000000004
+    }
+  ],
+  "execution_time_seconds": 5.290571399964392,
+  "final_test_score": {
+    "accuracy": 1.0,
+    "classification_report": {
+      "0": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 12.0
+      },
+      "1": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 8.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 20.0
+      },
+      "weighted avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 20.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        12,
+        0
+      ],
+      [
+        0,
+        8
+      ]
+    ],
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "roc_auc": 1.0
+  },
+  "model": "random_forest",
+  "optimization_metric": 1.0,
+  "validation_score": {
+    "accuracy": 1.0,
+    "classification_report": {
+      "0": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 9.0
+      },
+      "1": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 19.0
+      },
+      "weighted avg": {
+        "f1-score": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 19.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        9,
+        0
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "roc_auc": 1.0
+  }
+}
