@@ -13,6 +13,15 @@ class ParameterSpace:
         "max_features": ["sqrt", "log2", None],
     }
 
+    XGBOOST = {
+        "n_estimators": [100, 200, 300],
+        "max_depth": [3, 4, 6],
+        "learning_rate": [0.03, 0.05, 0.1],
+        "subsample": [0.7, 0.8, 1.0],
+        "colsample_bytree": [0.7, 0.8, 1.0],
+        "min_child_weight": [1, 3, 5],
+    }
+
     @classmethod
     def get(cls, model_name: str) -> dict[str, list[object]]:
         """Return the parameter space for a registered model.
@@ -29,5 +38,8 @@ class ParameterSpace:
 
         if model_name == "random_forest":
             return cls.RANDOM_FOREST
+
+        if model_name == "xgboost":
+            return cls.XGBOOST
 
         raise ValueError(f"No parameter space is defined for: {model_name}")

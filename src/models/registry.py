@@ -7,6 +7,7 @@ from collections.abc import Callable
 from src.models.base_model import BaseModel
 from src.models.logistic_regression import LogisticRegressionModel
 from src.models.random_forest import RandomForestModel
+from src.models.xgboost_model import XGBoostModel
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -23,6 +24,7 @@ class ModelRegistry:
         self._models: dict[str, ModelFactory] = {}
         self.register("logistic_regression", LogisticRegressionModel)
         self.register("random_forest", RandomForestModel)
+        self.register("xgboost", XGBoostModel)
 
     def register(
         self,
