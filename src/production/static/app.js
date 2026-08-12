@@ -35,6 +35,13 @@ function setupEventListeners() {
     document.getElementById("btn-execute-buy").addEventListener("click", () => handlePaperTrade("BUY"));
     document.getElementById("btn-execute-sell").addEventListener("click", () => handlePaperTrade("SELL"));
     document.getElementById("btn-reset-portfolio").addEventListener("click", handleResetPortfolio);
+
+    const capInput = document.getElementById("trade-capital-input");
+    if (capInput) {
+        capInput.addEventListener("input", () => {
+            capInput.dataset.userEdited = "true";
+        });
+    }
 }
 
 async function loadSupportedAssets() {
@@ -200,10 +207,39 @@ async function handleResetPortfolio() {
     }
 }
 
+function switchToTab(tabId) {
+    const navButtons = document.querySelectorAll(".side-nav .nav-btn");
+    navButtons.forEach(btn => {
+        if (btn.getAttribute("data-tab") === tabId) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    });
+    document.querySelectorAll(".tab-page").forEach(page => page.classList.remove("active"));
+    const targetPage = document.getElementById(tabId);
+    if (targetPage) targetPage.classList.add("active");
+}
+
 async function refreshPortfolioView() {
     try {
         const res = await fetch("/api/portfolio");
         const data = await res.json();
+
+        // Dynamically compute 20% portfolio equity cap for paper trade capital input
+        const max20Cap = data.current_equity * 0.20;
+        const capInput = document.getElementById("trade-capital-input");
+        if (capInput) {
+            capInput.max = Math.floor(max20Cap);
+            const currVal = parseFloat(capInput.value);
+            if (isNaN(currVal) || currVal > max20Cap || !capInput.dataset.userEdited) {
+                capInput.value = Math.floor(max20Cap);
+            }
+        }
+        const capLabel = document.getElementById("trade-capital-label");
+        if (capLabel) {
+            capLabel.innerText = `Capital Allocation (Max 20% Equity: ₹${max20Cap.toLocaleString('en-IN', {maximumFractionDigits: 0})}):`;
+        }
 
         document.getElementById("nav-portfolio-equity").innerText = `₹${data.current_equity.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
         document.getElementById("nav-cash-balance").innerText = `₹${data.cash_balance.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
