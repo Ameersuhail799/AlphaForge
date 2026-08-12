@@ -63,18 +63,18 @@ The platform connects quantitative Machine Learning models (`RandomForestClassif
 
 ## 3. Empirical Research & Validation Matrix
 
-The production system is backed by extensive out-of-fold cross-asset research:
+The production system is backed by extensive out-of-fold cross-asset research and four independent empirical reality checks under realistic 2026 NSE delivery transaction friction (~0.30% round-trip):
 
-| Asset | Display Name | Cumulative Return (%) | Daily Sharpe Ratio | Net Expectancy (%/trade) | Walk-Forward Positive Folds |
-|---|---|---|---|---|---|
-| **`tcs_ns`** | Tata Consultancy Services | **+79.84%** | **1.09** | **+2.09%** | **5 / 5 Folds Positive** |
-| **`reliance_ns`** | Reliance Industries | **+53.35%** | **0.70** | **+1.60%** | **5 / 5 Folds Positive** |
-| **`icicibank_ns`** | ICICI Bank | **+44.98%** | **0.45** | **+1.19%** | **4 / 5 Folds Positive** |
-| **`hdfcbank_ns`** | HDFC Bank | **+42.74%** | **0.54** | **+1.23%** | **4 / 5 Folds Positive** |
-| **`infy_ns`** | Infosys Ltd | **+11.99%** | **0.31** | **+2.84%** | **4 / 5 Folds Positive** |
+| Asset | Display Name | Champion CAGR | Buy & Hold CAGR | CAGR Difference | Champion Sharpe | Buy & Hold Sharpe | Reality Check Verdict |
+|---|---|---|---|---|---|---|---|
+| **`reliance_ns`** | Reliance Industries | **8.34%** | **19.04%** | **-10.70%** | **0.50** | **0.43** | **NO (B&H Outperformed)** |
+| **`tcs_ns`** | Tata Consultancy Services | **8.67%** | **20.02%** | **-11.35%** | **0.52** | **0.51** | **NO (B&H Outperformed)** |
+| **`hdfcbank_ns`** | HDFC Bank | **6.33%** | **19.29%** | **-12.96%** | **0.40** | **0.76** | **NO (B&H Outperformed)** |
+| **`infy_ns`** | Infosys Ltd | **1.26%** | **14.54%** | **-13.28%** | **0.16** | **0.60** | **NO (B&H Outperformed)** |
+| **`icicibank_ns`** | ICICI Bank | **4.90%** | **18.95%** | **-14.05%** | **0.33** | **0.65** | **NO (B&H Outperformed)** |
 
-* **Multi-Asset Equal-Weight Portfolio:** **+350.10%** cumulative return, **0.85** daily equity Sharpe ratio across 1,003 trades.
-* **Volatility Expansion Governance (Mission 29):** Retains **93.5%** of baseline cumulative return (**+327.36%** return) while protecting against volatility spikes.
+* **Empirical Reality Check Summary:** 0 of 5 equities beat Buy-and-Hold on CAGR under realistic transaction costs over the 23-year evaluation window (2003–2026).
+* **Reference Reports:** [`reports/validation/per_stock_reality_check.md`](file:///c:/Users/AMEER%20SUHAIL/OneDrive/Desktop/projects/AlphaForge/reports/validation/per_stock_reality_check.md), [`reports/validation/benchmark_and_cost_reality_check.md`](file:///c:/Users/AMEER%20SUHAIL/OneDrive/Desktop/projects/AlphaForge/reports/validation/benchmark_and_cost_reality_check.md), [`reports/validation/risk_overlay_reality_check.md`](file:///c:/Users/AMEER%20SUHAIL/OneDrive/Desktop/projects/AlphaForge/reports/validation/risk_overlay_reality_check.md), and [`reports/validation/risk_overlay_persistence_test.md`](file:///c:/Users/AMEER%20SUHAIL/OneDrive/Desktop/projects/AlphaForge/reports/validation/risk_overlay_persistence_test.md).
 
 ---
 
