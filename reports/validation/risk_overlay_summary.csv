@@ -1,0 +1,7 @@
+asset,strategy,total_return_pct,cagr_pct,sharpe,sortino,max_dd_pct,transitions,total_trades,win_rate_pct
+reliance_ns,Risk Overlay,1819.22,13.97,0.32,1.18,52.81,770.0,,
+reliance_ns,Buy and Hold,5094.46,19.1,0.43,1.08,77.59,,1.0,100.0
+reliance_ns,Champion 10D,510.56,8.33,0.5,0.43,51.81,,202.0,54.46
+tcs_ns,Risk Overlay,2743.75,15.97,0.44,0.87,59.55,736.0,,
+tcs_ns,Buy and Hold,6074.37,20.01,0.51,1.12,66.36,,1.0,100.0
+tcs_ns,Champion 10D,553.98,8.66,0.52,0.45,66.96,,214.0,60.28

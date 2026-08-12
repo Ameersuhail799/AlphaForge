@@ -1,0 +1,4 @@
+strategy,total_return_pct,cagr_pct,sharpe,sortino,max_dd_pct,total_trades,win_rate_pct,expectancy_pct
+Champion Strategy (Old 10bps),317.44,6.53,0.73,0.82,24.45,1003.0,56.43,0.98
+Champion Strategy (Realistic Costs),217.97,5.25,0.6,0.68,25.95,1003.0,55.23,0.8
+Equal-Weight Buy-and-Hold,4676.95,18.66,0.71,1.01,61.0,,,
