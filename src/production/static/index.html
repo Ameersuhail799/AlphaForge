@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaForge — AI Trading Intelligence & Paper Trading Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon">⚡</div>
+            <div class="brand-text">
+                <span class="brand-title">AlphaForge</span>
+                <span class="brand-subtitle">AI Trading Intelligence Platform</span>
+            </div>
+        </div>
+        <div class="nav-metrics">
+            <div class="metric-chip">
+                <span class="chip-label">Portfolio Equity</span>
+                <span class="chip-value" id="nav-portfolio-equity">₹1,00,000.00</span>
+            </div>
+            <div class="metric-chip">
+                <span class="chip-label">Cash Balance</span>
+                <span class="chip-value" id="nav-cash-balance">₹1,00,000.00</span>
+            </div>
+            <div class="metric-chip">
+                <span class="chip-label">Total P&L</span>
+                <span class="chip-value positive" id="nav-total-pnl">+₹0.00 (0.00%)</span>
+            </div>
+            <div class="metric-chip">
+                <span class="chip-label">Win Rate</span>
+                <span class="chip-value" id="nav-win-rate">0.0%</span>
+            </div>
+            <div class="server-status-pill">
+                <span class="status-dot"></span>
+                <span>LIVE SYSTEM</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Application Container -->
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <button class="nav-btn active" data-tab="tab-trading">
+                    <span class="nav-icon">📊</span>
+                    <span>AI Trading Intelligence</span>
+                </button>
+                <button class="nav-btn" data-tab="tab-paper-trading">
+                    <span class="nav-icon">💼</span>
+                    <span>Paper Portfolio</span>
+                </button>
+                <button class="nav-btn" data-tab="tab-backtests">
+                    <span class="nav-icon">🔬</span>
+                    <span>Validated Research Edge</span>
+                </button>
+                <button class="nav-btn" data-tab="tab-risk">
+                    <span class="nav-icon">🛡️</span>
+                    <span>Risk & Capital Controls</span>
+                </button>
+            </nav>
+            <div class="system-badge">
+                <div class="badge-title">Model Version</div>
+                <div class="badge-value">AlphaForge C59_VOL_VOL + RF Dual Model</div>
+                <div class="badge-sub">10-Day Horizon | 10 bps Costs</div>
+            </div>
+        </aside>
+
+        <!-- Main Content View -->
+        <main class="main-content">
+            <!-- TAB 1: TRADING INTELLIGENCE & SIGNAL VIEW -->
+            <section id="tab-trading" class="tab-page active">
+                <!-- Asset Selector Bar -->
+                <div class="asset-selector-bar">
+                    <div class="selector-label">SELECT ASSET:</div>
+                    <div class="asset-tabs" id="asset-tabs-container">
+                        <!-- Rendered via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Main Signal & Analysis Grid -->
+                <div class="grid-2col">
+                    <!-- Left Column: Signal Banner & Technical Evidence -->
+                    <div class="col-left">
+                        <!-- AI Signal Card -->
+                        <div class="glass-card signal-card">
+                            <div class="card-header">
+                                <div class="asset-title-group">
+                                    <h2 id="signal-asset-name">Tata Consultancy Services (TCS)</h2>
+                                    <span class="asset-symbol-badge" id="signal-asset-symbol">TCS.NS</span>
+                                </div>
+                                <div class="signal-badge" id="signal-action-badge">BUY</div>
+                            </div>
+
+                            <div class="signal-metrics-grid">
+                                <div class="sig-metric-item">
+                                    <span class="sig-label">Current Price</span>
+                                    <span class="sig-value" id="signal-last-price">₹3,450.00</span>
+                                </div>
+                                <div class="sig-metric-item">
+                                    <span class="sig-label">P(Up) Direction Conviction</span>
+                                    <span class="sig-value highlight" id="signal-prob-pct">68.5%</span>
+                                </div>
+                                <div class="sig-metric-item">
+                                    <span class="sig-label">Expected 10D Return</span>
+                                    <span class="sig-value positive" id="signal-exp-ret">+2.15%</span>
+                                </div>
+                                <div class="sig-metric-item">
+                                    <span class="sig-label">Risk Rating</span>
+                                    <span class="sig-value" id="signal-risk-level">MODERATE</span>
+                                </div>
+                            </div>
+
+                            <!-- Conviction & Edge Progress Bars -->
+                            <div class="progress-section">
+                                <div class="progress-group">
+                                    <div class="progress-header">
+                                        <span>Direction Probability (P >= 55.0% Required)</span>
+                                        <span id="prob-bar-label">68.5%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill" id="prob-bar-fill" style="width: 68.5%;"></div>
+                                    </div>
+                                </div>
+
+                                <div class="progress-group">
+                                    <div class="progress-header">
+                                        <span>Expected Return Edge (> 1.0% Required)</span>
+                                        <span id="ret-bar-label">+2.15%</span>
+                                    </div>
+                                    <div class="progress-bar-bg">
+                                        <div class="progress-bar-fill green" id="ret-bar-fill" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Execution & Paper Trade Simulator -->
+                            <div class="trade-simulator-panel">
+                                <div class="sim-header">PAPER TRADE SIMULATOR</div>
+                                <div class="sim-controls">
+                                    <div class="input-group">
+                                        <label for="trade-capital-input">Capital Allocation (₹):</label>
+                                        <input type="number" id="trade-capital-input" value="20000" step="5000" min="5000">
+                                    </div>
+                                    <button class="btn btn-buy" id="btn-execute-buy">BUY POSITION</button>
+                                    <button class="btn btn-sell" id="btn-execute-sell">CLOSE POSITION</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technical & Evidence Reasoning -->
+                        <div class="glass-card evidence-card">
+                            <h3 class="section-title">⚡ Why AlphaForge Likes This Trade</h3>
+                            <ul class="evidence-list" id="evidence-reasons-list">
+                                <!-- Rendered dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Price & Indicator Chart -->
+                    <div class="col-right">
+                        <div class="glass-card chart-card">
+                            <div class="card-header">
+                                <h3 class="section-title">📈 Technical & Signal Chart</h3>
+                                <div class="chart-indicators-legend">
+                                    <span class="legend-item"><span class="leg-color close"></span> Price</span>
+                                    <span class="legend-item"><span class="leg-color sma20"></span> SMA 20</span>
+                                    <span class="legend-item"><span class="leg-color sma50"></span> SMA 50</span>
+                                </div>
+                            </div>
+                            <div class="chart-container">
+                                <canvas id="market-chart-canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: PAPER PORTFOLIO VIEW -->
+            <section id="tab-paper-trading" class="tab-page">
+                <div class="portfolio-header-bar">
+                    <h2>💼 Paper Trading Portfolio & Position Tracker</h2>
+                    <button class="btn btn-secondary" id="btn-reset-portfolio">Reset Portfolio (₹1,00,000)</button>
+                </div>
+
+                <!-- Portfolio Summary Cards -->
+                <div class="metrics-row-4">
+                    <div class="glass-card stat-card">
+                        <div class="stat-label">Total Equity</div>
+                        <div class="stat-value" id="port-total-equity">₹1,00,000.00</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-label">Available Cash</div>
+                        <div class="stat-value" id="port-cash">₹1,00,000.00</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-label">Realized Net P&L</div>
+                        <div class="stat-value" id="port-realized-pnl">₹0.00</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-label">Unrealized P&L</div>
+                        <div class="stat-value" id="port-unrealized-pnl">₹0.00</div>
+                    </div>
+                </div>
+
+                <!-- Active Positions Table -->
+                <div class="glass-card table-card">
+                    <h3 class="section-title">Open Positions</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Entry Date</th>
+                                <th>Entry Price</th>
+                                <th>Current Price</th>
+                                <th>Units</th>
+                                <th>Allocated Cash</th>
+                                <th>Unrealized P&L</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="open-positions-tbody">
+                            <!-- Rendered dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Trade History Table -->
+                <div class="glass-card table-card">
+                    <h3 class="section-title">Closed Trade History Ledger</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Trade ID</th>
+                                <th>Asset</th>
+                                <th>Entry Date</th>
+                                <th>Exit Date</th>
+                                <th>Entry Price</th>
+                                <th>Exit Price</th>
+                                <th>Units</th>
+                                <th>Net P&L</th>
+                                <th>Net Return %</th>
+                            </tr>
+                        </thead>
+                        <tbody id="trade-history-tbody">
+                            <!-- Rendered dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- TAB 3: VALIDATED RESEARCH EDGE VIEW -->
+            <section id="tab-backtests" class="tab-page">
+                <h2 class="page-title">🔬 Quantitative Validation & Cross-Asset Edge Matrix</h2>
+                <div class="glass-card table-card">
+                    <h3 class="section-title">Cross-Asset Generalization Matrix (Mission 27 Locked Rules)</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Asset Symbol</th>
+                                <th>Display Name</th>
+                                <th>Cumulative Return</th>
+                                <th>Daily Sharpe</th>
+                                <th>Net Expectancy</th>
+                                <th>Positive Validation Folds</th>
+                            </tr>
+                        </thead>
+                        <tbody id="backtest-summary-tbody">
+                            <!-- Rendered dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- TAB 4: RISK & CAPITAL CONTROLS VIEW -->
+            <section id="tab-risk" class="tab-page">
+                <h2 class="page-title">🛡️ Institutional Risk & Capital Controls</h2>
+                <div class="grid-2col">
+                    <div class="glass-card">
+                        <h3 class="section-title">Active Portfolio Limits</h3>
+                        <ul class="risk-rules-list">
+                            <li><span class="rule-key">Maximum Position Allocation:</span> <strong>20.0% of Portfolio Equity</strong></li>
+                            <li><span class="rule-key">Maximum Total Exposure:</span> <strong>100.0% (Zero Leverage)</strong></li>
+                            <li><span class="rule-key">IT Sector Cap (TCS, INFY):</span> <strong>35.0% Max Cluster Exposure</strong></li>
+                            <li><span class="rule-key">Financials Sector Cap (ICICI, HDFC):</span> <strong>35.0% Max Cluster Exposure</strong></li>
+                            <li><span class="rule-key">Drawdown Governor:</span> <strong>Hysteresis Buffer Active (20% -> 10%)</strong></li>
+                            <li><span class="rule-key">Transaction Cost Model:</span> <strong>10 bps round-trip (0.10%)</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
