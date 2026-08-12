@@ -1,0 +1,16 @@
+strategy,exit_reason,trade_id
+Candidate 1: Control Baseline (Fixed 10D),TIME_LIMIT_10D,276
+Candidate 2: Profit Target (+3.0%) + 10D Time Stop,PROFIT_TARGET,282
+Candidate 2: Profit Target (+3.0%) + 10D Time Stop,TIME_LIMIT_10D,133
+Candidate 3: ATR Protective Stop (1.5x ATR14),STOP_LOSS,125
+Candidate 3: ATR Protective Stop (1.5x ATR14),TIME_LIMIT_10D,217
+Candidate 4: Trailing ATR Exit (1.5x ATR14),TIME_LIMIT_10D,131
+Candidate 4: Trailing ATR Exit (1.5x ATR14),TRAILING_STOP,267
+Candidate 5: Model Probability Deterioration,PROB_DETERIORATION,289
+Candidate 5: Model Probability Deterioration,TIME_LIMIT_10D,96
+Candidate 6: Expected Return Decay Exit,RETURN_DECAY,344
+Candidate 6: Expected Return Decay Exit,TIME_LIMIT_10D,115
+Candidate 7: Combined Adaptive Exit,PROB_DETERIORATION,165
+Candidate 7: Combined Adaptive Exit,PROFIT_TARGET,279
+Candidate 7: Combined Adaptive Exit,STOP_LOSS,126
+Candidate 7: Combined Adaptive Exit,TIME_LIMIT_10D,33

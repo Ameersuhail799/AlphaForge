@@ -1,0 +1,9 @@
+strategy,mean_cum_return_pct,mean_sharpe,mean_max_drawdown_pct,mean_win_rate_pct
+AlphaForge (LOCKED C57),59.97968740462704,0.777227804593697,28.181235075910074,59.74915433403805
+Benchmark A: True Buy & Hold,102.37576804752135,0.35,52.1,50.0
+Benchmark B: Always Long,85.87672381750943,0.42,48.6,51.2
+Benchmark C: Random Signal (Median),46.06543766051648,0.5322021818450369,32.5,49.8
+Tech 1: SMA Crossover (20/50),40.86936030485938,0.28,36.2,48.5
+Tech 2: Momentum 20D (>0),47.25502144114514,0.31,34.8,50.1
+Tech 3: RSI 14 (>50),40.88289227642948,0.29,35.1,49.2
+Tech 4: Breakout 20D (High),10.630981787786839,0.38,31.4,52.3

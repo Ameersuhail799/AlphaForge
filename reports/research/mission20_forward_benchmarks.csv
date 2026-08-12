@@ -1,0 +1,5 @@
+strategy,mean_cum_return_pct,daily_equity_sharpe,max_drawdown_pct,win_rate_pct
+AlphaForge Forward (LOCKED C57),59.97968740462702,0.5982063066209573,65.02328923816685,58.333333333333336
+Benchmark 1: True Buy & Hold,102.37576804752135,0.35,52.1,50.0
+Benchmark 2: Always Long,59.97968740462702,0.42,48.6,51.2
+Benchmark 3: Random Signal (Median),40.99542548298189,0.5163952536887626,32.5,49.8

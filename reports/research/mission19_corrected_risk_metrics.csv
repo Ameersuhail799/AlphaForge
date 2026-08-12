@@ -1,0 +1,9 @@
+metric_name,alphaforge_value,calculation_methodology
+Daily Equity Curve Annualized Sharpe,0.5985619353509101,mean(daily_returns) / std(daily_returns) * sqrt(252)
+Trade-Level Sharpe Ratio,0.8900014805084746,mean(trade_returns) / std(trade_returns) * sqrt(252/10)
+Mean Cumulative Return (%),59.97968740462704,Mean across 5 outer folds (Mode A SAME_BAR_CLOSE 10 bps)
+Mean Return Ex-Fold 2 (%),35.108719444746804,"Mean across Folds 1, 3, 4, 5"
+True Buy & Hold Mean Return (%),102.37576804752135,Mean across 5 outer folds (Price ratio)
+Mean Alpha vs Buy & Hold (%),-42.39608064289429,AlphaForge Return - Buy & Hold Return per fold
+Moving Block Bootstrap 95% CI (Mean Trade Ret),"[0.134%, 1.614%]","10,000 resamples, 10-day block size"
+Moving Block Bootstrap 95% CI (Median Trade Ret),"[0.134%, 1.714%]","10,000 resamples, 10-day block size"

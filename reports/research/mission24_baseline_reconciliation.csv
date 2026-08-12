@@ -1,0 +1,6 @@
+fold,mission22_unconstrained_return_pct,mission22_unconstrained_sharpe,mission23_constrained_return_pct,mission23_constrained_sharpe,reconciliation_notes
+1,-28.200533085447343,-0.02858994874917503,-25.378525942062698,-0.0005457038972137434,max_depth parameter difference (Unconstrained vs max_depth=6)
+2,225.8499363425031,1.6373065290174453,174.11411473411334,1.6816043364830717,max_depth parameter difference (Unconstrained vs max_depth=6)
+3,47.143537752452744,0.7964155165111664,57.653060902943686,0.8866577478178242,max_depth parameter difference (Unconstrained vs max_depth=6)
+4,58.0900451885789,0.8238118660497197,53.76994656753927,0.9116548701238172,max_depth parameter difference (Unconstrained vs max_depth=6)
+5,33.80993111245797,0.4951861464315986,28.596108312337705,0.45132775140165143,max_depth parameter difference (Unconstrained vs max_depth=6)

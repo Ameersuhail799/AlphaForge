@@ -1,0 +1,32 @@
+proposed_feature,max_shortlist_corr,most_similar_base_feature,max_other_proposed_corr,most_similar_other_feature,classification,reasoning
+VOLATILITY_20D,1.0,HIST_VOL_20,0.7164977501401303,ATR_TO_PRICE,Redundant (High Base Correlation),Correlated with base feature HIST_VOL_20 (|r|=1.00 >= 0.85)
+VOLUME_RATIO_20,0.9999999999999987,VOLUME_RATIO,0.7470964980649311,VOLUME_RATIO_5,Redundant (High Base Correlation),Correlated with base feature VOLUME_RATIO (|r|=1.00 >= 0.85)
+RSI_NEUTRAL_DIFF,0.9999999999999928,RSI_14,0.8486577955576455,PRICE_ZSCORE_20D,Redundant (High Base Correlation),Correlated with base feature RSI_14 (|r|=1.00 >= 0.85)
+RETURN_10D,0.8942477843910246,ROC_12,0.8921436828442065,CLOSE_TO_SMA20,Redundant (High Base Correlation),Correlated with base feature ROC_12 (|r|=0.89 >= 0.85)
+CLOSE_TO_SMA20,0.8937081938009792,ROC_12,0.8921436828442065,RETURN_10D,Redundant (High Base Correlation),Correlated with base feature ROC_12 (|r|=0.89 >= 0.85)
+EMA20_SLOPE_5D,0.8604311136621821,ROC_12,0.8800890042478943,SMA20_SLOPE_5D,Redundant (High Base Correlation),Correlated with base feature ROC_12 (|r|=0.86 >= 0.85)
+PRICE_ZSCORE_20D,0.8486577955729625,RSI_14,0.9306178404565811,POSITION_IN_20D_RANGE,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.85) with base feature RSI_14
+POSITION_IN_20D_RANGE,0.8361686629635745,RSI_14,0.9306178404565811,PRICE_ZSCORE_20D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.84) with base feature RSI_14
+CLOSE_TO_SMA50,0.7796852614917383,ROC_12,0.8754269379567085,RETURN_20D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.78) with base feature ROC_12
+RETURN_20D,0.753277020912316,ROC_12,0.9147450923045315,SMA20_SLOPE_5D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.75) with base feature ROC_12
+VOLUME_RATIO_5,0.7470964980647862,VOLUME_RATIO,0.7470964980649311,VOLUME_RATIO_20,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.75) with base feature VOLUME_RATIO
+DISTANCE_TO_20D_LOW,0.7196900503686476,ROC_12,0.8237516223793436,RETURN_20D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.72) with base feature ROC_12
+ATR_TO_PRICE,0.7164977501401303,HIST_VOL_20,0.7284013743554025,DISTANCE_TO_20D_HIGH,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.72) with base feature HIST_VOL_20
+SMA20_SLOPE_5D,0.7159612951788172,ROC_12,0.9147450923045315,RETURN_20D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.72) with base feature ROC_12
+DISTANCE_TO_20D_HIGH,0.6384990968192694,HIST_VOL_20,0.7284013743554025,ATR_TO_PRICE,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.64) with base feature HIST_VOL_20
+VOLATILITY_60D,0.6359916751045335,HIST_VOL_20,0.6359916751045335,VOLATILITY_20D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.64) with base feature HIST_VOL_20
+RETURN_5D,0.6357046735278208,ROC_12,0.7978109027422012,CLOSE_TO_SMA20,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.64) with base feature ROC_12
+RANGE_TO_ATR,0.6301230648732158,HIGH_LOW_PCT,0.44530135138787275,VOLUME_RATIO_5,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.63) with base feature HIGH_LOW_PCT
+VOLUME_TREND_RATIO,0.5669034891694746,VOLUME_RATIO,0.5669034891694261,VOLUME_RATIO_20,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.57) with base feature VOLUME_RATIO
+VOLATILITY_5D,0.5607354207675023,HIST_VOL_20,0.5607354207675023,VOLATILITY_20D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.56) with base feature HIST_VOL_20
+RETURN_3D,0.4835607532751454,ROC_12,0.7275052687402542,RETURN_5D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.48) with base feature ROC_12
+CLOSE_TO_SMA200,0.4492502507436103,ROC_12,0.9030452549589224,SMA50_SMA200_SPREAD,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.45) with base feature ROC_12
+MOMENTUM_SPREAD_SHORT_LONG,0.4393710030378633,ROC_12,0.8069495311521683,RETURN_20D,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.44) with base feature ROC_12
+DISTANCE_TO_52W_HIGH,0.41914156418988474,HIGH_LOW_PCT,0.6190240596436984,ATR_TO_PRICE,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.42) with base feature HIGH_LOW_PCT
+SMA50_SLOPE_10D,0.3938217492893004,ROC_12,0.8682620794472772,SMA20_SMA50_SPREAD,Potentially Useful (Moderate Correlation),Moderate correlation (|r|=0.39) with base feature ROC_12
+SMA20_SMA50_SPREAD,0.28167710457741985,ROC_12,0.8682620794472772,SMA50_SLOPE_10D,Complementary (Orthogonal Signal),Low correlation with base features (Max |r|=0.28 with ROC_12)
+VOLATILITY_RATIO_SHORT_LONG,0.272612373560508,HIGH_LOW_PCT,0.5337019330367372,VOLATILITY_5D,Complementary (Orthogonal Signal),Low correlation with base features (Max |r|=0.27 with HIGH_LOW_PCT)
+DISTANCE_TO_52W_LOW,0.2717575024384496,ATR_14,0.7541130066607936,SMA50_SMA200_SPREAD,Complementary (Orthogonal Signal),Low correlation with base features (Max |r|=0.27 with ATR_14)
+MOMENTUM_ACCELERATION,0.2042315597297711,DAILY_RETURN,0.7272277703115687,RETURN_5D,Complementary (Orthogonal Signal),Low correlation with base features (Max |r|=0.20 with DAILY_RETURN)
+SMA50_SMA200_SPREAD,0.19637068287822,RSI_14,0.9030452549589224,CLOSE_TO_SMA200,Complementary (Orthogonal Signal),Low correlation with base features (Max |r|=0.20 with RSI_14)
+VOLUME_CHANGE_5D,0.04510391984473018,HIST_VOL_20,0.07290391191199327,VOLATILITY_5D,Complementary (Orthogonal Signal),Low correlation with base features (Max |r|=0.05 with HIST_VOL_20)

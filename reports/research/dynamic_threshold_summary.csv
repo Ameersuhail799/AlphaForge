@@ -1,0 +1,2 @@
+total_folds,fixed_recall_failures,dynamic_recall_failures,fixed_severe_collapses,dynamic_severe_collapses,f1_win_rate,mean_fixed_f1,mean_dynamic_f1,mean_delta_f1,mean_fixed_recall,mean_dynamic_recall,mean_delta_recall,mean_dynamic_threshold,std_dynamic_threshold,criterion_1_pass,criterion_2_pass,criterion_3_pass,hypothesis_supported
+75,16,1,2,0,1.0,0.4721633118181376,0.6650256501099934,0.1928623382918559,0.4758475419121603,0.9682921389930754,0.4924445970809153,0.22693333333333332,0.03657548039008873,False,True,True,False

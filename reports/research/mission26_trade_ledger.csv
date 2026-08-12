@@ -1,0 +1,1628 @@
+strategy,fold,trade_id,net_return_pct,net_pnl,is_win
+Candidate A: Baseline Control (P(up) >= 0.55),1,1,3.506061576548527,3506.061576548527,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,2,8.867857142857142,9178.769674806072,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,3,2.2419103171362926,2526.29285767174,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,4,-6.650095539108915,-7661.6498249315955,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,5,0.9634215231940824,1036.1547833350535,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,6,-0.8202009058917569,-890.620313279322,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,7,4.864876908052885,5239.229612006199,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,8,11.744441720257061,13263.49580712946,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,9,2.138849567917158,2699.179692086574,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,10,1.904391849230437,2454.7023215617346,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,11,0.7414116061328017,973.8561272529437,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,12,-5.79033851446468,-7662.092787855689,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,13,-5.292544025811025,-6597.864245494992,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,14,-6.169732441471571,-7284.326398472358,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,15,7.794466842342675,8634.8030349889,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,16,3.1630402384500744,3777.1758754901725,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,17,0.6147255932919244,757.2999316096727,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,18,2.9413394496058847,3645.804005150348,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,19,2.5356191963138346,3235.3555597565874,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,20,-1.3309616726826459,-1741.318814968391,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,21,6.683272597768281,8627.457212643561,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,22,3.7229629747573845,5127.18142619145,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,23,-3.6489942399364406,-5212.403892201895,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,24,2.5404118710538377,3496.4334664202165,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,25,8.492955222829172,11986.020796501722,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,26,-2.5484697513279833,-3902.089395624984,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,27,7.503150533681496,11195.669109550588,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,28,2.6802750902334473,4299.39113723246,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,29,-0.08076108344159005,-133.01993974206164,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,30,-1.2194931073616089,-2006.9801521253726,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,31,-7.262665309791042,-11806.767434433712,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,32,6.20346938604105,9352.424938202,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,33,-5.8401143472215375,-9350.81882910747,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,34,5.207873535478182,7851.536322821284,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,35,0.6069633218343713,962.7308866396418,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,36,-2.931638940982372,-4678.223645997963,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,37,-1.9345894578030913,-2996.6568316705843,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,38,-4.073510768520017,-6187.752215938272,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,39,-2.8903124473834865,-4211.602638395061,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,40,2.3939584071057998,3387.51910563482,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,41,-0.05245522134571706,-76.00255794556699,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,42,-2.3506267993045062,-3404.0450459337067,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,43,-8.819431487692851,-12471.585433187724,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,44,-1.649437803245513,-2126.7640709283005,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,45,2.3738947413968736,3010.382468727213,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,46,2.89963968292097,3764.3801825148244,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,47,-2.1874649617209365,-2922.1627688537696,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,48,-5.80598348073223,-7586.362807984192,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,49,-2.9971163024827394,-3688.7967330858314,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,50,10.467491766018037,12497.07573323266,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,51,4.32808928020215,5708.164467340615,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,52,-11.069463005004476,-15230.987919434046,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,53,-19.07174472259201,-23336.883612632657,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,54,19.224609535167232,19037.509829881332,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,55,-8.42630507583333,-9948.456387436496,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,56,-1.9999799140690264,-2162.2947488356986,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,57,-5.60799095047901,-5941.86428979303,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,58,7.465291918334669,7466.162685410126,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,59,1.5365777758758918,1651.4804020175684,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,60,8.85744327228786,9666.066487012533,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,61,-0.6786786253272886,-806.2388097298333,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,62,2.051511282883194,2420.5604165134846,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,63,-9.648925797385779,-11618.242160833002,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,64,-3.626872253417969,-3945.7270311812836,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,65,-8.659694425947503,-9079.31950722596,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,66,6.341046919885095,6072.59278161345,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,67,-0.1658995868276799,-168.9504793505625,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,68,-2.61788282436885,-2661.6027500597506,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,69,-6.446766290288218,-6382.843136791598,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,70,-18.56691823808526,-17197.71999585913,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,71,-12.490826514459425,-9421.566022571214,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,72,-1.1300820957165252,-745.9255714262706,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,73,-3.5384186046511634,-2309.185834805798,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,74,2.565920156137102,1615.2776750582882,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,75,-10.514645838005803,-6788.9370547731405,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,76,4.295348949621123,2481.7472280991105,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,77,0.3911824713592246,235.72379364547982,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,78,-0.27954945633307854,-169.11349203057563,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,79,-3.017956570834085,-1820.6095785335083,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,80,-5.185072064878768,-3033.5416686752214,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,81,10.583042298139683,5870.599039289467,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,82,13.56815450538954,8323.025045237697,1
+Candidate A: Baseline Control (P(up) >= 0.55),1,83,-2.0736972540340015,-1444.6490029495521,0
+Candidate A: Baseline Control (P(up) >= 0.55),1,84,5.24582392092611,3578.739250814245,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,1,3.506061576548527,3506.061576548527,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,2,8.867857142857142,9178.769674806072,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,3,2.2419103171362926,2526.29285767174,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,4,-6.650095539108915,-7661.6498249315955,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,5,0.9634215231940824,1036.1547833350535,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,6,-0.8202009058917569,-890.620313279322,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,7,4.864876908052885,5239.229612006199,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,8,11.744441720257061,13263.49580712946,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,9,2.138849567917158,2699.179692086574,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,10,1.904391849230437,2454.7023215617346,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,11,0.7414116061328017,973.8561272529437,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,12,-5.79033851446468,-7662.092787855689,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,13,-0.8237924397443662,-1026.9674956677466,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,14,-5.7087775296147925,-7058.127708428504,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,15,7.794466842342674,9086.655716868609,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,16,3.1630402384500744,3974.83261906102,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,17,0.6147255932919244,796.9288616152073,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,18,2.9413394496058842,3836.5861585659754,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,19,2.5356191963138346,3404.659257893847,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,20,7.459684565809879,10270.34055812662,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,21,7.670493371612035,11348.36358566892,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,22,-1.6538493852802938,-2634.526684659264,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,23,7.867189216667504,12324.905757035283,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,24,-2.0480943744869005,-3461.013858164026,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,25,8.769329476985364,14515.521738971056,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,26,-0.41777674564566936,-752.1716784055911,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,27,-0.5781551360488445,-1036.570679969781,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,28,1.5867667150863212,2828.456030479243,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,29,2.764746028779442,5006.436715387012,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,30,3.656828245479015,6804.90715152749,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,31,1.9460520063564628,3753.7902262465773,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,32,-0.502130716195496,-987.421905382484,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,33,-1.5478260869565217,-3028.4604846062616,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,34,-5.181907571636158,-9981.934641405645,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,35,1.5387888915421906,2810.5758867487684,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,36,1.387312789616064,2572.8984332952514,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,37,0.2828274322048332,531.8061991856246,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,38,-12.641667038229532,-23837.613981245388,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,39,6.848097421771874,11280.61307290861,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,40,-7.138410222154381,-12564.090856305636,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,41,6.953471566802112,11364.945672267095,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,42,3.2569980603929425,5693.483502444194,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,43,-5.752252080359723,-10382.883266816953,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,44,-5.039187244430747,-8572.579846864926,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,45,7.008245530347768,11321.520952452945,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,46,-2.5060530257245084,-4332.144812159932,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,47,-1.981960742330481,-3340.2995135573656,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,48,-10.237087023732853,-16911.13545612215,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,49,2.808955652134484,4165.2223822805145,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,50,-8.42630507583333,-12845.808314758478,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,51,-1.9999799140690266,-2792.0335358387797,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,52,-5.60799095047901,-7672.351038838689,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,53,7.465291918334668,9640.580505001795,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,54,1.536577775875892,2132.4514933481564,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,55,8.857443272287858,12481.176216109385,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,56,4.088829028879412,6271.973524050649,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,57,-10.786535141067818,-17222.30795602921,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,58,-0.876034268465909,-1247.8457088137932,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,59,-1.567861982080657,-2213.738371956982,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,60,-7.675332189662175,-10667.252198460394,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,61,6.223492439983363,7985.595394885288,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,62,-4.121283950560771,-5617.282294320311,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,63,5.589730495698408,7304.774113381525,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,64,-18.566918238085268,-25619.89985626181,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,65,-12.490826514459426,-14035.556925310611,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,66,-1.1300820957165252,-1111.2251184905533,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,67,-3.5384186046511625,-3440.0554173150676,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,68,2.5659201561371026,2406.322017396086,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,69,-10.514645838005803,-10113.659689518856,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,70,4.295348949621122,3697.1247041912443,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,71,0.3911824713592246,351.1639908307287,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,72,-0.27954945633307854,-251.93285686761374,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,73,-3.017956570834085,-2712.2104029261095,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,74,-5.185072064878766,-4519.14752536788,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,75,10.583042298139683,8745.587177781548,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,76,13.568154505389545,12399.031279233033,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,77,-2.073697254034002,-2152.1319565574795,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),1,78,5.245823920926111,5331.3428314689845,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,1,3.506061576548527,3506.061576548527,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,2,8.867857142857142,9178.769674806072,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,3,2.2419103171362926,2526.29285767174,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,4,-6.650095539108915,-7661.6498249315955,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,5,0.9634215231940824,1036.1547833350535,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,6,-0.8202009058917569,-890.620313279322,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,7,4.864876908052885,5239.229612006199,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,8,11.744441720257061,13263.49580712946,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,9,2.138849567917158,2699.179692086574,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,10,1.904391849230437,2454.7023215617346,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,11,-5.79033851446468,-7605.703221443887,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,12,-0.823792439744366,-1019.4094755023544,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,13,-3.773633983912703,-4631.249042966005,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,14,2.9555990643527914,3490.422235481236,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,15,1.0930639432646634,1329.0091919907964,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,16,7.221413292069561,8876.177463646272,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,17,4.094076466535768,5395.618720971125,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,18,7.459684565809878,10233.67882854109,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,19,10.005238866018171,14749.73923347795,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,20,-1.6538493852802933,-2682.0458962629855,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,21,7.867189216667506,12547.211269473184,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,22,-2.0480943744869005,-3523.440498534451,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,23,-0.0845399780848817,-142.4596908419328,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,24,1.586766715086321,2671.6258735278434,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,25,-4.715096270383656,-8064.737965691791,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,26,3.6095710192208785,5882.736385039248,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,27,-0.7645094129531486,-1290.9413410742377,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,28,-0.502130716195496,-841.409636565079,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,29,-0.4383006437901622,-730.7630538407485,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,30,-7.945268618367793,-13188.802318621598,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,31,5.368118956064048,8202.854728980596,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,32,-0.2714110875445418,-436.9982537541208,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,33,-9.411965623622741,-15113.05012243809,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,34,-0.6243863319220838,-908.2303578833435,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,35,-2.2134815978418003,-3199.619728399538,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,36,12.246629359890076,17310.834654033133,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,37,-5.752252080359723,-9126.676400373864,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,38,-5.039187244430746,-7535.398421433687,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,39,7.008245530347769,9951.749955941423,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,40,-2.506053025724509,-3808.006196747235,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,41,-9.542520800101357,-14136.703800779376,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,42,-12.56869689174037,-16843.012739137917,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,43,4.141231877281444,4852.058450115254,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,44,0.8887076920029584,1084.371576392212,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,45,-11.239208816605124,-13835.583681929747,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,46,3.8398806616721215,4195.66338018005,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,47,16.64902419275715,18890.170365480735,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,48,2.8440078585461683,3764.0812777839546,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,49,4.088829028879413,5565.525085724853,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,50,-5.9316305837838055,-8403.987774885347,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,51,-3.626872253417969,-4833.783459218074,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,52,-8.659694425947503,-11122.782723731825,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,53,3.3322247683502906,3909.377729747592,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,54,-0.08802378932914172,-106.7109993151611,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,55,2.1275948106881057,2577.0069985414552,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,56,-18.566918238085268,-22967.282092029498,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,57,-9.767225264886662,-9838.79369952668,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,58,0.6234809330531529,566.7064288386766,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,59,-7.184408634373679,-6570.907081929681,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,60,11.337725259231188,9624.566213966014,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,61,-2.0074942383579746,-1897.369379064662,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,62,1.2653771341371127,1171.9536213476963,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,63,-1.6918667630594038,-1586.78317243708,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,64,8.185252477359532,7546.975790060797,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,65,12.482461977186313,12451.142159423307,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),1,66,10.120911052123763,11355.685638415904,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,1,3.506061576548527,3506.061576548527,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,2,8.867857142857142,9178.769674806072,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,3,2.2419103171362926,2526.29285767174,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,4,-6.650095539108915,-7661.6498249315955,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,5,0.9634215231940824,1036.1547833350535,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,6,-0.8202009058917569,-890.620313279322,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,7,4.864876908052885,5239.229612006199,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,8,11.744441720257061,13263.49580712946,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,9,2.138849567917158,2699.179692086574,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,10,1.904391849230437,2454.7023215617346,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,11,0.7414116061328017,973.8561272529437,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,12,-5.79033851446468,-7662.092787855689,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,13,-5.292544025811025,-6597.864245494992,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,14,-6.169732441471571,-7284.326398472358,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,15,7.794466842342675,8634.8030349889,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,16,3.1630402384500744,3777.1758754901725,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,17,0.6147255932919244,757.2999316096727,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,18,2.9413394496058847,3645.804005150348,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,19,2.5356191963138346,3235.3555597565874,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,20,-1.3309616726826459,-1741.318814968391,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,21,6.683272597768281,8627.457212643561,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,22,3.7229629747573845,5127.18142619145,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,23,-3.6489942399364406,-5212.403892201895,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,24,2.5404118710538377,3496.4334664202165,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,25,8.492955222829172,11986.020796501722,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,26,-2.5484697513279833,-3902.089395624984,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,27,7.503150533681496,11195.669109550588,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,28,2.6802750902334473,4299.39113723246,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,29,-0.08076108344159005,-133.01993974206164,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,30,-1.2194931073616089,-2006.9801521253726,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,31,-7.262665309791042,-11806.767434433712,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,32,6.20346938604105,9352.424938202,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,33,-5.8401143472215375,-9350.81882910747,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,34,5.207873535478182,7851.536322821284,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,35,0.6069633218343713,962.7308866396418,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,36,-2.931638940982372,-4678.223645997963,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,37,-1.9345894578030913,-2996.6568316705843,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,38,-4.073510768520017,-6187.752215938272,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,39,-2.8903124473834865,-4211.602638395061,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,40,2.3939584071057998,3387.51910563482,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,41,-0.05245522134571706,-76.00255794556699,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,42,-2.3506267993045062,-3404.0450459337067,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,43,-8.819431487692851,-12471.585433187724,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,44,-1.649437803245513,-2126.7640709283005,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,45,2.3738947413968736,3010.382468727213,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,46,2.89963968292097,3764.3801825148244,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,47,-2.1874649617209365,-2922.1627688537696,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,48,-5.80598348073223,-7586.362807984192,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,49,-2.9971163024827394,-3688.7967330858314,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,50,10.467491766018037,12497.07573323266,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,51,4.32808928020215,5708.164467340615,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,52,-11.069463005004476,-15230.987919434046,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,53,-19.07174472259201,-23336.883612632657,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,54,19.224609535167232,19037.509829881332,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,55,-8.42630507583333,-9948.456387436496,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,56,-1.9999799140690264,-2162.2947488356986,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,57,-5.60799095047901,-5941.86428979303,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,58,7.465291918334669,7466.162685410126,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,59,1.5365777758758918,1651.4804020175684,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,60,8.85744327228786,9666.066487012533,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,61,-0.6786786253272886,-806.2388097298333,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,62,2.051511282883194,2420.5604165134846,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,63,-9.648925797385779,-11618.242160833002,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,64,-3.626872253417969,-3945.7270311812836,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,65,-8.659694425947503,-9079.31950722596,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,66,6.341046919885095,6072.59278161345,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,67,-0.1658995868276799,-168.9504793505625,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,68,-2.61788282436885,-2661.6027500597506,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,69,-6.446766290288218,-6382.843136791598,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,70,-18.56691823808526,-17197.71999585913,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,71,-12.490826514459425,-9421.566022571214,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,72,-1.1300820957165252,-745.9255714262706,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,73,-3.5384186046511634,-2309.185834805798,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,74,2.565920156137102,1615.2776750582882,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,75,-10.514645838005803,-6788.9370547731405,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,76,4.295348949621123,2481.7472280991105,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,77,0.3911824713592246,235.72379364547982,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,78,-0.27954945633307854,-169.11349203057563,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,79,-3.017956570834085,-1820.6095785335083,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,80,-5.185072064878768,-3033.5416686752214,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,81,10.583042298139683,5870.599039289467,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,82,13.56815450538954,8323.025045237697,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,83,-2.0736972540340015,-1444.6490029495521,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),1,84,5.24582392092611,3578.739250814245,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,1,3.506061576548527,3506.061576548527,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,2,8.867857142857142,9178.769674806072,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,3,2.2419103171362926,2526.29285767174,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,4,-3.529523521496194,-4066.4037248082564,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,5,0.33183480600194304,368.8168672683721,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,6,1.1140499034968299,1242.3164541360861,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,7,-0.8770418019521827,-988.9159711463589,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,8,3.4198830264527684,3822.298532767385,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,9,9.669315180360716,11176.687569251595,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,10,1.9419451909863092,2461.724761752185,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,11,-7.075203684285945,-9143.119354739289,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,12,9.955817008647067,11955.395987178934,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,13,-0.9666508416177764,-1276.365048513918,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,14,0.6030509796221826,788.5709306674369,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,15,-11.675473448000744,-15359.334138358816,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,16,-16.867106744663673,-19598.363095296165,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,17,8.56174133149344,8270.165569356326,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,18,1.7107453133248531,1793.9662204028086,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,19,11.174483452343384,11918.543771183018,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,20,1.6301230672140448,1932.9528134191632,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,21,0.4206150783731652,506.8834927953061,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,22,0.7684214402161978,929.9201574096967,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,23,1.2794891878336763,1560.296964140536,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,24,0.5548349066976014,685.2608518629249,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,25,4.7721484509156555,5926.646824696907,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,26,1.293973103970474,1683.7057759815784,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,27,1.2820444954296966,1689.770238639636,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,28,0.10120611530513363,135.10262059433498,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,29,-3.6489942399364406,-4876.06522152855,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,30,3.57971794142501,4608.943550818393,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,31,1.9706981431914885,2628.133439369401,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,32,2.820945893676662,3836.166546887709,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,33,-4.897182049419719,-6847.476352727742,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,34,7.373064112604245,9804.505354978437,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,35,-2.2830859548971945,-3259.8325118350995,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,36,-2.518086052519276,-3513.284626174755,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,37,0.3909736752152256,531.7583668875604,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,38,-0.9463493371358399,-1292.1500951552248,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,39,1.6143156548802753,2183.335248777162,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,40,-2.5429283739305792,-3494.7892587249257,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,41,2.305434151323749,3087.82688676623,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,42,0.7636731717242692,1046.4210291498073,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,43,3.6568282454790157,5049.024502586037,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,44,1.946052006356463,2785.192862717105,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,45,-2.9135851145762532,-4251.076818351114,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,46,-2.437910515127719,-3453.4046380571554,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,47,0.8923019818112098,1233.169168331595,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,48,-7.919574857283126,-11042.583698165085,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,49,4.425782811459028,5682.327297126751,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,50,0.4433290324749044,594.3880369552526,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,51,-0.16087328349583696,-216.64512017528358,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,52,0.2828274322048332,380.26581871196123,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,53,-12.641667038229528,-17044.987084766944,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,54,3.676354270105177,4330.260487585464,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,55,-1.5516970574285969,-1894.8870182985784,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,56,2.97220117584448,3573.2452061039435,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,57,-0.005976470588235306,-7.398597495770105,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,58,2.8307711538037723,3504.1559000745274,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,59,-9.060198424409327,-11532.92479726057,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,60,-4.020611298970489,-4654.230009583328,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,61,2.8779923774673777,3197.5943817355246,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,62,2.6832258303768985,3066.997623650547,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,63,1.2586960839999544,1477.3268741912239,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,64,-10.951594849050931,-13015.63666415224,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,65,-14.95215425531915,-15824.061506705813,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,66,19.224609535167232,17303.54308559471,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,67,-5.220262061657108,-5601.904814952795,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,68,5.6769037864596195,5773.915941940465,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,69,-7.521360759697426,-8084.16974106088,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,70,5.0349036594149785,5004.62567291763,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,71,2.8287016240695673,2953.256821191488,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,72,-1.7519192151314804,-1880.7995150071238,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,73,2.3043820309868988,2430.563566260768,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,74,5.339725775206127,5761.89970043968,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,75,5.4187229641684125,6159.364014354425,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,76,-12.554457560377024,-15043.698719008482,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,77,-4.943434124101868,-5179.920585414614,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,78,1.1696707105719237,1165.0379860939745,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,79,-17.01404727776936,-17144.879713456696,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,80,18.072993631587725,15113.375998192556,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,81,4.431010521805534,4375.067394078884,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,82,-1.3681773925551737,-1410.7623357907048,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,83,-1.2216573635273265,-1242.4471437212778,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,84,5.58973049569841,5615.4053216396505,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,85,-16.711492811395225,-17726.670323535516,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,86,-7.776092148356232,-6870.026273420865,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,87,-14.80802000590226,-12065.282994846495,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,88,-7.75220574583116,-5381.0189679713885,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,89,-0.2551481142500532,-163.37574681589945,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,90,-7.860556546342878,-5020.40795338838,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,91,11.822594124930244,6957.353619431566,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,92,-15.116434392646399,-9947.414704748142,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,93,-0.40219300644201966,-224.65650031150977,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,94,4.164405558247866,2316.793190449408,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,95,0.3911824713592246,226.69032047932745,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,96,2.543384922616076,1479.657679351319,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,97,-0.17810670403061687,-106.25199082992528,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,98,-10.134948136236863,-6035.373374917083,0
+Candidate E: Meta-Filtered + Mission 25 Exit,1,99,9.741184561165063,5212.969849663789,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,100,7.681976951872968,4511.449339134297,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,101,1.046694214876033,661.9206485774453,1
+Candidate E: Meta-Filtered + Mission 25 Exit,1,102,8.561325465274624,5470.779648188448,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,1,3.506061576548527,3506.061576548527,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,2,8.867857142857142,9178.769674806072,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,3,2.2419103171362926,2526.29285767174,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,4,-6.650095539108915,-7661.6498249315955,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,5,0.9634215231940824,1036.1547833350535,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,6,-0.8202009058917569,-890.620313279322,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,7,4.864876908052885,5239.229612006199,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,8,11.744441720257061,13263.49580712946,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,9,2.138849567917158,2699.179692086574,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,10,1.904391849230437,2454.7023215617346,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,11,0.7414116061328017,973.8561272529437,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,12,-5.79033851446468,-7662.092787855689,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,13,-5.292544025811025,-6597.864245494992,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,14,-6.169732441471571,-7284.326398472358,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,15,7.794466842342675,8634.8030349889,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,16,3.1630402384500744,3777.1758754901725,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,17,0.6147255932919244,757.2999316096727,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,18,2.9413394496058847,3645.804005150348,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,19,2.5356191963138346,3235.3555597565874,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,20,-1.3309616726826459,-1741.318814968391,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,21,6.683272597768281,8627.457212643561,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,22,3.7229629747573845,5127.18142619145,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,23,-3.6489942399364406,-5212.403892201895,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,24,2.5404118710538377,3496.4334664202165,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,25,8.492955222829172,11986.020796501722,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,26,-2.5484697513279833,-3902.089395624984,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,27,7.503150533681496,11195.669109550588,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,28,2.6802750902334473,4299.39113723246,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,29,-0.08076108344159005,-133.01993974206164,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,30,-1.2194931073616089,-2006.9801521253726,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,31,-7.262665309791042,-11806.767434433712,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,32,6.20346938604105,9352.424938202,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,33,-5.8401143472215375,-9350.81882910747,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,34,5.207873535478182,7851.536322821284,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,35,0.6069633218343713,962.7308866396418,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,36,-2.931638940982372,-4678.223645997963,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,37,-1.9345894578030913,-2996.6568316705843,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,38,-4.073510768520017,-6187.752215938272,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,39,-2.8903124473834865,-4211.602638395061,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,40,2.3939584071057998,3387.51910563482,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,41,-0.05245522134571706,-76.00255794556699,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,42,-2.3506267993045062,-3404.0450459337067,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,43,-8.819431487692851,-12471.585433187724,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,44,-1.649437803245513,-2126.7640709283005,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,45,2.3738947413968736,3010.382468727213,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,46,2.89963968292097,3764.3801825148244,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,47,-2.1874649617209365,-2922.1627688537696,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,48,-5.80598348073223,-7586.362807984192,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,49,-2.9971163024827394,-3688.7967330858314,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,50,10.467491766018037,12497.07573323266,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,51,4.32808928020215,5708.164467340615,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,52,-11.069463005004476,-15230.987919434046,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,53,-19.07174472259201,-23336.883612632657,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,54,19.224609535167232,19037.509829881332,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,55,-8.42630507583333,-9948.456387436496,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,56,-1.9999799140690264,-2162.2947488356986,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,57,-5.60799095047901,-5941.86428979303,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,58,7.465291918334669,7466.162685410126,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,59,1.5365777758758918,1651.4804020175684,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,60,8.85744327228786,9666.066487012533,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,61,-0.6786786253272886,-806.2388097298333,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,62,2.051511282883194,2420.5604165134846,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,63,-9.648925797385779,-11618.242160833002,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,64,-3.626872253417969,-3945.7270311812836,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,65,-8.659694425947503,-9079.31950722596,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,66,6.341046919885095,6072.59278161345,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,67,-0.1658995868276799,-168.9504793505625,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,68,-2.61788282436885,-2661.6027500597506,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,69,-6.446766290288218,-6382.843136791598,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,70,-18.56691823808526,-17197.71999585913,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,71,-12.490826514459425,-9421.566022571214,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,72,-1.1300820957165252,-745.9255714262706,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,73,-3.5384186046511634,-2309.185834805798,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,74,2.565920156137102,1615.2776750582882,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,75,-10.514645838005803,-6788.9370547731405,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,76,4.295348949621123,2481.7472280991105,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,77,0.3911824713592246,235.72379364547982,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,78,-0.27954945633307854,-169.11349203057563,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,79,-3.017956570834085,-1820.6095785335083,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,80,-5.185072064878768,-3033.5416686752214,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,81,10.583042298139683,5870.599039289467,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,82,13.56815450538954,8323.025045237697,1
+Candidate F: Meta-Filtered + Tiered Sizing,1,83,-2.0736972540340015,-1444.6490029495521,0
+Candidate F: Meta-Filtered + Tiered Sizing,1,84,5.24582392092611,3578.739250814245,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,1,19.451238510408547,19451.238510408548,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,2,3.6290033594624864,4334.889458462274,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,3,11.913880936333326,14747.731901908477,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,4,3.5095659717647534,4861.937205397137,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,5,10.926177914469601,15667.679910414836,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,6,-3.2665294968244973,-5195.85539444165,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,7,6.4104539699897085,9863.613056882696,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,8,8.822994727895491,14445.998201002316,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,9,8.020986077238508,14291.571039710114,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,10,-2.874348577176781,-5532.224326114046,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,11,11.441938976728816,21389.16935885473,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,12,4.111776574398004,8565.889342633956,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,13,7.765866192556342,16843.514410512496,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,14,4.560158949550795,10658.694482984038,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,15,7.6910838095179095,18796.53561027425,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,16,-7.6317100250001255,-20085.92682660959,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,17,-3.158714789326636,-7678.976403360871,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,18,6.3843902356999855,15030.481328032654,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,19,-1.7039274503014794,-4267.587868128331,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,20,6.737414700867698,16586.731634249772,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,21,0.4796540109006687,1260.4113290209675,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,22,2.5981003545395547,6859.907676321527,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,23,2.5063217738196677,6789.510986930658,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,24,8.333815677675341,23141.750616349684,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,25,7.962635340977574,23953.7319541467,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,26,8.08934900130149,26272.621434854766,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,27,-4.166645210927392,-14627.134621921068,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,28,3.851290439720582,12956.73867783357,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,29,-1.7743253217268475,-6199.1846989069645,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,30,-1.3147455680513773,-4511.989304178794,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,31,-5.209998729570956,-17644.779215830942,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,32,-15.314953427030664,-49165.08798031567,0
+Candidate A: Baseline Control (P(up) >= 0.55),2,33,5.895517752965283,16027.648979184112,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,34,1.6650986691142722,4793.6400780417825,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,35,0.8128557780368393,2379.089787117052,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,36,12.58445523343841,37131.942825742284,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,37,1.842762430849356,6121.544813510314,1
+Candidate A: Baseline Control (P(up) >= 0.55),2,38,-3.6845881458603875,-12465.531628470593,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,1,19.451238510408547,19451.238510408548,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,2,3.6290033594624864,4334.889458462274,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,3,11.913880936333326,14747.731901908477,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,4,6.0305060341405685,8354.292778835184,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,5,3.443670644777014,5058.344193450023,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,6,8.02098607723851,12187.607356633856,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,7,11.345784923380418,18622.302448414885,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,8,7.765866192556342,14192.617998616619,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,9,7.691083809517912,15147.514547608085,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,10,6.7374147008677,14289.82341171095,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,11,2.5981003545395542,5881.7448894969575,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,12,2.5063217738196677,5821.3861517997375,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,13,8.333815677675343,19841.939548480324,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,14,7.9626353409775765,20538.139455140805,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,15,8.08934900130149,22526.37559416951,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,16,-4.166645210927393,-12541.433262641463,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,17,3.851290439720582,11109.221158463193,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,18,-5.295778110744685,-15864.230766281817,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,19,7.348375117728743,20847.30386207222,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),2,20,-5.209998729570955,-15866.88489218347,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,1,2.3907788025882306,2390.7788025882305,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,2,9.119283168522545,9337.305057463578,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,3,8.186930382504139,9147.100443328285,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,4,7.691083809517912,9296.611729682203,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,5,2.5981003545395542,3381.993894245497,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,6,5.771252857244934,7707.726917138649,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,7,3.420039864394801,4831.2001891288455,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,8,1.3570152508695732,1982.5004505553475,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,9,0.35957260415456543,532.4379156152249,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,10,6.923821955650175,10289.329472344556,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,11,5.9325557718643545,9426.652247347629,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,12,-5.239362382411166,-8819.085323942114,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,13,3.8512904397205823,6142.983554219099,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,14,6.7122738308577485,11118.716166739758,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,15,0.18519040267496387,327.354132976762,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,16,1.251898382153976,2217.0319840233756,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,17,-3.819913661820197,-6849.511544057251,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,18,7.348375117728743,12673.090477308091,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),2,19,-3.9429503038955676,-7299.750154731602,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,1,19.451238510408547,19451.238510408548,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,2,3.6290033594624864,4334.889458462274,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,3,11.913880936333326,14747.731901908477,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,4,3.5095659717647534,4861.937205397137,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,5,10.926177914469601,15667.679910414836,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,6,-3.2665294968244973,-5195.85539444165,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,7,6.4104539699897085,9863.613056882696,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,8,8.822994727895491,14445.998201002316,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,9,8.020986077238508,14291.571039710114,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,10,-2.874348577176781,-5532.224326114046,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,11,11.441938976728816,21389.16935885473,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,12,4.111776574398004,8565.889342633956,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,13,7.765866192556342,16843.514410512496,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,14,4.560158949550795,10658.694482984038,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,15,7.6910838095179095,18796.53561027425,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,16,-7.6317100250001255,-20085.92682660959,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,17,-3.158714789326636,-7678.976403360871,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,18,6.3843902356999855,15030.481328032654,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,19,-1.7039274503014794,-4267.587868128331,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,20,6.737414700867698,16586.731634249772,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,21,0.4796540109006687,1260.4113290209675,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,22,2.5981003545395547,6859.907676321527,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,23,2.5063217738196677,6789.510986930658,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,24,8.333815677675341,23141.750616349684,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,25,7.962635340977574,23953.7319541467,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,26,8.08934900130149,26272.621434854766,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,27,-4.166645210927392,-14627.134621921068,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,28,3.851290439720582,12956.73867783357,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,29,-1.7743253217268475,-6199.1846989069645,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,30,-1.3147455680513773,-4511.989304178794,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,31,-5.209998729570956,-17644.779215830942,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,32,-15.314953427030664,-49165.08798031567,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,33,5.895517752965283,16027.648979184112,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,34,1.6650986691142722,4793.6400780417825,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,35,0.8128557780368393,2379.089787117052,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,36,12.58445523343841,37131.942825742284,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,37,1.842762430849356,6121.544813510314,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),2,38,-3.6845881458603875,-12465.531628470593,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,1,19.451238510408547,19451.238510408548,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,2,5.098227041485863,6089.895343127424,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,3,6.265011060953967,7865.165921971055,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,4,1.6574471793023797,2211.1389526408184,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,5,1.3199405377466527,1790.069550026552,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,6,4.337081183334531,5959.475186021541,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,7,0.8441594477819916,1210.2459359130557,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,8,-3.2143274258386754,-4647.185536125401,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,9,4.0801918042080985,5709.414181363056,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,10,-2.4466442953020135,-3563.2794919752437,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,11,3.719763895722883,5284.898394251088,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,12,-0.12842489687831893,-189.24831110876443,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,13,-0.32285179876990766,-475.14689603555075,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,14,6.8391371917000034,10032.787319902833,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,15,-0.3789834519015403,-593.9787519919887,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,16,-1.4675333497777439,-2291.3403911146065,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,17,3.5093938177438786,5398.997086157453,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,18,2.1044332680941866,3351.1657627003506,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,19,4.885206074809073,7943.067244545155,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,20,-0.010245419537189026,-17.472270049824232,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,21,-0.487293272110268,-830.932038028714,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,22,1.3750390829053052,2333.2897352924206,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,23,-0.9024140789243909,-1552.3531421962168,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,24,3.787392050348157,6456.363906522628,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,25,1.0769230769230769,1905.3598975623438,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,26,-0.25290615914948567,-452.2762222041386,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,27,5.390895985290488,9616.245750227106,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,28,2.7166606542401706,5107.202649791042,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,29,0.855327868852459,1651.6621347349944,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,30,2.222638852463524,4328.688526294002,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,31,1.801994560290118,3587.4676945277156,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,32,0.011203020827187436,22.705232512303155,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,33,-0.9171477561773256,-1858.997345126988,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,34,3.6343236377018493,7298.969692101044,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,35,-0.5645311289072591,-1174.9772919035795,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,36,5.399716668007108,11175.163274567485,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,37,1.72827677093059,3769.950440665542,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,38,9.362539715912325,20775.797760518286,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,39,-0.9055735757094924,-2197.63905665161,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,40,-1.6348514658956517,-3931.5169520165696,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,41,-3.2521198799716045,-7692.892255423391,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,42,1.8014436722121263,4122.7333700424715,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,43,-1.6099005228487797,-3750.7450065983985,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,44,1.0020875535417224,2297.0770667927236,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,45,-0.8380828810408297,-1940.3819129852436,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,46,-2.8922208664008076,-6640.1305440036185,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,47,3.93491261715372,8772.720174870992,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,48,-0.6265876914162853,-1451.9193696546538,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,49,-3.555046332359867,-8186.082323954763,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,50,-2.2165453147570973,-4922.514066295427,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,51,1.6238805215599001,3526.385610806412,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,52,-0.44385039008719596,-979.5082734651068,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,53,0.6917155649236834,1519.7324704307482,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,54,3.425880179175718,7578.888260982172,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,55,0.030914440175033534,70.73330430513857,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,56,2.549974919007813,5836.234157873575,1
+Candidate E: Meta-Filtered + Mission 25 Exit,2,57,-0.5545501206867002,-1301.5868788415692,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,58,-0.8065981121060025,-1882.6711853977686,0
+Candidate E: Meta-Filtered + Mission 25 Exit,2,59,-1.0970494947177685,-2539.9565134276622,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,1,19.451238510408547,19451.238510408548,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,2,3.6290033594624864,4334.889458462274,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,3,11.913880936333326,14747.731901908477,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,4,3.5095659717647534,4861.937205397137,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,5,10.926177914469601,15667.679910414836,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,6,-3.2665294968244973,-5195.85539444165,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,7,6.4104539699897085,9863.613056882696,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,8,8.822994727895491,14445.998201002316,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,9,8.020986077238508,14291.571039710114,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,10,-2.874348577176781,-5532.224326114046,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,11,11.441938976728816,21389.16935885473,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,12,4.111776574398004,8565.889342633956,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,13,7.765866192556342,16843.514410512496,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,14,4.560158949550795,10658.694482984038,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,15,7.6910838095179095,18796.53561027425,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,16,-7.6317100250001255,-20085.92682660959,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,17,-3.158714789326636,-7678.976403360871,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,18,6.3843902356999855,15030.481328032654,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,19,-1.7039274503014794,-4267.587868128331,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,20,6.737414700867698,16586.731634249772,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,21,0.4796540109006687,1260.4113290209675,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,22,2.5981003545395547,6859.907676321527,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,23,2.5063217738196677,6789.510986930658,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,24,8.333815677675341,23141.750616349684,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,25,7.962635340977574,23953.7319541467,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,26,8.08934900130149,26272.621434854766,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,27,-4.166645210927392,-14627.134621921068,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,28,3.851290439720582,12956.73867783357,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,29,-1.7743253217268475,-6199.1846989069645,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,30,-1.3147455680513773,-4511.989304178794,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,31,-5.209998729570956,-17644.779215830942,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,32,-15.314953427030664,-49165.08798031567,0
+Candidate F: Meta-Filtered + Tiered Sizing,2,33,5.895517752965283,16027.648979184112,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,34,1.6650986691142722,4793.6400780417825,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,35,0.8128557780368393,2379.089787117052,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,36,12.58445523343841,37131.942825742284,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,37,1.842762430849356,6121.544813510314,1
+Candidate F: Meta-Filtered + Tiered Sizing,2,38,-3.6845881458603875,-12465.531628470593,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,1,-1.4602118003025721,-1460.211800302572,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,2,-1.1955328818479196,-1178.075569630679,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,3,1.432289551926549,1394.5016375771975,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,4,2.2416586763165234,2213.777245532377,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,5,2.586463441087238,2611.5519169571926,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,6,1.2253412805229764,1269.2274106522611,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,7,4.362174605540603,4573.773699330329,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,8,6.017770477866667,6584.917936875169,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,9,-2.715462535782946,-3150.193491525873,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,10,3.7945892688965017,4282.545709877508,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,11,-0.9280415450243227,-1087.1247069681895,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,12,3.0960536243014194,3593.115435556852,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,13,4.764761257588484,5700.932278394344,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,14,15.128936161178366,18963.930505827808,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,15,3.985627437289088,5751.765299588143,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,16,-1.1772937585812806,-1766.699209537001,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,17,-1.422472575134336,-2109.4945999375504,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,18,0.08649803664280162,126.44995714167395,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,19,-0.3908601907177768,-571.8858750352549,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,20,2.2780250158604725,3320.057528933357,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,21,-3.692143727989164,-5503.61508459277,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,22,6.998503385693311,10046.99870751243,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,23,-8.49683291589908,-13051.665980278009,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,24,4.327499368126341,6082.498516018222,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,25,7.1596083957921675,10498.640509740828,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,26,-1.3694609086000935,-2151.9122311527976,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,27,1.567740772082173,2429.744312813377,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,28,2.1821155942220694,3434.945623264041,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,29,5.041083306406943,8108.5066644638755,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,30,-4.141312660980353,-6997.037729813172,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,31,5.56063813272211,9006.007552251882,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,32,0.17045077304042838,291.4128211990561,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,33,1.4639823053513386,2507.177812871766,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,34,-1.630433074732397,-2833.1149041141375,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,35,-1.6070290234469307,-2746.9179779429005,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,36,-0.609380892635225,-1024.884389710291,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,37,0.368595102737723,616.1422671840937,1
+Candidate A: Baseline Control (P(up) >= 0.55),3,38,-4.93416135127895,-8278.328078383158,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,39,-6.980577420693604,-11133.843659838833,0
+Candidate A: Baseline Control (P(up) >= 0.55),3,40,-0.8223568154660545,-1220.0783083478839,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,1,-1.4602118003025721,-1460.211800302572,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,2,-1.1955328818479196,-1178.075569630679,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,3,2.836022206769427,2761.199791079727,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,4,2.241658676316523,2244.413953269424,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,5,2.586463441087238,2647.6934722927213,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,6,5.468966388273801,5743.236138055556,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,7,0.62353527988263,690.6168014477192,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,8,3.0960536243014194,3450.5168651405916,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,9,15.128936161178366,17383.055309936703,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,10,3.9856274372890867,5272.285421093978,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,11,-1.1772937585812806,-1619.4232554251057,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,12,0.5802822310209,788.808432941425,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,13,0.0864980366428016,118.2636755765483,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,14,1.4580249554051228,1995.1960388233588,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,15,4.469008620260808,6204.663207169529,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,16,9.87681431888719,14325.552578772233,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,17,6.380214402512263,10168.006758191159,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,18,1.8142391905256152,3075.7848859922706,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,19,7.1596083957921675,12358.313367415727,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,20,-1.3694609086000937,-2533.090419382074,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,21,1.5677407720821732,2860.136185497903,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,22,2.1821155942220694,4043.3934634626394,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,23,5.041083306406943,9544.804035174757,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,24,-4.141312660980353,-8236.455456154767,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,25,5.560638132722108,10601.283415388507,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,26,0.17045077304042833,343.0321249993469,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,27,1.4639823053513386,2951.2858403479286,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,28,-1.6304330747323972,-3334.9576793731744,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,29,-1.6070290234469309,-3233.4922921219595,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,30,-0.6093808926352249,-1206.4269122902913,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,31,0.3685951027377231,725.2824029650476,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,32,-4.934161351278951,-9744.706703312113,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,33,-0.8619226433537007,-1618.2596256529937,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),3,34,-2.4607111307420495,-4580.164061417454,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,1,-1.4602118003025721,-1460.211800302572,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,2,1.9247446551860576,1896.6393066053377,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,3,2.8360222067694267,2848.3993877646235,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,4,2.241658676316523,2315.2932833893638,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,5,2.5864634410872367,2731.3085021341058,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,6,2.666303171370715,2888.444318475136,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,7,4.362174605540603,4851.605056236145,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,8,-2.9988911125547393,-3480.8572395813917,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,9,-4.454608321916977,-5015.471164510538,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,10,3.7945892688965004,4082.035084626228,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,11,3.258204947205453,3638.019916940773,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,12,3.0960536243014194,3569.601362267087,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,13,15.128936161178363,17982.980619973263,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,14,-1.1772937585812806,-1611.1004507989169,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,15,2.755752264881433,3726.7880424446435,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,16,0.08649803664280163,120.20067685582443,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,17,1.458024955405123,2027.8746889732608,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,18,-2.4149324219262116,-3407.7485621674346,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,19,-0.46895991663879766,-645.7756305155781,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,20,8.061407423806054,11048.805834421608,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,21,2.546846091504669,3772.0530425149605,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,22,6.380214402512265,9690.198448936078,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,23,0.12865940452791402,207.8738197347887,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,24,0.4151073595741942,671.5480527110201,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,25,0.19112769578031436,310.4840836660685,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,26,-0.4459479780194727,-725.8204190669429,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,27,0.2710858172401344,439.2489383823846,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,28,9.35533900059506,15199.845411531349,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,29,-4.141312660980353,-7357.963906586137,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,30,5.560638132722109,9470.561839271499,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,31,0.17045077304042838,306.44468460745986,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,32,1.4639823053513386,2636.5048420278567,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,33,3.4137237282986246,6237.8226105928525,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,34,-1.4425570839011397,-2725.9371203863675,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,35,3.3001144378477405,6146.123082217778,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,36,-1.6070290234469309,-3091.6959425951836,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,37,-0.6093808926352249,-1153.5222146200947,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,38,0.3685951027377231,693.4770396533688,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,39,-4.934161351278951,-9317.378071323326,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,40,-0.6343002861707182,-1138.6749383641243,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,41,2.1792208280493504,3887.251062918618,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,42,-0.861922643353701,-1570.9856811868974,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),3,43,-2.4607111307420495,-4446.364504132145,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,1,-1.4602118003025721,-1460.211800302572,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,2,-1.1955328818479196,-1178.075569630679,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,3,1.432289551926549,1394.5016375771975,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,4,2.2416586763165234,2213.777245532377,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,5,2.586463441087238,2611.5519169571926,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,6,1.2253412805229764,1269.2274106522611,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,7,4.362174605540603,4573.773699330329,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,8,6.017770477866667,6584.917936875169,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,9,-2.715462535782946,-3150.193491525873,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,10,3.7945892688965017,4282.545709877508,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,11,-0.9280415450243227,-1087.1247069681895,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,12,3.0960536243014194,3593.115435556852,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,13,4.764761257588484,5700.932278394344,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,14,15.128936161178366,18963.930505827808,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,15,3.985627437289088,5751.765299588143,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,16,-1.1772937585812806,-1766.699209537001,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,17,-1.422472575134336,-2109.4945999375504,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,18,0.08649803664280162,126.44995714167395,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,19,-0.3908601907177768,-571.8858750352549,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,20,2.2780250158604725,3320.057528933357,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,21,-3.692143727989164,-5503.61508459277,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,22,6.998503385693311,10046.99870751243,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,23,-8.49683291589908,-13051.665980278009,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,24,4.327499368126341,6082.498516018222,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,25,7.1596083957921675,10498.640509740828,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,26,-1.3694609086000935,-2151.9122311527976,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,27,1.567740772082173,2429.744312813377,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,28,2.1821155942220694,3434.945623264041,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,29,5.041083306406943,8108.5066644638755,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,30,-4.141312660980353,-6997.037729813172,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,31,5.56063813272211,9006.007552251882,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,32,0.17045077304042838,291.4128211990561,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,33,1.4639823053513386,2507.177812871766,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,34,-1.630433074732397,-2833.1149041141375,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,35,-1.6070290234469307,-2746.9179779429005,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,36,-0.609380892635225,-1024.884389710291,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,37,0.368595102737723,616.1422671840937,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,38,-4.93416135127895,-8278.328078383158,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,39,-6.980577420693604,-11133.843659838833,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),3,40,-0.8223568154660545,-1220.0783083478839,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,1,-1.4602118003025721,-1460.211800302572,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,2,-0.7205426081557945,-710.0211599652957,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,3,-0.6673705112879782,-652.8870164848984,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,4,1.015845516914864,987.1669791938931,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,5,-1.5130698908806606,-1485.2906388638764,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,6,-0.3648678308590312,-352.7496812452719,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,7,0.32678344169626194,314.7774398850957,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,8,3.786099076943858,3658.915835602567,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,9,4.334884170942289,4347.875816974134,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,10,2.0739776546979227,2170.3673377522996,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,11,3.095848619556115,3306.9218172879937,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,12,1.6960089878652564,1867.7276070844594,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,13,-2.7154625357829474,-3041.116893192071,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,14,3.329767445943118,3627.8307678594483,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,15,1.2729762678523417,1433.1078531322582,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,16,-3.049293437734989,-3476.573066377281,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,17,0.30119804828936003,332.931796349629,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,18,0.24896944252461314,276.02936605875976,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,19,4.418873308921231,4911.348005772403,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,20,2.348017520928021,2725.0187447204985,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,21,2.836775039242747,3369.5545566684336,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,22,2.3021056590888227,2812.0387221769192,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,23,0.7776156947892688,971.7300529875421,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,24,0.25703592557729477,323.6968882721262,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,25,0.8941676026764437,1128.9598247267922,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,26,-1.3086627341458783,-1667.0681490963655,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,27,1.6157842137011362,2031.3652223630243,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,28,-2.3052290081147753,-2944.963396764909,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,29,3.4452761619297667,4299.928001573697,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,30,1.0061715659424952,1299.0319956221124,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,31,1.1099099882226022,1447.3830351535491,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,32,0.13270523763613962,174.97560589401417,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,33,4.547481331039327,6003.939623667164,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,34,-1.2475027716141749,-1721.9497958610177,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,35,3.442089597764484,4691.905147024456,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,36,-1.1170727918064818,-1575.0915869799196,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,37,6.380214402512265,8895.716324126712,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,38,-0.22425889561540402,-332.62599943567176,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,39,6.856765810684781,10147.306822669303,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,40,0.5120234659852736,809.698558676477,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,41,2.09880656890531,3335.983792510315,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,42,1.6659122191191569,2703.487068221448,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,43,1.198029828818774,1976.5835471028274,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,44,5.778643347551493,9648.182133109449,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,45,0.16453150879790215,290.58063952204094,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,46,-4.141312660980353,-7326.04495184724,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,47,1.0746549574505002,1822.3512249935957,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,48,0.1704507730404284,292.1489160136978,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,49,1.4639823053513386,2513.510823821133,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,50,-1.8148679650673922,-3161.5632207581107,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,51,-1.6070290234469307,-2748.6933052969853,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,52,0.31695039112486467,533.406041948794,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,53,0.36859510273772306,622.2867023651143,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,54,-4.934161351278951,-8360.88311963575,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,55,0.18408182330050796,296.5337953649491,1
+Candidate E: Meta-Filtered + Mission 25 Exit,3,56,-2.089166074211023,-3371.591699075666,0
+Candidate E: Meta-Filtered + Mission 25 Exit,3,57,-4.646591255297585,-7342.217262268386,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,1,-1.4602118003025721,-1460.211800302572,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,2,-1.1955328818479196,-1178.075569630679,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,3,1.432289551926549,1394.5016375771975,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,4,2.2416586763165234,2213.777245532377,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,5,2.586463441087238,2611.5519169571926,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,6,1.2253412805229764,1269.2274106522611,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,7,4.362174605540603,4573.773699330329,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,8,6.017770477866667,6584.917936875169,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,9,-2.715462535782946,-3150.193491525873,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,10,3.7945892688965017,4282.545709877508,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,11,-0.9280415450243227,-1087.1247069681895,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,12,3.0960536243014194,3593.115435556852,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,13,4.764761257588484,5700.932278394344,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,14,15.128936161178366,18963.930505827808,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,15,3.985627437289088,5751.765299588143,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,16,-1.1772937585812806,-1766.699209537001,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,17,-1.422472575134336,-2109.4945999375504,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,18,0.08649803664280162,126.44995714167395,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,19,-0.3908601907177768,-571.8858750352549,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,20,2.2780250158604725,3320.057528933357,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,21,-3.692143727989164,-5503.61508459277,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,22,6.998503385693311,10046.99870751243,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,23,-8.49683291589908,-13051.665980278009,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,24,4.327499368126341,6082.498516018222,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,25,7.1596083957921675,10498.640509740828,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,26,-1.3694609086000935,-2151.9122311527976,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,27,1.567740772082173,2429.744312813377,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,28,2.1821155942220694,3434.945623264041,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,29,5.041083306406943,8108.5066644638755,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,30,-4.141312660980353,-6997.037729813172,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,31,5.56063813272211,9006.007552251882,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,32,0.17045077304042838,291.4128211990561,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,33,1.4639823053513386,2507.177812871766,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,34,-1.630433074732397,-2833.1149041141375,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,35,-1.6070290234469307,-2746.9179779429005,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,36,-0.609380892635225,-1024.884389710291,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,37,0.368595102737723,616.1422671840937,1
+Candidate F: Meta-Filtered + Tiered Sizing,3,38,-4.93416135127895,-8278.328078383158,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,39,-6.980577420693604,-11133.843659838833,0
+Candidate F: Meta-Filtered + Tiered Sizing,3,40,-0.8223568154660545,-1220.0783083478839,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,1,6.9262196908920455,6926.219690892045,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,2,3.1470959558315323,3365.0707356156036,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,3,2.8470136222192797,3140.008062564101,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,4,-3.4875931478380626,-3956.0221936086064,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,5,-1.3368229312681343,-1463.4905975868994,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,6,3.452303213956213,3728.8943490992788,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,7,-4.410710327300337,-4928.557714627576,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,8,-6.051120720454471,-6463.330466409884,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,9,2.82293682456743,2832.782998592091,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,10,-1.35758996809841,-1400.7827092868122,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,11,-8.47075633229398,-8621.602896549251,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,12,4.448173994561377,4143.882830149446,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,13,4.602516122662682,4478.389580735116,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,14,3.6129885675155244,3677.3525739720726,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,15,7.805350137262038,8231.429702313906,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,16,-0.3037327505018955,-345.31450498908947,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,17,-4.667623077716999,-5290.514084004357,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,18,0.8054294276748053,870.3020591862047,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,19,9.609672488660168,10467.3086028817,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,20,-2.860738873266751,-3415.494099904545,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,21,-4.236097488544845,-4912.878955923633,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,22,3.7003659745860222,4109.761624379257,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,23,4.6729406673567535,5381.985328242225,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,24,0.3785351858860707,456.3446071667136,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,25,0.0869655410482575,105.23851835627434,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,26,-2.8944373094759643,-3505.655145257773,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,27,6.244480518893263,7344.21645847725,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,28,-2.72733747415299,-3407.959387211454,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,29,-2.3837642573611095,-2897.407886135251,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,30,3.4985091403892796,4150.987290271336,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,31,1.4015430404302902,1721.1111728147114,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,32,-4.874714014342104,-6070.104816931502,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,33,-1.4530898191043842,-1721.216433346289,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,34,10.127850678560401,11822.336746548475,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,35,-2.4230274430824856,-3114.8815208966475,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,36,-1.159750598090669,-1454.772704638848,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,37,3.400687096330905,4216.295538727759,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,38,6.501041331194646,8334.330588876132,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,39,3.161867289521821,4317.032198970307,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,40,-1.2080128436944242,-1701.5017358195457,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,41,1.0899153550231828,1516.6149648118048,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,42,-9.41735065008296,-13247.048923129129,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,43,2.9298840378145243,3733.239473534498,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,44,-3.4017429930091527,-4461.474343941836,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,45,6.918600015300942,8765.252164367832,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,46,-4.046821792778395,-5481.678173676845,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,47,1.166816692254485,1516.5664785950287,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,48,6.696128964924816,8804.824685109039,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,49,0.8025085718102152,1125.8881460088312,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,50,1.643643357710351,2324.472945724213,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,51,2.5194610991836317,3621.635909945323,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,52,3.947832235311336,5817.844832609028,1
+Candidate A: Baseline Control (P(up) >= 0.55),4,53,-0.6402002990786418,-980.6967920297708,0
+Candidate A: Baseline Control (P(up) >= 0.55),4,54,3.866365321599493,5884.810414946804,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,1,6.9262196908920455,6926.219690892045,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,2,1.027277790542128,1098.4293071508175,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,3,-1.3368229312681341,-1444.0982792277496,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,4,7.006385355097376,7467.444096945193,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,5,-4.410710327300337,-5030.326685417693,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,6,-6.0511207204544695,-6596.790705191451,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,7,2.82293682456743,2891.276664879662,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,8,1.5289273143151492,1610.1462891761398,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,9,-5.650236789251312,-6041.363151939747,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,10,-0.18339317355059379,-185.00875228866775,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,11,4.687733294405313,4720.35656523213,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,12,3.612988567515524,3808.678326802389,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,13,7.805350137262035,8525.390828091562,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,14,-0.30373275050189547,-357.6463895225154,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,15,-4.667623077716999,-5479.449121090235,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,16,0.8054294276748053,901.3823189147274,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,17,-4.236097488544845,-4778.93817425619,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,18,3.7003659745860213,3997.7163878947495,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,19,4.672940667356753,5235.255207623579,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,20,-0.922561802628594,-1081.8759966908808,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,21,3.6949613053365242,4293.057243823127,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,22,4.128544128555573,4974.064007430368,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,23,-1.4530898191043842,-1822.958134526302,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,24,10.127850678560401,12521.15917771616,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,25,-2.4230274430824856,-3299.003249443062,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,26,-1.1597505980906693,-1540.7648244749637,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,27,6.501041331194643,8536.670318643257,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,28,-1.208012843694424,-1689.3941592242943,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,29,-9.417350650082962,-13010.976701695066,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,30,2.929884037814524,3666.7103816003787,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,31,-3.401742993009153,-4381.967567349014,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,32,6.918600015300942,8609.048880007707,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,33,0.010659117856250122,14.181150883529156,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,34,0.3405283935068949,453.0955874013935,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,35,4.871919592784521,6504.486233200249,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,36,3.947832235311336,5527.525988959353,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),4,37,1.1044661517676697,1607.459175040637,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,1,6.9262196908920455,6926.219690892045,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,2,1.027277790542128,1098.4293071508175,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,3,-1.3368229312681341,-1444.0982792277496,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,4,7.006385355097376,7467.444096945193,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,5,-4.410710327300337,-5030.326685417693,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,6,-6.0511207204544695,-6596.790705191451,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,7,2.82293682456743,2891.276664879662,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,8,1.6708007271990664,1759.5562363652364,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,9,-5.650236789251312,-6049.8051677426265,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,10,-0.1833931735505938,-185.2672778517256,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,11,3.612988567515524,3643.216198500394,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,12,7.805350137262035,8155.018433789981,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,13,-2.851280192713584,-3211.5358100539916,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,14,-4.762167809252644,-5210.922916282214,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,15,1.244812057955354,1297.2486927038651,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,16,-5.889978012736214,-6214.495921352371,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,17,2.9984778554824336,2977.343580809249,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,18,3.7615497752314706,3847.0313752540023,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,19,6.244480518893265,6626.614096591236,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,20,-1.7825180092299302,-2009.720528476232,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,21,3.694961305336525,4091.668427199555,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,22,-7.331301615189173,-8418.394607281985,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,23,3.7189927690286324,3957.369379617355,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,24,-1.4530898191043842,-1603.732778156101,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,25,10.127850678560405,11015.38922561788,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,26,-0.6469634752539443,-774.9246648197683,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,27,-0.3775144935333639,-449.2566308502623,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,28,3.400687096330906,4031.6694007295837,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,29,6.407029972896891,7854.136039638461,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,30,3.161867289521822,4124.351039571261,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,31,3.8315715476228056,5155.943138188809,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,32,-0.9155494043620325,-1279.2116067859515,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,33,-0.38704581531827237,-535.8318057789927,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,34,-9.417350650082962,-12987.054825855765,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,35,2.929884037814524,3659.9687977440412,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,36,-1.3834099759085086,-1778.7681225113333,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,37,5.700304192567121,7227.971778278813,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,38,-3.576415540017197,-4793.38846590282,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,39,0.3405283935068949,440.0796177780594,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,40,4.871919592784522,6317.633397770343,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,41,8.8510009765625,12036.657834323745,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),4,42,4.073408960713337,6029.814723344039,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,1,6.9262196908920455,6926.219690892045,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,2,3.1470959558315323,3365.0707356156036,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,3,2.8470136222192797,3140.008062564101,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,4,-3.4875931478380626,-3956.0221936086064,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,5,-1.3368229312681343,-1463.4905975868994,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,6,3.452303213956213,3728.8943490992788,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,7,-4.410710327300337,-4928.557714627576,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,8,-6.051120720454471,-6463.330466409884,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,9,2.82293682456743,2832.782998592091,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,10,-1.35758996809841,-1400.7827092868122,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,11,-8.47075633229398,-8621.602896549251,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,12,4.448173994561377,4143.882830149446,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,13,4.602516122662682,4478.389580735116,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,14,3.6129885675155244,3677.3525739720726,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,15,7.805350137262038,8231.429702313906,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,16,-0.3037327505018955,-345.31450498908947,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,17,-4.667623077716999,-5290.514084004357,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,18,0.8054294276748053,870.3020591862047,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,19,9.609672488660168,10467.3086028817,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,20,-2.860738873266751,-3415.494099904545,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,21,-4.236097488544845,-4912.878955923633,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,22,3.7003659745860222,4109.761624379257,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,23,4.6729406673567535,5381.985328242225,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,24,0.3785351858860707,456.3446071667136,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,25,0.0869655410482575,105.23851835627434,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,26,-2.8944373094759643,-3505.655145257773,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,27,6.244480518893263,7344.21645847725,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,28,-2.72733747415299,-3407.959387211454,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,29,-2.3837642573611095,-2897.407886135251,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,30,3.4985091403892796,4150.987290271336,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,31,1.4015430404302902,1721.1111728147114,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,32,-4.874714014342104,-6070.104816931502,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,33,-1.4530898191043842,-1721.216433346289,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,34,10.127850678560401,11822.336746548475,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,35,-2.4230274430824856,-3114.8815208966475,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,36,-1.159750598090669,-1454.772704638848,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,37,3.400687096330905,4216.295538727759,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,38,6.501041331194646,8334.330588876132,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,39,3.161867289521821,4317.032198970307,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,40,-1.2080128436944242,-1701.5017358195457,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,41,1.0899153550231828,1516.6149648118048,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,42,-9.41735065008296,-13247.048923129129,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,43,2.9298840378145243,3733.239473534498,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,44,-3.4017429930091527,-4461.474343941836,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,45,6.918600015300942,8765.252164367832,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,46,-4.046821792778395,-5481.678173676845,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,47,1.166816692254485,1516.5664785950287,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,48,6.696128964924816,8804.824685109039,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,49,0.8025085718102152,1125.8881460088312,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,50,1.643643357710351,2324.472945724213,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,51,2.5194610991836317,3621.635909945323,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,52,3.947832235311336,5817.844832609028,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,53,-0.6402002990786418,-980.6967920297708,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),4,54,3.866365321599493,5884.810414946804,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,1,4.4824146189177805,4482.41461891778,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,2,1.427244096394929,1491.2190944193765,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,3,2.9642976980683065,3141.373984723792,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,4,2.376758323557479,2593.4000277140476,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,5,1.2928772711580658,1444.2526134591258,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,6,-2.6388030071043778,-2985.8758036503127,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,7,-0.7853184178807278,-865.160049344917,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,8,0.1821786007671719,199.12417010481855,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,9,-2.7923943342703197,-3057.6927014633243,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,10,5.052129795791506,5377.641345447536,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,11,-0.34789479212769897,-389.0183824287193,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,12,-0.9012420562788059,-1004.2691544256713,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,13,0.8152410250515472,900.2495472936138,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,14,-6.663852973184126,-7418.71153495685,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,15,2.2015833720476197,2287.642116301884,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,16,-1.2196965267368085,-1295.2761184270248,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,17,-2.505042963878422,-2627.8229797037257,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,18,-8.470756332293982,-8663.338197689285,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,19,8.138423695575002,7618.390840360558,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,20,-3.104393565770264,-3142.5323891704033,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,21,3.2962108881228622,3233.121775872505,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,22,4.5057106198293235,4565.146927540875,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,23,0.02320611444258516,24.571627135699877,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,24,6.725113472198142,7122.490432274296,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,25,0.013185977886725068,14.904287736175533,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,26,-4.838371941825704,-5469.597852494891,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,27,-2.480971907550207,-2668.9464220561226,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,28,1.9809339282825942,2078.152258803068,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,29,3.5975497033510773,3848.869276165181,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,30,-0.30923116227698055,-342.73550324783906,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,31,-4.2360974885448455,-4680.548322577879,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,32,0.1529308353950657,161.818318420801,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,33,3.8688666196347103,4099.963998738855,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,34,1.8001718381731207,1981.5071411097963,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,35,1.8787775500768058,2105.2590920804887,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,36,0.8284541193764061,945.7631239530898,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,37,0.3744621177929975,431.0274336710329,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,38,1.0449392108518432,1207.2891029708044,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,39,-0.7530395733893251,-879.1290296935864,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,40,-0.5982941185009207,-693.2131137298684,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,41,4.776574287941628,5501.26303199568,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,42,-1.2270598883028063,-1480.7298395213238,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,43,-0.9606805616258743,-1145.0568611835952,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,44,-0.9869778947390847,-1165.0997884213775,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,45,0.5834975238979192,682.0041718843828,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,46,1.102710274194278,1296.3914790991807,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,47,-0.3624449977658587,-430.80392857397993,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,48,-0.9515972567952915,-1126.9737180545294,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,49,-1.2530937025904345,-1469.9129991340901,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,50,0.25094160072727606,290.672700425145,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,51,-0.09654449007821414,-112.11082148097648,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,52,-1.4063234360631294,-1631.4950711270458,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,53,2.0213169566922975,2311.9797873171633,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,54,-0.04506220293698753,-52.583919944774316,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,55,3.443466057247452,4016.4336657912418,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,56,-0.30181542534170375,-364.157524685032,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,57,1.4603789340186273,1756.712396671489,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,58,2.5990011517866054,3172.035640543401,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,59,1.6983921945856806,2126.7316993630607,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,60,1.6346833800134488,2081.7206640776444,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,61,5.483448890322841,7097.159156321129,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,62,0.5503681624023673,751.3951174219685,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,63,1.2979422261744877,1781.7800519452965,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,64,0.34416931362761793,478.5986835506938,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,65,-0.05677561366469047,-79.223373758304,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,66,1.113954049064055,1553.5031173817574,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,67,-9.41735065008296,-13279.590648699246,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,68,4.490657009695005,5736.022558318756,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,69,-0.2649445671736266,-353.61725092188624,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,70,5.384632901442496,7167.741905463985,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,71,0.618195066157675,867.2195906293546,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,72,-4.0468217927783945,-5712.078247470706,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,73,0.5227654485434456,708.0212752454574,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,74,0.5876704172102104,800.0878756829524,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,75,0.9113196868970872,1248.0137275367442,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,76,4.351720377891959,6013.806881054761,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,77,2.7457234308660863,3959.5414994395237,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,78,5.555197063315467,8230.975959250445,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,79,1.1381049011311095,1779.97448967243,1
+Candidate E: Meta-Filtered + Mission 25 Exit,4,80,-0.6402002990786417,-1012.6565331271902,0
+Candidate E: Meta-Filtered + Mission 25 Exit,4,81,1.381722288182572,2171.589667855497,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,1,6.9262196908920455,6926.219690892045,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,2,3.1470959558315323,3365.0707356156036,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,3,2.8470136222192797,3140.008062564101,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,4,-3.4875931478380626,-3956.0221936086064,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,5,-1.3368229312681343,-1463.4905975868994,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,6,3.452303213956213,3728.8943490992788,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,7,-4.410710327300337,-4928.557714627576,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,8,-6.051120720454471,-6463.330466409884,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,9,2.82293682456743,2832.782998592091,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,10,-1.35758996809841,-1400.7827092868122,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,11,-8.47075633229398,-8621.602896549251,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,12,4.448173994561377,4143.882830149446,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,13,4.602516122662682,4478.389580735116,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,14,3.6129885675155244,3677.3525739720726,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,15,7.805350137262038,8231.429702313906,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,16,-0.3037327505018955,-345.31450498908947,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,17,-4.667623077716999,-5290.514084004357,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,18,0.8054294276748053,870.3020591862047,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,19,9.609672488660168,10467.3086028817,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,20,-2.860738873266751,-3415.494099904545,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,21,-4.236097488544845,-4912.878955923633,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,22,3.7003659745860222,4109.761624379257,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,23,4.6729406673567535,5381.985328242225,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,24,0.3785351858860707,456.3446071667136,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,25,0.0869655410482575,105.23851835627434,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,26,-2.8944373094759643,-3505.655145257773,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,27,6.244480518893263,7344.21645847725,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,28,-2.72733747415299,-3407.959387211454,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,29,-2.3837642573611095,-2897.407886135251,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,30,3.4985091403892796,4150.987290271336,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,31,1.4015430404302902,1721.1111728147114,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,32,-4.874714014342104,-6070.104816931502,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,33,-1.4530898191043842,-1721.216433346289,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,34,10.127850678560401,11822.336746548475,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,35,-2.4230274430824856,-3114.8815208966475,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,36,-1.159750598090669,-1454.772704638848,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,37,3.400687096330905,4216.295538727759,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,38,6.501041331194646,8334.330588876132,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,39,3.161867289521821,4317.032198970307,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,40,-1.2080128436944242,-1701.5017358195457,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,41,1.0899153550231828,1516.6149648118048,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,42,-9.41735065008296,-13247.048923129129,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,43,2.9298840378145243,3733.239473534498,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,44,-3.4017429930091527,-4461.474343941836,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,45,6.918600015300942,8765.252164367832,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,46,-4.046821792778395,-5481.678173676845,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,47,1.166816692254485,1516.5664785950287,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,48,6.696128964924816,8804.824685109039,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,49,0.8025085718102152,1125.8881460088312,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,50,1.643643357710351,2324.472945724213,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,51,2.5194610991836317,3621.635909945323,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,52,3.947832235311336,5817.844832609028,1
+Candidate F: Meta-Filtered + Tiered Sizing,4,53,-0.6402002990786418,-980.6967920297708,0
+Candidate F: Meta-Filtered + Tiered Sizing,4,54,3.866365321599493,5884.810414946804,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,1,-0.940316436266545,-940.316436266545,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,2,-3.0508988341196273,-3022.210730928536,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,3,-1.5063933923986272,-1446.7021449800002,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,4,8.259634914820953,7812.852321929811,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,5,-1.5237271150372353,-1560.3517705801423,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,6,4.189668029829204,4224.998295341647,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,7,4.952536012811027,5203.543886734274,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,8,-8.465397240457508,-9334.947050364992,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,9,-17.23669816678002,-17398.182995355623,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,10,10.028581158646055,8377.744661179375,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,11,1.5896049386773043,1461.1080795273008,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,12,6.041082755577492,5641.014231901112,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,13,7.940447125962903,7862.515635288827,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,14,-0.8497677843956272,-908.2408663457917,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,15,3.4311161727015564,3636.0507412608936,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,16,4.208539393744682,4612.932719539011,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,17,-0.2282143147336247,-260.6705177223628,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,18,0.2785010419738799,317.3829569428326,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,19,10.389912712299367,11873.438582583489,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,20,0.1122939572895573,141.66102763280935,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,21,0.667800062025602,843.3888768836041,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,22,0.40176723547125787,510.79484834585867,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,23,2.213349913286379,2825.2925669490623,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,24,5.132576511455471,6696.6315262585795,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,25,-8.344942806300445,-11446.735386355844,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,26,4.06291847619685,5108.0227138379905,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,27,2.07785076496819,2718.4732620598506,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,28,0.956406262808427,1277.275677082229,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,29,2.552573529411765,3441.552306610461,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,30,5.51316354954238,7622.958454456613,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,31,1.3619779723715555,1987.0070355602372,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,32,-1.8875465132272193,-2791.27136531904,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,33,1.9996549384135773,2901.239583331394,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,34,8.28242064806942,12257.009434931313,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,35,2.0052974730665505,3213.3941527364964,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,36,-3.701446629334657,-6050.33485048674,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,37,-6.483139141389365,-10205.000370986727,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,38,2.948112732587004,4339.719792977679,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,39,4.635312377712813,7024.493239053723,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,40,-1.6394732633000126,-2599.672293468035,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,41,3.8480506710284517,6001.722276845374,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,42,3.21517428399243,5207.6043518464,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,43,-9.869158979325347,-16498.98230894674,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,44,5.700200069503267,8588.95909777128,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,45,-1.9633140825869255,-3126.914645010065,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,46,-3.2440831124181604,-5065.319436659254,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,47,-4.885575458260159,-7380.879662997309,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,48,-0.14585698758901233,-209.58781195211117,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,49,-8.30096406660824,-11910.5936062751,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,50,3.87756198467835,5101.858290689029,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,51,-8.30549537955418,-11351.596139221123,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,52,8.619908295122968,10802.825098164561,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,53,4.221699088461796,5746.870432572018,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,54,-2.7299627551220143,-3873.102602749562,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,55,-5.213742999822997,-7195.003043764798,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,56,1.8100386335463223,2367.6340690982806,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,57,2.2631277466717328,3013.8831298741748,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,58,1.2758658340720888,1737.5664313460918,1
+Candidate A: Baseline Control (P(up) >= 0.55),5,59,-2.8087865047811285,-3874.0132745434694,0
+Candidate A: Baseline Control (P(up) >= 0.55),5,60,-0.179677691229699,-240.85936540578678,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,1,-0.940316436266545,-940.316436266545,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,2,-3.0508988341196273,-3022.210730928536,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,3,-1.5063933923986272,-1446.7021449800002,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,4,8.259634914820953,7812.852321929811,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,5,-1.5237271150372353,-1560.3517705801423,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,6,4.189668029829204,4224.998295341647,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,7,4.952536012811027,5203.543886734274,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,8,-15.271174476719246,-16839.801026201476,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,9,5.157334895330831,4818.601778659691,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,10,6.53515176424585,6420.82674555551,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,11,11.48878451927248,12025.476300431868,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,12,-0.2282143147336247,-266.31906994819474,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,13,0.27850104197388004,324.260429023469,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,14,10.389912712299369,12130.727893702919,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,15,5.831589702720014,7516.07858901911,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,16,2.8896197539142285,3941.489458284836,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,17,3.6061550966709266,5060.991819543737,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,18,-1.8875465132272191,-2744.570894315675,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,19,4.473566208275052,6381.970559976457,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,20,9.687766913374608,14438.797581052717,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,21,-4.442042760351623,-7261.866766861449,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,22,-6.011372277260251,-9390.874207466062,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,23,4.473452984454327,6568.263771036191,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,24,4.635312377712814,7110.377581339152,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,25,3.2151742839924293,5160.55548013536,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,26,1.186917141811915,1966.3276408945985,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,27,2.286487003832609,3832.909664919318,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,28,0.3063293735549769,525.2508362359215,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,29,-0.9885408785315936,-1700.2041853030987,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,30,4.832295135966036,8228.96774016872,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,31,2.5234522639715733,4504.868272164161,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,32,1.5987924847843344,2926.188656862398,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,33,-2.7299627551220143,-5076.395993052074,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,34,-5.2137429998229985,-9430.342639370256,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,35,1.8100386335463223,3103.2093218629484,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,36,2.2631277466717328,3950.2346860522334,1
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,37,-2.8087865047811285,-5013.622495390911,0
+Candidate B: Prob + Return (P >= 0.55 & Ret > 1%),5,38,0.7896572283424694,1369.9304538702013,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,1,-0.940316436266545,-940.316436266545,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,2,-2.9822798891966276,-2954.2370212230403,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,3,-3.0508988341196273,-2932.079948090912,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,4,-1.5063933923986272,-1403.557437853685,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,5,8.259634914820952,7579.851198360264,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,6,-1.5237271150372351,-1513.8177135254068,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,7,4.189668029829204,4098.997020860772,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,8,-1.3728178244721987,-1399.3796482306814,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,9,4.952536012811026,4979.054862840103,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,10,-15.271174476719246,-16113.305665110835,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,11,11.488784519272478,10271.112283963086,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,12,0.7903408994103056,787.7511221724293,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,13,-1.1299152964602381,-1135.1137273446648,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,14,10.797889653898197,10724.999459781431,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,15,3.049153935798165,3355.592636383399,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,16,2.2716277819616595,2576.152002500929,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,17,2.8896197539142285,3351.430200502533,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,18,1.0560770056382665,1260.2497797243107,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,19,4.769536384033622,5751.745277464613,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,20,-4.024859924456592,-5085.21443331309,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,21,4.473566208275052,5424.642528548438,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,22,9.687766913374608,12272.904533669587,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,23,-4.442042760351623,-6172.549830802493,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,24,-4.222009417500735,-5606.191449340319,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,25,0.9809440258454687,1247.5520520204877,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,26,3.332209981878178,4279.433043198334,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,27,0.032654093484742575,43.33384486934932,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,28,-4.8098270212160745,-6384.999125897447,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,29,3.3687992615209827,4256.950826467479,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,30,0.30632937355497686,400.1304611222523,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,31,-2.6606652942485938,-3486.0334865326313,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,32,-2.625285303450605,-3348.159901291144,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,33,7.2156787937908335,8960.929778541185,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,34,1.5987924847843342,2128.757932777017,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,35,7.541829167217099,10202.331208073625,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,36,-2.7299627551220147,-3971.521048596194,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,37,-5.213742999822998,-7377.833474574047,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,38,1.8100386335463223,2427.797428893801,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,39,2.2631277466717328,3090.468163638843,1
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,40,-2.8087865047811285,-3922.4101700129377,0
+Candidate C: Risk-Adjusted Edge (RAE > 0.5),5,41,0.7896572283424694,1071.765803949296,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,1,-0.940316436266545,-940.316436266545,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,2,-3.0508988341196273,-3022.210730928536,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,3,-1.5063933923986272,-1446.7021449800002,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,4,8.259634914820953,7812.852321929811,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,5,-1.5237271150372353,-1560.3517705801423,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,6,4.189668029829204,4224.998295341647,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,7,4.952536012811027,5203.543886734274,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,8,-8.465397240457508,-9334.947050364992,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,9,-17.23669816678002,-17398.182995355623,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,10,10.028581158646055,8377.744661179375,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,11,1.5896049386773043,1461.1080795273008,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,12,6.041082755577492,5641.014231901112,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,13,7.940447125962903,7862.515635288827,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,14,-0.8497677843956272,-908.2408663457917,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,15,3.4311161727015564,3636.0507412608936,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,16,4.208539393744682,4612.932719539011,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,17,-0.2282143147336247,-260.6705177223628,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,18,0.2785010419738799,317.3829569428326,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,19,10.389912712299367,11873.438582583489,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,20,0.1122939572895573,141.66102763280935,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,21,0.6387694937034802,806.7251210609094,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,22,0.40176723547125787,510.6475453876699,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,23,2.213349913286379,2824.477809411456,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,24,5.132576511455471,6694.700352447973,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,25,1.5377326234911568,2108.6953831225096,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,26,2.07785076496819,2893.175859741962,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,27,-1.0937168106804354,-1554.5220443568778,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,28,1.9511848725856193,2742.927317259367,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,29,4.779411491985586,6849.873960709948,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,30,1.3619779723715555,2045.2867057546841,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,31,-1.8875465132272198,-2873.1404134314603,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,32,1.9996549384135773,2986.334040998453,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,33,8.282420648069419,12616.512171788314,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,34,-3.701446629334657,-6105.362781481646,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,35,-6.483139141389363,-10297.815077956617,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,36,2.9481127325870036,4379.189641706133,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,37,4.635312377712813,7088.381162414154,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,38,-1.6394732633000126,-2623.316371210744,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,39,3.848050671028453,6056.308075394074,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,40,3.2151742839924293,5254.967630078699,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,41,-9.869158979325345,-16649.040922629887,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,42,5.700200069503266,8667.075873161357,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,43,-1.963314082586926,-3155.3540037504727,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,44,-3.24408311241816,-5111.388630400691,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,45,-4.885575458260158,-7448.008928866692,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,46,-0.1458569875890123,-211.49401779665982,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,47,-8.30096406660824,-12018.920721925859,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,48,3.87756198467835,5148.259806126352,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,49,-8.30549537955418,-11454.839160387275,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,50,8.619908295122967,10901.07703441963,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,51,4.221699088461796,5799.138347888274,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,52,-2.729962755122015,-3908.3285576804947,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,53,-5.213742999822998,-7260.441757618558,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,54,1.810038633546323,2389.167753992605,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,55,2.2631277466717328,3041.2944644524723,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,56,1.2758658340720888,1753.3696369613122,1
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,57,-2.8087865047811285,-3909.247512054766,0
+Candidate D: Meta-Filtered High Quality (P_meta >= 0.55),5,58,-0.17967769122969898,-243.04998672949085,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,1,0.33487296285172363,334.8729628517236,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,2,1.9152023909225946,1921.615885913684,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,3,0.648321535282471,662.9508384302646,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,4,-1.1741099544031555,-1208.387386383316,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,5,-1.4428352035888614,-1467.5228685367993,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,6,9.707875398064441,9731.516931907365,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,7,-1.523727115037235,-1675.7196012258257,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,8,4.189668029829204,4537.3822699078755,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,9,1.0267887097719308,1158.5945888276617,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,10,5.018823389870716,5721.222961519648,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,11,1.7005587776649325,2035.8499011263882,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,12,3.8372238445375,4671.911221748111,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,13,-8.958728245616845,-11326.0083720451,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,14,3.784915945615399,4356.373127643096,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,15,3.455623143750296,4127.902616752461,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,16,3.8850515294609025,4801.2459462216875,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,17,3.655907638912476,4693.593188786698,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,18,2.95511721853796,3932.5929903831698,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,19,2.8422710804412334,3894.195243610659,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,20,1.3624786612971749,1919.7894187216014,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,21,5.203493277902648,7431.835775289257,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,22,0.6234470192659893,936.7653540146604,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,23,4.377883997354838,6619.035458357491,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,24,8.586646363727395,13550.724738839855,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,25,0.8019474415315888,1374.2358467873917,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,26,-0.3680919474905696,-635.8294010057026,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,27,0.2932239789450961,504.6406365617857,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,28,10.7978896538982,18637.73849878649,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,29,0.21382584990630205,408.92722410538005,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,30,-0.9161381875166796,-1755.7975805437725,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,31,1.421363036852354,2699.115083373591,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,32,-0.7225630514180421,-1391.6229354005266,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,33,0.628521847247674,1201.7572822078432,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,34,-1.5569655706273675,-2995.687357480297,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,35,2.4546827281845003,4649.409903586361,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,36,-1.8504180000463821,-3590.90674491361,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,37,0.7519650492501797,1432.2551485346385,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,38,-2.3835247286497,-4573.997511702167,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,39,-1.2565431413313843,-2353.839183379947,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,40,1.6528647126321967,3057.3490169086167,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,41,-0.006850295142425511,-12.880615513199658,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,42,3.0364620050823845,5709.0708563106255,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,43,-0.6775439498181755,-1312.5806308072472,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,44,2.5525735294117644,4911.500936514678,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,45,4.115439674629426,8120.799225844383,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,46,1.1623346470510652,2387.969933108555,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,47,2.9674130642045595,6167.292105361369,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,48,0.16945380984490893,362.63327620556817,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,49,-0.5798443447343071,-1242.9768713188323,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,50,-1.8875465132272191,-4022.756293107053,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,51,1.999654938413578,4181.24154342968,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,52,1.419511623582946,3027.5257968430706,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,53,3.7804554362610534,8177.386730588675,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,54,1.3215394446750441,2966.648665597796,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,55,-2.9005355525649543,-6597.295836993931,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,56,-4.560544320259344,-10072.129044531119,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,57,0.44104169185203107,929.6344299780707,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,58,0.011815928215384108,25.015639318944167,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,59,4.635312377712813,9814.633404409618,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,60,-2.955306354255365,-6547.505294990813,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,61,-0.7927335498057255,-1704.4033642326967,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,62,0.12365335216940682,263.7512470524431,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,63,4.700294514176714,10038.073849334289,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,64,-0.6499226857069353,-1453.2318749243823,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,65,-1.2211730731344965,-2712.8054396062503,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,66,-0.7014512509969552,-1539.2274026277069,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,67,0.12487980414577474,272.1074312961308,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,68,-1.4476563879747568,-3158.316814575388,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,69,-3.883259930970364,-8349.368313582228,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,70,-7.2543302332530395,-14991.790763734594,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,71,6.447203887814233,12357.233042083977,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,72,0.13201873271116346,269.3516559626986,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,73,2.957163056399826,6041.3268719866,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,74,1.3677236254377323,2876.8152906281384,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,75,1.53049251118709,3263.20631171602,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,76,1.5362322307488756,3325.574557027944,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,77,1.073493291804842,2359.555488809745,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,78,-2.7299627551220147,-6064.916947495802,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,79,-5.2137429998229985,-11266.70278924047,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,80,1.8100386335463226,3707.493827028653,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,81,2.2631277466717328,4719.459499773936,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,82,-0.24849293103237946,-529.9273136459352,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,83,1.9820663236166407,4216.381648357935,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,84,3.6104677915129204,7832.655291397805,1
+Candidate E: Meta-Filtered + Mission 25 Exit,5,85,-2.011208506823849,-4520.706070202439,0
+Candidate E: Meta-Filtered + Mission 25 Exit,5,86,-1.5508486455222419,-3415.820102235193,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,1,-0.940316436266545,-940.316436266545,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,2,-3.0508988341196273,-3022.210730928536,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,3,-1.5063933923986272,-1446.7021449800002,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,4,8.259634914820953,7812.852321929811,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,5,-1.5237271150372353,-1560.3517705801423,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,6,4.189668029829204,4224.998295341647,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,7,4.952536012811027,5203.543886734274,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,8,-8.465397240457508,-9334.947050364992,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,9,-17.23669816678002,-17398.182995355623,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,10,10.028581158646055,8377.744661179375,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,11,1.5896049386773043,1461.1080795273008,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,12,6.041082755577492,5641.014231901112,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,13,7.940447125962903,7862.515635288827,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,14,-0.8497677843956272,-908.2408663457917,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,15,3.4311161727015564,3636.0507412608936,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,16,4.208539393744682,4612.932719539011,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,17,-0.2282143147336247,-260.6705177223628,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,18,0.2785010419738799,317.3829569428326,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,19,10.389912712299367,11873.438582583489,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,20,0.1122939572895573,141.66102763280935,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,21,0.6387694937034802,806.7251210609094,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,22,0.40176723547125787,510.6475453876699,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,23,2.213349913286379,2824.477809411456,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,24,5.132576511455471,6694.700352447973,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,25,1.5377326234911568,2108.6953831225096,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,26,2.07785076496819,2893.175859741962,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,27,-1.0937168106804354,-1554.5220443568778,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,28,1.9511848725856193,2742.927317259367,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,29,4.779411491985586,6849.873960709948,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,30,1.3619779723715555,2045.2867057546841,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,31,-1.8875465132272198,-2873.1404134314603,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,32,1.9996549384135773,2986.334040998453,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,33,8.282420648069419,12616.512171788314,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,34,-3.701446629334657,-6105.362781481646,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,35,-6.483139141389363,-10297.815077956617,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,36,2.9481127325870036,4379.189641706133,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,37,4.635312377712813,7088.381162414154,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,38,-1.6394732633000126,-2623.316371210744,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,39,3.848050671028453,6056.308075394074,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,40,3.2151742839924293,5254.967630078699,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,41,-9.869158979325345,-16649.040922629887,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,42,5.700200069503266,8667.075873161357,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,43,-1.963314082586926,-3155.3540037504727,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,44,-3.24408311241816,-5111.388630400691,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,45,-4.885575458260158,-7448.008928866692,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,46,-0.1458569875890123,-211.49401779665982,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,47,-8.30096406660824,-12018.920721925859,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,48,3.87756198467835,5148.259806126352,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,49,-8.30549537955418,-11454.839160387275,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,50,8.619908295122967,10901.07703441963,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,51,4.221699088461796,5799.138347888274,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,52,-2.729962755122015,-3908.3285576804947,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,53,-5.213742999822998,-7260.441757618558,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,54,1.810038633546323,2389.167753992605,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,55,2.2631277466717328,3041.2944644524723,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,56,1.2758658340720888,1753.3696369613122,1
+Candidate F: Meta-Filtered + Tiered Sizing,5,57,-2.8087865047811285,-3909.247512054766,0
+Candidate F: Meta-Filtered + Tiered Sizing,5,58,-0.17967769122969898,-243.04998672949085,0
