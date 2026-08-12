@@ -289,21 +289,44 @@ async function loadBacktestResearchSummaries() {
     try {
         const res = await fetch("/api/backtests");
         const data = await res.json();
-        const tbody = document.getElementById("backtest-summary-tbody");
-        tbody.innerHTML = "";
+        
+        // 1. Render Realistic Per-Stock Benchmark Table
+        const realityTbody = document.getElementById("reality-check-tbody");
+        if (realityTbody && data.per_stock_reality_check) {
+            realityTbody.innerHTML = "";
+            data.per_stock_reality_check.forEach(row => {
+                const tr = document.createElement("tr");
+                const diffClass = row.cagr_diff >= 0 ? "positive" : "negative";
+                tr.innerHTML = `
+                    <td><strong>${row.asset.toUpperCase()}</strong></td>
+                    <td>${row.champion_cagr.toFixed(2)}%</td>
+                    <td>${row.bh_cagr.toFixed(2)}%</td>
+                    <td class="${diffClass}">${row.cagr_diff >= 0 ? '+' : ''}${row.cagr_diff.toFixed(2)}%</td>
+                    <td>${row.champion_sharpe.toFixed(2)}</td>
+                    <td>${row.bh_sharpe.toFixed(2)}</td>
+                    <td><span style="color: #EF4444; font-weight: 700;">${row.verdict}</span></td>
+                `;
+                realityTbody.appendChild(tr);
+            });
+        }
 
-        data.mission27_cross_asset.forEach(row => {
-            const tr = document.createElement("tr");
-            tr.innerHTML = `
-                <td><strong>${row.asset.toUpperCase()}</strong></td>
-                <td>${row.display_name}</td>
-                <td class="positive">+${row.cum_return_pct.toFixed(2)}%</td>
-                <td>${row.sharpe.toFixed(2)}</td>
-                <td>+${row.expectancy_pct.toFixed(2)}% / trade</td>
-                <td><span style="color: #10B981; font-weight: 700;">${row.positive_folds} Folds Positive</span></td>
-            `;
-            tbody.appendChild(tr);
-        });
+        // 2. Render Superseded Historical Matrix Table
+        const tbody = document.getElementById("backtest-summary-tbody");
+        if (tbody && data.superseded_historical_matrix) {
+            tbody.innerHTML = "";
+            data.superseded_historical_matrix.forEach(row => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td><strong>${row.asset.toUpperCase()}</strong></td>
+                    <td>${row.display_name}</td>
+                    <td class="positive">+${row.cum_return_pct.toFixed(2)}%</td>
+                    <td>${row.sharpe.toFixed(2)}</td>
+                    <td>+${row.expectancy_pct.toFixed(2)}% / trade</td>
+                    <td><span style="color: #9CA3AF; font-weight: 600;">${row.positive_folds}</span></td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
     } catch (err) {
         console.error("Failed to load backtest summaries:", err);
     }

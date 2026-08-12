@@ -101,12 +101,20 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
             elif path == "/api/backtests":
                 self._send_json(_get_backtest_research_summaries())
             elif path == "/api/risk-summary":
+                from src.research.benchmark_and_cost_reality_check import calculate_nse_delivery_cost
+                sample_trade_cap = 20000.0
+                entry_c = calculate_nse_delivery_cost(sample_trade_cap, is_buy=True)
+                exit_c = calculate_nse_delivery_cost(sample_trade_cap, is_buy=False)
+                round_trip_cost_pct = ((entry_c + exit_c) / sample_trade_cap) * 100.0
+
                 self._send_json({
                     "max_position_weight_pct": 20.0,
                     "max_portfolio_exposure_pct": 100.0,
                     "sector_caps": {"IT_Services": 35.0, "Banking_Financials": 35.0, "Energy": 35.0},
                     "drawdown_governor_status": "ACTIVE (Hysteresis Buffer 20% -> 10%)",
-                    "transaction_cost_bps": 10,
+                    "transaction_cost_bps": round(round_trip_cost_pct * 100.0, 1),
+                    "transaction_cost_pct": round(round_trip_cost_pct, 3),
+                    "transaction_cost_model": "2026 NSE Delivery Rates (STT 0.10% buy/sell + Stamp Duty 0.015% + Exch 0.00354% + DP Flat ₹15.93: ~0.302% / 30.2 bps round-trip)",
                 })
             elif path == "/api/assets":
                 engine = get_engine()
@@ -165,10 +173,15 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                     self._send_json({"error": True, "message": "Capital allocation must be positive", "code": "INVALID_CAPITAL"}, status_code=400)
                     return
 
+                # Enforce 20% max position weight cap relative to portfolio equity
+                port_summary = portfolio.get_portfolio_summary()
+                max_20pct_cap = port_summary["current_equity"] * 0.20
+                capital = min(capital, max_20pct_cap)
+
                 m_data = engine.get_asset_market_data(symbol, limit=1)
                 curr_price = m_data["last_price"]
 
-                res = portfolio.execute_trade(symbol, action, curr_price, capital_alloc=capital, cost_bps=0.0010)
+                res = portfolio.execute_trade(symbol, action, curr_price, capital_alloc=capital)
                 if res.get("status") == "ERROR":
                     self._send_json({"error": True, "message": res["message"], "code": "TRADE_EXECUTION_ERROR"}, status_code=400)
                 else:
@@ -188,31 +201,47 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
 
 
 def _get_backtest_research_summaries() -> Dict[str, Any]:
-    """Return key validated research summaries across Missions 26-29."""
+    """Return key validated research summaries and realistic cost reality check benchmark results."""
     return {
+        "status": "HONEST_VALIDATION_COMPLETED",
+        "verdict": "0 of 5 equities beat Buy-and-Hold on CAGR under realistic transaction costs",
+        "evaluation_period": "2003-08-12 to 2026-08-06 (5,695 trading days / ~23.0 years)",
+        "per_stock_reality_check": [
+            {"asset": "reliance_ns", "display_name": "RELIANCE", "champion_cagr": 8.34, "bh_cagr": 19.04, "cagr_diff": -10.70, "champion_sharpe": 0.50, "bh_sharpe": 0.43, "verdict": "NO"},
+            {"asset": "tcs_ns", "display_name": "TCS", "champion_cagr": 8.67, "bh_cagr": 20.02, "cagr_diff": -11.35, "champion_sharpe": 0.52, "bh_sharpe": 0.51, "verdict": "NO"},
+            {"asset": "hdfcbank_ns", "display_name": "HDFCBANK", "champion_cagr": 6.33, "bh_cagr": 19.29, "cagr_diff": -12.96, "champion_sharpe": 0.40, "bh_sharpe": 0.76, "verdict": "NO"},
+            {"asset": "infy_ns", "display_name": "INFY", "champion_cagr": 1.26, "bh_cagr": 14.54, "cagr_diff": -13.28, "champion_sharpe": 0.16, "bh_sharpe": 0.60, "verdict": "NO"},
+            {"asset": "icicibank_ns", "display_name": "ICICIBANK", "champion_cagr": 4.90, "bh_cagr": 18.95, "cagr_diff": -14.05, "champion_sharpe": 0.33, "bh_sharpe": 0.65, "verdict": "NO"},
+        ],
+        "pooled_reality_check": {
+            "champion_cagr": 5.25,
+            "champion_return": 217.97,
+            "champion_sharpe": 0.60,
+            "bh_cagr": 18.66,
+            "bh_return": 4676.95,
+            "bh_sharpe": 0.71,
+            "verdict": "NO (Buy-and-Hold outperformed Champion strategy by >21x in total return)",
+        },
         "mission26_champion": {
-            "signal": "P(up) >= 0.55 AND Expected Return > 1.0%",
+            "signal": "P(up) >= 0.55 AND Expected Return > 1.0% (Superseded)",
             "mean_cum_return_pct": 79.84,
             "daily_sharpe": 1.09,
-            "win_rate_pct": 66.35,
-            "profit_factor": 3.58,
-            "expectancy_pct": 2.09,
-            "max_drawdown_pct": 23.70,
-            "positive_folds": "5 / 5",
+            "positive_folds": "5 / 5 (Superseded — See Reality Check)",
         },
         "mission27_cross_asset": [
-            {"asset": "tcs_ns", "display_name": "TCS", "cum_return_pct": 79.84, "sharpe": 1.09, "expectancy_pct": 2.09, "positive_folds": "5/5"},
-            {"asset": "infy_ns", "display_name": "INFY", "cum_return_pct": 11.99, "sharpe": 0.31, "expectancy_pct": 2.84, "positive_folds": "4/5"},
-            {"asset": "reliance_ns", "display_name": "RELIANCE", "cum_return_pct": 53.35, "sharpe": 0.70, "expectancy_pct": 1.60, "positive_folds": "5/5"},
-            {"asset": "icicibank_ns", "display_name": "ICICIBANK", "cum_return_pct": 44.98, "sharpe": 0.45, "expectancy_pct": 1.19, "positive_folds": "4/5"},
-            {"asset": "hdfcbank_ns", "display_name": "HDFCBANK", "cum_return_pct": 42.74, "sharpe": 0.54, "expectancy_pct": 1.23, "positive_folds": "4/5"},
+            {"asset": "tcs_ns", "display_name": "TCS", "cum_return_pct": 79.84, "sharpe": 1.09, "expectancy_pct": 2.09, "positive_folds": "5/5 (Superseded)"},
+            {"asset": "infy_ns", "display_name": "INFY", "cum_return_pct": 11.99, "sharpe": 0.31, "expectancy_pct": 2.84, "positive_folds": "4/5 (Superseded)"},
+            {"asset": "reliance_ns", "display_name": "RELIANCE", "cum_return_pct": 53.35, "sharpe": 0.70, "expectancy_pct": 1.60, "positive_folds": "5/5 (Superseded)"},
+            {"asset": "icicibank_ns", "display_name": "ICICIBANK", "cum_return_pct": 44.98, "sharpe": 0.45, "expectancy_pct": 1.19, "positive_folds": "4/5 (Superseded)"},
+            {"asset": "hdfcbank_ns", "display_name": "HDFCBANK", "cum_return_pct": 42.74, "sharpe": 0.54, "expectancy_pct": 1.23, "positive_folds": "4/5 (Superseded)"},
         ],
-        "mission29_portfolio_overlay": {
-            "equal_weight_baseline": {"cum_return_pct": 350.10, "sharpe": 0.85, "max_drawdown_pct": 53.14},
-            "volatility_expansion_governor": {"cum_return_pct": 327.36, "sharpe": 0.82, "return_retention_pct": 93.5},
-            "correlation_cluster_cap": {"cum_return_pct": 348.94, "sharpe": 0.85, "return_retention_pct": 99.7},
-            "hysteresis_drawdown_governor": {"cum_return_pct": 176.82, "sharpe": 0.61, "max_drawdown_pct": 43.42, "drawdown_reduction_pct": 18.3},
-        },
+        "superseded_historical_matrix": [
+            {"asset": "tcs_ns", "display_name": "TCS", "cum_return_pct": 79.84, "sharpe": 1.09, "expectancy_pct": 2.09, "positive_folds": "5/5 (Superseded)"},
+            {"asset": "infy_ns", "display_name": "INFY", "cum_return_pct": 11.99, "sharpe": 0.31, "expectancy_pct": 2.84, "positive_folds": "4/5 (Superseded)"},
+            {"asset": "reliance_ns", "display_name": "RELIANCE", "cum_return_pct": 53.35, "sharpe": 0.70, "expectancy_pct": 1.60, "positive_folds": "5/5 (Superseded)"},
+            {"asset": "icicibank_ns", "display_name": "ICICIBANK", "cum_return_pct": 44.98, "sharpe": 0.45, "expectancy_pct": 1.19, "positive_folds": "4/5 (Superseded)"},
+            {"asset": "hdfcbank_ns", "display_name": "HDFCBANK", "cum_return_pct": 42.74, "sharpe": 0.54, "expectancy_pct": 1.23, "positive_folds": "4/5 (Superseded)"},
+        ],
     }
 
 

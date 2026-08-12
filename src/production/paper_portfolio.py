@@ -48,11 +48,17 @@ class PaperPortfolioEngine:
             if symbol in self.open_positions:
                 return {"status": "ERROR", "message": f"Active position already exists for {symbol.upper()}."}
 
-            alloc_cash = min(capital_alloc, self.cash)
-            if alloc_cash <= 1000.0:
-                return {"status": "ERROR", "message": "Insufficient cash to execute trade."}
+            # Enforce 20% position allocation cap relative to current total equity
+            pos_val_sum = sum(p["units"] * p["current_price"] for p in self.open_positions.values())
+            total_equity = self.cash + pos_val_sum
+            max_20pct_alloc = total_equity * 0.20
 
-            entry_cost = alloc_cash * (cost_bps / 2.0)
+            alloc_cash = min(capital_alloc, self.cash, max_20pct_alloc)
+            if alloc_cash <= 1000.0:
+                return {"status": "ERROR", "message": f"Cash allocation (INR {alloc_cash:,.2f}) below minimum limit or exceeds 20% equity cap (INR {max_20pct_alloc:,.2f})."}
+
+            from src.research.benchmark_and_cost_reality_check import calculate_nse_delivery_cost
+            entry_cost = calculate_nse_delivery_cost(alloc_cash, is_buy=True)
             units = (alloc_cash - entry_cost) / current_price
 
             self.cash -= alloc_cash
@@ -71,7 +77,7 @@ class PaperPortfolioEngine:
             self.open_positions[symbol] = pos
             self.update_market_prices({symbol: current_price})
 
-            logger.info("Paper BUY executed for %s: %f units at INR %.2f", symbol.upper(), units, current_price)
+            logger.info("Paper BUY executed for %s: %f units at INR %.2f (Allocated INR %.2f)", symbol.upper(), units, current_price, alloc_cash)
             return {"status": "SUCCESS", "action": "BUY", "position": pos}
 
         elif signal_type == "SELL" or signal_type == "CLOSE":
@@ -83,7 +89,9 @@ class PaperPortfolioEngine:
             entry_p = pos["entry_price"]
             units = pos["units"]
             entry_cost = pos["entry_cost"]
-            exit_cost = units * current_price * (cost_bps / 2.0)
+
+            from src.research.benchmark_and_cost_reality_check import calculate_nse_delivery_cost
+            exit_cost = calculate_nse_delivery_cost(units * current_price, is_buy=False)
 
             gross_pnl = units * (current_price - entry_p)
             net_pnl = gross_pnl - entry_cost - exit_cost

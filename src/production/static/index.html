@@ -37,9 +37,9 @@
                 <span class="chip-label">Win Rate</span>
                 <span class="chip-value" id="nav-win-rate">0.0%</span>
             </div>
-            <div class="server-status-pill">
+            <div class="server-status-pill research-demo">
                 <span class="status-dot"></span>
-                <span>LIVE SYSTEM</span>
+                <span>Paper trading — research demo</span>
             </div>
         </div>
     </header>
@@ -69,7 +69,7 @@
             <div class="system-badge">
                 <div class="badge-title">Model Version</div>
                 <div class="badge-value">AlphaForge C59_VOL_VOL + RF Dual Model</div>
-                <div class="badge-sub">10-Day Horizon | 10 bps Costs</div>
+                <div class="badge-sub">10-Day Horizon | 2026 NSE Delivery Costs (~0.30% RT)</div>
             </div>
         </aside>
 
@@ -147,7 +147,7 @@
                                 <div class="sim-controls">
                                     <div class="input-group">
                                         <label for="trade-capital-input">Capital Allocation (₹):</label>
-                                        <input type="number" id="trade-capital-input" value="20000" step="5000" min="5000">
+                                        <input type="number" id="trade-capital-input" value="20000" step="5000" min="1000" max="20000">
                                     </div>
                                     <button class="btn btn-buy" id="btn-execute-buy">BUY POSITION</button>
                                     <button class="btn btn-sell" id="btn-execute-sell">CLOSE POSITION</button>
@@ -258,9 +258,41 @@
 
             <!-- TAB 3: VALIDATED RESEARCH EDGE VIEW -->
             <section id="tab-backtests" class="tab-page">
-                <h2 class="page-title">🔬 Quantitative Validation & Cross-Asset Edge Matrix</h2>
-                <div class="glass-card table-card">
-                    <h3 class="section-title">Cross-Asset Generalization Matrix (Mission 27 Locked Rules)</h3>
+                <h2 class="page-title">🔬 Honest Validation & Benchmark Reality Check</h2>
+                
+                <!-- Empirical Reality Check Banner -->
+                <div class="glass-card reality-check-card" style="margin-bottom: 1.5rem; border-left: 4px solid #F59E0B; padding: 1.2rem;">
+                    <h3 style="color: #F59E0B; margin-bottom: 0.5rem; font-size: 1.1rem;">⚠️ Realistic Cost Benchmark Verdict (2003–2026 Evaluation Window)</h3>
+                    <p style="color: #D1D5DB; font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.5rem;">
+                        <strong>0 of 5 equities beat Buy-and-Hold on CAGR</strong> after accounting for realistic 2026 NSE delivery transaction costs (~0.30% round-trip). Across the 23-year evaluation period, the active champion strategy generated +217.97% total return (5.25% CAGR) vs. Buy-and-Hold's +4,676.95% (18.66% CAGR).
+                    </p>
+                    <span style="color: #9CA3AF; font-size: 0.8rem; font-style: italic;">Reference Reports: reports/validation/per_stock_reality_check.md & benchmark_and_cost_reality_check.md</span>
+                </div>
+
+                <!-- Per-Stock Benchmark Table -->
+                <div class="glass-card table-card" style="margin-bottom: 1.5rem;">
+                    <h3 class="section-title">Per-Stock Benchmark Comparison (Realistic 2026 Costs)</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Asset Symbol</th>
+                                <th>Champion CAGR</th>
+                                <th>Buy & Hold CAGR</th>
+                                <th>CAGR Diff (Value Add/Loss)</th>
+                                <th>Champion Sharpe</th>
+                                <th>Buy & Hold Sharpe</th>
+                                <th>Verdict</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reality-check-tbody">
+                            <!-- Rendered dynamically via app.js -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Superseded Historical Matrix -->
+                <div class="glass-card table-card" style="opacity: 0.8;">
+                    <h3 class="section-title" style="color: #9CA3AF;">superseded — see reality check above (Mission 27 — Flat 10bps Assumption)</h3>
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -269,11 +301,11 @@
                                 <th>Cumulative Return</th>
                                 <th>Daily Sharpe</th>
                                 <th>Net Expectancy</th>
-                                <th>Positive Validation Folds</th>
+                                <th>Validation Status</th>
                             </tr>
                         </thead>
                         <tbody id="backtest-summary-tbody">
-                            <!-- Rendered dynamically -->
+                            <!-- Rendered dynamically via app.js -->
                         </tbody>
                     </table>
                 </div>
@@ -291,7 +323,16 @@
                             <li><span class="rule-key">IT Sector Cap (TCS, INFY):</span> <strong>35.0% Max Cluster Exposure</strong></li>
                             <li><span class="rule-key">Financials Sector Cap (ICICI, HDFC):</span> <strong>35.0% Max Cluster Exposure</strong></li>
                             <li><span class="rule-key">Drawdown Governor:</span> <strong>Hysteresis Buffer Active (20% -> 10%)</strong></li>
-                            <li><span class="rule-key">Transaction Cost Model:</span> <strong>10 bps round-trip (0.10%)</strong></li>
+                            <li><span class="rule-key">Transaction Cost Model:</span> <strong id="risk-cost-model-text">2026 NSE Delivery Rates (~0.302% / 30.2 bps round-trip)</strong></li>
+                        </ul>
+                    </div>
+                    <div class="glass-card">
+                        <h3 class="section-title">2026 NSE Delivery Friction Breakdown</h3>
+                        <ul class="risk-rules-list" style="font-size: 0.85rem; color: #D1D5DB;">
+                            <li><span class="rule-key">Securities Transaction Tax (STT):</span> <strong>0.10% Buy + 0.10% Sell (0.20% Total)</strong></li>
+                            <li><span class="rule-key">Stamp Duty:</span> <strong>0.015% (Buy Leg Only)</strong></li>
+                            <li><span class="rule-key">Exchange + SEBI Charges:</span> <strong>~0.00354% per leg + GST</strong></li>
+                            <li><span class="rule-key">Depository Participant (DP) Fee:</span> <strong>Flat ₹15.93 per sell trade</strong></li>
                         </ul>
                     </div>
                 </div>

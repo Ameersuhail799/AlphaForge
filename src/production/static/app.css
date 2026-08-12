@@ -118,6 +118,16 @@ body {
     font-weight: 600;
 }
 
+.server-status-pill.research-demo {
+    background: rgba(245, 158, 11, 0.12);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: #F59E0B;
+}
+
+.server-status-pill.research-demo .status-dot {
+    background-color: #F59E0B;
+}
+
 /* App Layout */
 .app-layout {
     display: flex;
