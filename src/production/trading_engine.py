@@ -74,10 +74,10 @@ class ProductionTradingEngine:
             scaler = FeatureScaler(scale=True)
             X_scaled = scaler.fit_transform_train(X)
 
-            clf = RandomForestClassifier(n_estimators=100, random_state=42)
+            clf = RandomForestClassifier(n_estimators=25, n_jobs=-1, random_state=42)
             clf.fit(X_scaled, y)
 
-            reg = RandomForestRegressor(n_estimators=100, random_state=42)
+            reg = RandomForestRegressor(n_estimators=25, n_jobs=-1, random_state=42)
             reg.fit(X_scaled, r)
 
             self.clf_models[asset] = clf

@@ -245,19 +245,25 @@ def _get_backtest_research_summaries() -> Dict[str, Any]:
     }
 
 
-def start_server(host: str = "127.0.0.1", port: int = 8080) -> ThreadingHTTPServer:
-    """Launch production ThreadingHTTPServer."""
+def start_server(host: str = "0.0.0.0", port: int = 8080) -> ThreadingHTTPServer:
+    """Launch production ThreadingHTTPServer immediately and pre-warm models asynchronously."""
+    import threading
     server_address = (host, port)
     httpd = ThreadingHTTPServer(server_address, AlphaForgeRequestHandler)
-    logger.info("Pre-warming Trading Engine models...")
-    get_engine()
-    logger.info("AlphaForge Server running at http://%s:%d", host, port)
+
+    def _async_prewarm():
+        logger.info("Pre-warming Trading Engine models in background...")
+        get_engine()
+        logger.info("Trading Engine models ready.")
+
+    threading.Thread(target=_async_prewarm, daemon=True).start()
+    logger.info("AlphaForge Server running at http://127.0.0.1:%d", port)
     return httpd
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="AlphaForge Production Web Application Server")
-    parser.add_argument("--host", default="127.0.0.1", help="Host address")
+    parser.add_argument("--host", default="0.0.0.0", help="Host address")
     parser.add_argument("--port", type=int, default=8080, help="Port number")
     args = parser.parse_args()
 
