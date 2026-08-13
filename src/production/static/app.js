@@ -2,6 +2,7 @@
 
 let currentAsset = "tcs_ns";
 let marketChart = null;
+let livePollInterval = null;
 
 document.addEventListener("DOMContentLoaded", () => {
     initApp();
@@ -14,6 +15,11 @@ async function initApp() {
     await refreshCurrentAssetView(currentAsset);
     await refreshPortfolioView();
     await loadBacktestResearchSummaries();
+
+    if (livePollInterval) clearInterval(livePollInterval);
+    livePollInterval = setInterval(() => {
+        loadLivePrice(currentAsset);
+    }, 60000);
 }
 
 function setupTabNavigation() {
@@ -69,8 +75,39 @@ async function loadSupportedAssets() {
 }
 
 async function refreshCurrentAssetView(symbol) {
+    await loadLivePrice(symbol);
     await loadSignalData(symbol);
     await loadChartData(symbol);
+}
+
+async function loadLivePrice(symbol) {
+    try {
+        const res = await fetch(`/api/live-price?symbol=${symbol}`);
+        const data = await res.json();
+
+        const symUpper = symbol.replace("_", ".").toUpperCase();
+        const labelEl = document.getElementById("nav-live-symbol-label");
+        if (labelEl) labelEl.innerText = `${symUpper.split('.')[0]} LIVE TICK`;
+
+        const priceEl = document.getElementById("nav-live-price");
+        if (priceEl) {
+            const sign = data.change_val >= 0 ? "+" : "";
+            priceEl.innerText = `₹${data.current_price.toLocaleString('en-IN', {minimumFractionDigits: 2})} (${sign}${data.change_pct.toFixed(2)}%)`;
+            priceEl.className = `chip-value ${data.change_val >= 0 ? 'positive' : 'negative'}`;
+        }
+
+        const marketText = document.getElementById("market-status-text");
+        if (marketText) marketText.innerText = data.market_status_text;
+
+        const marketBadge = document.getElementById("signal-market-status");
+        if (marketBadge) {
+            marketBadge.innerText = data.is_market_open ? "🟢 Market Open" : "🔴 Market Closed";
+            marketBadge.style.color = data.is_market_open ? "#10B981" : "#9CA3AF";
+            marketBadge.style.backgroundColor = data.is_market_open ? "rgba(16, 185, 129, 0.15)" : "rgba(255, 255, 255, 0.08)";
+        }
+    } catch (err) {
+        console.error("Failed to load live price:", err);
+    }
 }
 
 async function loadSignalData(symbol) {
@@ -81,6 +118,11 @@ async function loadSignalData(symbol) {
         document.getElementById("signal-asset-name").innerText = data.display_name;
         document.getElementById("signal-asset-symbol").innerText = data.symbol.toUpperCase();
         document.getElementById("signal-last-price").innerText = `₹${data.last_price.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+
+        const asOfEl = document.getElementById("signal-as-of-date");
+        if (asOfEl) {
+            asOfEl.innerText = data.signal_timestamp_text || `Confirmed Daily Close: ${data.timestamp}`;
+        }
 
         const badge = document.getElementById("signal-action-badge");
         badge.innerText = data.signal;
@@ -115,21 +157,36 @@ async function loadChartData(symbol) {
         const res = await fetch(`/api/market-data?symbol=${symbol}`);
         const data = await res.json();
 
+        let labels = [...data.dates];
+        let prices = [...data.close];
+        let pointRadii = labels.map(() => 0);
+        let pointColors = labels.map(() => '#06B6D4');
+
+        if (data.live_price_info && data.live_price_info.current_price) {
+            labels.push("LIVE (Forming)");
+            prices.push(data.live_price_info.current_price);
+            pointRadii.push(6);
+            pointColors.push(data.live_price_info.is_market_open ? '#F59E0B' : '#64748B');
+        }
+
         const ctx = document.getElementById("market-chart-canvas").getContext("2d");
         if (marketChart) marketChart.destroy();
 
         marketChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: data.dates,
+                labels: labels,
                 datasets: [
                     {
-                        label: 'Close Price (₹)',
-                        data: data.close,
+                        label: 'Price Series (₹)',
+                        data: prices,
                         borderColor: '#06B6D4',
                         borderWidth: 2,
                         tension: 0.1,
-                        pointRadius: 0
+                        pointRadius: pointRadii,
+                        pointBackgroundColor: pointColors,
+                        pointBorderColor: '#FFFFFF',
+                        pointBorderWidth: 1.5,
                     },
                     {
                         label: 'SMA 20',

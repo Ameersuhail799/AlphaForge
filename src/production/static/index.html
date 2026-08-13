@@ -34,12 +34,12 @@
                 <span class="chip-value positive" id="nav-total-pnl">+₹0.00 (0.00%)</span>
             </div>
             <div class="metric-chip">
-                <span class="chip-label">Win Rate</span>
-                <span class="chip-value" id="nav-win-rate">0.0%</span>
+                <span class="chip-label" id="nav-live-symbol-label">LIVE TICK</span>
+                <span class="chip-value" id="nav-live-price">₹3,450.00</span>
             </div>
-            <div class="server-status-pill research-demo">
-                <span class="status-dot"></span>
-                <span>Paper trading — research demo</span>
+            <div class="server-status-pill research-demo" id="market-status-pill">
+                <span class="status-dot" id="market-status-dot"></span>
+                <span id="market-status-text">Market Closed</span>
             </div>
         </div>
     </header>
@@ -116,10 +116,19 @@
                                 <div class="signal-badge" id="signal-action-badge">BUY</div>
                             </div>
 
+                            <!-- Signal Calculation Timestamp Pill -->
+                            <div class="signal-timestamp-pill" style="margin-bottom: 1rem; padding: 0.45rem 0.85rem; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: 6px; font-size: 0.78rem; color: #A5B4FC; display: flex; justify-content: space-between; align-items: center;">
+                                <span>📅 <strong>Signal Timestamp:</strong> <span id="signal-as-of-date">Confirmed Daily Close: 2026-08-06</span></span>
+                                <span style="font-size: 0.72rem; color: #9CA3AF; font-style: italic;">(Updates daily off confirmed closes)</span>
+                            </div>
+
                             <div class="signal-metrics-grid">
                                 <div class="sig-metric-item">
-                                    <span class="sig-label">Current Price</span>
-                                    <span class="sig-value" id="signal-last-price">₹3,450.00</span>
+                                    <span class="sig-label">Live Price Ticker (60s Poll)</span>
+                                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.2rem;">
+                                        <span class="sig-value" id="signal-last-price">₹3,450.00</span>
+                                        <span class="market-status-badge" id="signal-market-status" style="font-size: 0.7rem; padding: 0.15rem 0.4rem; border-radius: 4px; background: rgba(255, 255, 255, 0.08); color: #9CA3AF;">Market Closed</span>
+                                    </div>
                                 </div>
                                 <div class="sig-metric-item">
                                     <span class="sig-label">P(Up) Direction Conviction</span>

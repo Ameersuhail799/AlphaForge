@@ -100,6 +100,11 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                 self._send_json(summary)
             elif path == "/api/backtests":
                 self._send_json(_get_backtest_research_summaries())
+            elif path == "/api/live-price":
+                engine = get_engine()
+                symbol = query.get("symbol", [engine.assets[0]])[0]
+                live_info = engine.get_live_price_data(symbol)
+                self._send_json(live_info)
             elif path == "/api/risk-summary":
                 from src.research.benchmark_and_cost_reality_check import calculate_nse_delivery_cost
                 sample_trade_cap = 20000.0
@@ -121,11 +126,13 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                 assets_data = []
                 for a in engine.assets:
                     m_data = engine.get_asset_market_data(a, limit=2)
+                    live_p = engine.get_live_price_data(a)
                     assets_data.append({
                         "symbol": a,
                         "display_name": ASSET_DISPLAY_NAMES.get(a, a.upper()),
-                        "last_price": m_data["last_price"],
-                        "change_pct": m_data["price_change_pct"],
+                        "last_price": live_p["current_price"],
+                        "change_pct": live_p["change_pct"],
+                        "is_market_open": live_p["is_market_open"],
                     })
                 self._send_json({"assets": assets_data})
             elif path == "/api/signal":
@@ -137,6 +144,7 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                 engine = get_engine()
                 symbol = query.get("symbol", [engine.assets[0]])[0]
                 m_data = engine.get_asset_market_data(symbol, limit=150)
+                m_data["live_price_info"] = engine.get_live_price_data(symbol)
                 self._send_json(m_data)
             else:
                 # Serve Static Web UI Files

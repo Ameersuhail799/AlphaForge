@@ -201,6 +201,8 @@ class ProductionTradingEngine:
             "symbol": symbol,
             "display_name": ASSET_DISPLAY_NAMES.get(symbol, symbol.upper()),
             "timestamp": latest_row.index[0].strftime("%Y-%m-%d"),
+            "signal_as_of_date": latest_row.index[0].strftime("%Y-%m-%d"),
+            "signal_timestamp_text": f"Signal calculated as of confirmed daily close: {latest_row.index[0].strftime('%Y-%m-%d')}",
             "last_price": last_close,
             "signal": signal_type,
             "signal_color": signal_color,
@@ -216,3 +218,14 @@ class ProductionTradingEngine:
             "hist_vol_20": hist_vol,
             "reasons": reasons,
         }
+
+    def get_live_price_data(self, asset_symbol: str) -> Dict[str, Any]:
+        """Fetch current/live price and market hours status using YahooProvider."""
+        symbol = asset_symbol.lower()
+        fallback_p = 0.0
+        if symbol in self.processed_df_dict:
+            fallback_p = float(self.processed_df_dict[symbol]["Close"].iloc[-1])
+
+        from src.data.providers.yahoo_provider import YahooProvider
+        provider = YahooProvider()
+        return provider.get_live_price(symbol, fallback_close=fallback_p)
