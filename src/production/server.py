@@ -260,6 +260,13 @@ def start_server(host: str = "0.0.0.0", port: int = 8080) -> ThreadingHTTPServer
     httpd = ThreadingHTTPServer(server_address, AlphaForgeRequestHandler)
 
     def _async_prewarm():
+        try:
+            from src.data.downloader import refresh_all_datasets
+            logger.info("Checking and refreshing raw OHLCV datasets on server startup...")
+            refresh_all_datasets()
+        except Exception as err:
+            logger.warning("Auto dataset refresh skipped / failed (using existing local parquets): %s", str(err))
+
         logger.info("Pre-warming Trading Engine models in background...")
         get_engine()
         logger.info("Trading Engine models ready.")

@@ -89,11 +89,19 @@ async function loadLivePrice(symbol) {
         const labelEl = document.getElementById("nav-live-symbol-label");
         if (labelEl) labelEl.innerText = `${symUpper.split('.')[0]} LIVE TICK`;
 
+        const priceFormatted = `₹${data.current_price.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
+
         const priceEl = document.getElementById("nav-live-price");
         if (priceEl) {
             const sign = data.change_val >= 0 ? "+" : "";
-            priceEl.innerText = `₹${data.current_price.toLocaleString('en-IN', {minimumFractionDigits: 2})} (${sign}${data.change_pct.toFixed(2)}%)`;
+            priceEl.innerText = `${priceFormatted} (${sign}${data.change_pct.toFixed(2)}%)`;
             priceEl.className = `chip-value ${data.change_val >= 0 ? 'positive' : 'negative'}`;
+        }
+
+        // TASK 2: Wire signal-last-price card display to the exact same live tick source!
+        const sigPriceEl = document.getElementById("signal-last-price");
+        if (sigPriceEl) {
+            sigPriceEl.innerText = priceFormatted;
         }
 
         const marketText = document.getElementById("market-status-text");
@@ -117,7 +125,6 @@ async function loadSignalData(symbol) {
 
         document.getElementById("signal-asset-name").innerText = data.display_name;
         document.getElementById("signal-asset-symbol").innerText = data.symbol.toUpperCase();
-        document.getElementById("signal-last-price").innerText = `₹${data.last_price.toLocaleString('en-IN', {minimumFractionDigits: 2})}`;
 
         const asOfEl = document.getElementById("signal-as-of-date");
         if (asOfEl) {
