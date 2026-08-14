@@ -1,9 +1,13 @@
 /* AlphaForge Dashboard Application Logic & REST Integration */
 
+let currentAsset = "tcs_ns";
+let livePollInterval = null;
 let tvChartInstance = null;
+let marketChart = null;
 let currentChartType = "area"; // "area" | "candlestick"
 let currentChartTF = "3M";     // "1D" | "1W" | "1M" | "3M" | "6M" | "1Y" | "ALL"
 let showSMAOverlay = true;
+let showVolOverlay = true;
 let currentRawMarketData = null;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -391,8 +395,10 @@ function renderLightweightChart(data) {
         tvChartInstance = null;
     }
 
+    const initialWidth = Math.max(wrapper.clientWidth || container.clientWidth || 0, 500);
+
     tvChartInstance = LightweightCharts.createChart(wrapper, {
-        width: wrapper.clientWidth || container.clientWidth || 600,
+        width: initialWidth,
         height: 380,
         layout: {
             background: { type: 'solid', color: 'transparent' },
@@ -487,12 +493,28 @@ function renderLightweightChart(data) {
             updateTVHeader(rawDates[lastIdx], rawOpen[lastIdx], rawHigh[lastIdx], rawLow[lastIdx], rawClose[lastIdx], rawVol[lastIdx]);
             return;
         }
-        const timeStr = typeof param.time === 'string' ? param.time : `${param.time.year}-${param.time.month}-${param.time.day}`;
+        let timeStr = typeof param.time === 'string' ? param.time : '';
+        if (param.time && typeof param.time === 'object' && param.time.year) {
+            const mStr = String(param.time.month).padStart(2, '0');
+            const dStr = String(param.time.day).padStart(2, '0');
+            timeStr = `${param.time.year}-${mStr}-${dStr}`;
+        }
         const matchIdx = rawDates.indexOf(timeStr);
         if (matchIdx !== -1) {
             updateTVHeader(timeStr, rawOpen[matchIdx], rawHigh[matchIdx], rawLow[matchIdx], rawClose[matchIdx], rawVol[matchIdx]);
         }
     });
+
+    if (window.ResizeObserver && wrapper) {
+        const ro = new ResizeObserver(entries => {
+            if (!entries || !entries.length) return;
+            const w = Math.max(entries[0].contentRect.width, 300);
+            if (tvChartInstance && w > 0) {
+                tvChartInstance.applyOptions({ width: w });
+            }
+        });
+        ro.observe(wrapper);
+    }
 
     tvChartInstance.timeScale().fitContent();
     console.log("[renderLightweightChart] TradingView Lightweight Chart rendered successfully with 0 errors!");
