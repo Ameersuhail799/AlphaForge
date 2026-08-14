@@ -205,6 +205,20 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                 cap = float(body_json.get("initial_capital", 100000.0))
                 portfolio.reset_portfolio(cap)
                 self._send_json({"status": "SUCCESS", "message": f"Portfolio reset to INR {cap:,.2f}"})
+            elif path == "/api/strategy-test":
+                from src.research.strategy_tester import run_strategy_backtest
+                asset_sel = body_json.get("asset", "tcs_ns")
+                template_name = body_json.get("template", "rsi_threshold")
+                params_dict = body_json.get("params", {})
+                exit_d = int(body_json.get("exit_days", 10))
+
+                res = run_strategy_backtest(
+                    asset_selection=asset_sel,
+                    template=template_name,
+                    params=params_dict,
+                    exit_days=exit_d,
+                )
+                self._send_json(res)
             else:
                 self._send_json({"error": True, "message": f"POST path '{path}' not found", "code": "NOT_FOUND"}, status_code=404)
         except KeyError as k_err:

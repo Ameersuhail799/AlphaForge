@@ -22,6 +22,7 @@ async function initApp() {
     refreshCurrentAssetView(currentAsset);
     refreshPortfolioView();
     loadBacktestResearchSummaries();
+    initStrategyTesterUI();
 
     if (livePollInterval) clearInterval(livePollInterval);
     livePollInterval = setInterval(() => {
@@ -770,4 +771,173 @@ async function loadBacktestResearchSummaries() {
     } catch (err) {
         console.error("Failed to load backtest summaries:", err);
     }
+}
+
+/* Strategy Tester UI Controller */
+function initStrategyTesterUI() {
+    const templateSelect = document.getElementById("st-template-select");
+    const runBtn = document.getElementById("btn-run-strategy-test");
+
+    if (templateSelect) {
+        templateSelect.addEventListener("change", renderStrategyTesterParams);
+        renderStrategyTesterParams();
+    }
+
+    if (runBtn) {
+        runBtn.addEventListener("click", handleRunStrategyTest);
+    }
+}
+
+function renderStrategyTesterParams() {
+    const templateSelect = document.getElementById("st-template-select");
+    if (!templateSelect) return;
+    const template = templateSelect.value;
+    const container = document.getElementById("st-params-container");
+    if (!container) return;
+
+    if (template === "rsi_threshold") {
+        container.innerHTML = `
+            <div class="form-group">
+                <label style="font-size: 0.82rem; color: #D1D5DB;">RSI Period:</label>
+                <input type="number" id="st-param-period" value="14" min="2" max="100" style="width:100%; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--border-color); border-radius:6px; color:#FFF; margin-top:0.25rem;">
+            </div>
+            <div class="form-group">
+                <label style="font-size: 0.82rem; color: #D1D5DB;">Buy Threshold (Cross Below):</label>
+                <input type="number" id="st-param-buy-threshold" value="30" min="5" max="95" style="width:100%; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--border-color); border-radius:6px; color:#FFF; margin-top:0.25rem;">
+            </div>
+        `;
+    } else if (template === "sma_crossover") {
+        container.innerHTML = `
+            <div class="form-group">
+                <label style="font-size: 0.82rem; color: #D1D5DB;">Fast SMA Period:</label>
+                <input type="number" id="st-param-fast" value="20" min="2" max="100" style="width:100%; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--border-color); border-radius:6px; color:#FFF; margin-top:0.25rem;">
+            </div>
+            <div class="form-group">
+                <label style="font-size: 0.82rem; color: #D1D5DB;">Slow SMA Period:</label>
+                <input type="number" id="st-param-slow" value="50" min="5" max="300" style="width:100%; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--border-color); border-radius:6px; color:#FFF; margin-top:0.25rem;">
+            </div>
+        `;
+    } else if (template === "price_vs_sma") {
+        container.innerHTML = `
+            <div class="form-group" style="grid-column: span 2;">
+                <label style="font-size: 0.82rem; color: #D1D5DB;">SMA Period (Cross Above):</label>
+                <input type="number" id="st-param-period" value="50" min="5" max="300" style="width:100%; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--border-color); border-radius:6px; color:#FFF; margin-top:0.25rem;">
+            </div>
+        `;
+    } else if (template === "volume_breakout") {
+        container.innerHTML = `
+            <div class="form-group" style="grid-column: span 2;">
+                <label style="font-size: 0.82rem; color: #D1D5DB;">Volume Multiplier (vs 20D SMA):</label>
+                <input type="number" id="st-param-multiplier" value="2.0" step="0.1" min="1.0" max="10.0" style="width:100%; padding:0.5rem; background:rgba(15,23,42,0.8); border:1px solid var(--border-color); border-radius:6px; color:#FFF; margin-top:0.25rem;">
+            </div>
+        `;
+    }
+}
+
+async function handleRunStrategyTest() {
+    const templateSelect = document.getElementById("st-template-select");
+    const assetSelect = document.getElementById("st-asset-select");
+    const exitInput = document.getElementById("st-exit-days-input");
+    const runBtn = document.getElementById("btn-run-strategy-test");
+
+    if (!templateSelect || !assetSelect) return;
+
+    const template = templateSelect.value;
+    const asset = assetSelect.value;
+    const exitDays = parseInt(exitInput.value) || 10;
+
+    const params = {};
+    if (template === "rsi_threshold") {
+        params.period = parseInt(document.getElementById("st-param-period").value) || 14;
+        params.buy_threshold = parseFloat(document.getElementById("st-param-buy-threshold").value) || 30;
+    } else if (template === "sma_crossover") {
+        params.fast = parseInt(document.getElementById("st-param-fast").value) || 20;
+        params.slow = parseInt(document.getElementById("st-param-slow").value) || 50;
+    } else if (template === "price_vs_sma") {
+        params.period = parseInt(document.getElementById("st-param-period").value) || 50;
+    } else if (template === "volume_breakout") {
+        params.multiplier = parseFloat(document.getElementById("st-param-multiplier").value) || 2.0;
+    }
+
+    if (runBtn) {
+        runBtn.disabled = true;
+        runBtn.innerText = "⏳ Running Strategy Simulation...";
+    }
+
+    try {
+        const res = await fetch("/api/strategy-test", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                asset: asset,
+                template: template,
+                params: params,
+                exit_days: exitDays
+            })
+        });
+
+        const data = await res.json();
+        renderStrategyTestResults(data);
+    } catch (err) {
+        console.error("Failed to run strategy test:", err);
+        alert("Error executing strategy test.");
+    } finally {
+        if (runBtn) {
+            runBtn.disabled = false;
+            runBtn.innerText = "▶ RUN STRATEGY TEST";
+        }
+    }
+}
+
+function renderStrategyTestResults(data) {
+    const banner = document.getElementById("st-verdict-banner");
+    const tbody = document.getElementById("st-results-tbody");
+    if (!banner || !tbody) return;
+
+    if (data.beat_buy_and_hold) {
+        banner.style.background = "rgba(16, 185, 129, 0.15)";
+        banner.style.borderColor = "rgba(16, 185, 129, 0.4)";
+        banner.style.color = "#34D399";
+    } else {
+        banner.style.background = "rgba(239, 68, 68, 0.15)";
+        banner.style.borderColor = "rgba(239, 68, 68, 0.4)";
+        banner.style.color = "#F87171";
+    }
+    banner.innerText = data.verdict;
+
+    const sm = data.strategy_metrics;
+    const bm = data.benchmark_metrics;
+
+    const metricsMap = [
+        { label: "CAGR (Annualized Return)", sVal: `${sm.cagr_pct.toFixed(2)}%`, bVal: `${bm.cagr_pct.toFixed(2)}%`, diff: sm.cagr_pct - bm.cagr_pct, unit: "%" },
+        { label: "Sharpe Ratio (Risk-Adjusted)", sVal: sm.sharpe.toFixed(2), bVal: bm.sharpe.toFixed(2), diff: sm.sharpe - bm.sharpe, unit: "" },
+        { label: "Sortino Ratio (Downside-Adjusted)", sVal: sm.sortino.toFixed(2), bVal: bm.sortino.toFixed(2), diff: sm.sortino - bm.sortino, unit: "" },
+        { label: "Max Drawdown (Peak-to-Trough)", sVal: `${sm.max_dd_pct.toFixed(2)}%`, bVal: `${bm.max_dd_pct.toFixed(2)}%`, diff: bm.max_dd_pct - sm.max_dd_pct, unit: "%", lowerIsBetter: true },
+        { label: "Total Trades Executed", sVal: sm.total_trades, bVal: "1 (Buy & Hold)", diff: null, unit: "" },
+        { label: "Win Rate %", sVal: `${sm.win_rate_pct.toFixed(2)}%`, bVal: "N/A", diff: null, unit: "" },
+    ];
+
+    tbody.innerHTML = "";
+    metricsMap.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.style.borderBottom = "1px solid rgba(255, 255, 255, 0.05)";
+
+        let diffText = "-";
+        let diffClass = "";
+
+        if (row.diff !== null) {
+            const isGood = row.lowerIsBetter ? row.diff > 0 : row.diff > 0;
+            diffClass = isGood ? "positive" : "negative";
+            const sign = row.diff >= 0 ? "+" : "";
+            diffText = `${sign}${row.diff.toFixed(2)}${row.unit}`;
+        }
+
+        tr.innerHTML = `
+            <td style="padding: 0.6rem;"><strong>${row.label}</strong></td>
+            <td style="padding: 0.6rem; color: #38BDF8; font-weight: 600;">${row.sVal}</td>
+            <td style="padding: 0.6rem; color: #F59E0B;">${row.bVal}</td>
+            <td style="padding: 0.6rem;" class="${diffClass}">${diffText}</td>
+        `;
+        tbody.appendChild(tr);
+    });
 }

@@ -6,9 +6,9 @@
     <title>AlphaForge — AI Trading Intelligence & Paper Trading Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="chart.js?v=20260814_03"></script>
-    <script src="lightweight-charts.js?v=20260814_03"></script>
-    <link rel="stylesheet" href="app.css?v=20260814_03">
+    <script src="chart.js?v=20260814_04"></script>
+    <script src="lightweight-charts.js?v=20260814_04"></script>
+    <link rel="stylesheet" href="app.css?v=20260814_04">
 </head>
 <body>
     <!-- Top Navigation Header -->
@@ -58,6 +58,9 @@
                 </button>
                 <button class="nav-btn" data-tab="tab-backtests">
                     <span class="icon">🔬</span> Validated Research Edge
+                </button>
+                <button class="nav-btn" data-tab="tab-strategy-tester">
+                    <span class="icon">🧪</span> Strategy Tester
                 </button>
                 <button class="nav-btn" data-tab="tab-risk">
                     <span class="icon">🛡️</span> Risk & Capital Controls
@@ -402,10 +405,103 @@
                         </ul>
                     </div>
                 </div>
+            <!-- TAB 5: STRATEGY TESTER -->
+            <section id="tab-strategy-tester" class="tab-page">
+                <div class="portfolio-header-bar">
+                    <h2>🧪 Custom Strategy Tester</h2>
+                    <p style="color: #9CA3AF; font-size: 0.88rem; margin: 0.25rem 0 0 0;">
+                        Test your own deterministic trading rules against 2026 NSE delivery transaction costs and a Buy-and-Hold benchmark.
+                    </p>
+                </div>
+
+                <div class="grid-2col" style="margin-top: 1.25rem;">
+                    <!-- Left Column: Strategy Configuration Controls -->
+                    <div class="col-left">
+                        <div class="glass-card" style="display: flex; flex-direction: column; gap: 1.2rem;">
+                            <h3 class="section-title">⚙️ Strategy Configuration</h3>
+
+                            <!-- Strategy Template Selection -->
+                            <div class="form-group">
+                                <label for="st-template-select" style="font-size: 0.85rem; font-weight: 600; color: #D1D5DB;">Strategy Template Rule:</label>
+                                <select id="st-template-select" style="width: 100%; padding: 0.6rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #FFF; font-size: 0.88rem; margin-top: 0.35rem;">
+                                    <option value="rsi_threshold">1. RSI Threshold (RSI &lt; Buy Threshold)</option>
+                                    <option value="sma_crossover">2. SMA Crossover (Fast SMA &gt; Slow SMA)</option>
+                                    <option value="price_vs_sma">3. Price vs SMA (Close &gt; SMA)</option>
+                                    <option value="volume_breakout">4. Volume Breakout (Vol &gt; Mult x 20D SMA Vol &amp; Close &gt; Open)</option>
+                                </select>
+                            </div>
+
+                            <!-- Dynamic Parameter Input Fields -->
+                            <div id="st-params-container" class="grid-2col" style="gap: 0.75rem; margin: 0;">
+                                <!-- Rendered dynamically by JavaScript -->
+                            </div>
+
+                            <!-- Asset Selection -->
+                            <div class="form-group">
+                                <label for="st-asset-select" style="font-size: 0.85rem; font-weight: 600; color: #D1D5DB;">Asset Universe Selection:</label>
+                                <select id="st-asset-select" style="width: 100%; padding: 0.6rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #FFF; font-size: 0.88rem; margin-top: 0.35rem;">
+                                    <option value="tcs_ns">TCS (Tata Consultancy Services)</option>
+                                    <option value="infy_ns">INFY (Infosys Ltd)</option>
+                                    <option value="reliance_ns">RELIANCE (Reliance Industries)</option>
+                                    <option value="icicibank_ns">ICICIBANK (ICICI Bank Ltd)</option>
+                                    <option value="hdfcbank_ns">HDFCBANK (HDFC Bank Ltd)</option>
+                                    <option value="all_pooled">ALL 5 EQUITIES POOLED</option>
+                                </select>
+                            </div>
+
+                            <!-- Fixed Exit Horizon -->
+                            <div class="form-group">
+                                <label for="st-exit-days-input" style="font-size: 0.85rem; font-weight: 600; color: #D1D5DB;">Fixed Holding Period Exit (1 - 30 Trading Days):</label>
+                                <div style="display: flex; align-items: center; gap: 0.75rem; margin-top: 0.35rem;">
+                                    <input type="number" id="st-exit-days-input" value="10" min="1" max="30" style="width: 80px; padding: 0.5rem; background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-color); border-radius: 6px; color: #FFF; text-align: center;">
+                                    <span style="font-size: 0.82rem; color: #9CA3AF;">Trading Days</span>
+                                </div>
+                            </div>
+
+                            <!-- Run Test Action Button -->
+                            <button class="btn btn-buy" id="btn-run-strategy-test" style="margin-top: 0.5rem; padding: 0.75rem; font-size: 0.95rem; font-weight: 700; width: 100%;">
+                                ▶ RUN STRATEGY TEST
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Results Panel -->
+                    <div class="col-right">
+                        <div class="glass-card" id="st-results-panel" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <h3 class="section-title">📊 Honest Benchmark & Cost Comparison</h3>
+
+                            <!-- Honest Verdict Sentence Banner -->
+                            <div id="st-verdict-banner" style="padding: 0.85rem 1rem; border-radius: 8px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); color: #A5B4FC; font-weight: 700; font-size: 0.92rem;">
+                                Select parameters and click "Run Strategy Test" to compare against Buy-and-Hold.
+                            </div>
+
+                            <!-- Comparison Table -->
+                            <div style="overflow-x: auto;">
+                                <table class="portfolio-table" style="width: 100%; border-collapse: collapse;">
+                                    <thead>
+                                        <tr style="border-bottom: 1px solid var(--border-color); text-align: left; font-size: 0.82rem; color: var(--text-muted);">
+                                            <th style="padding: 0.6rem;">METRIC</th>
+                                            <th style="padding: 0.6rem; color: #38BDF8;">YOUR STRATEGY</th>
+                                            <th style="padding: 0.6rem; color: #F59E0B;">BUY & HOLD BENCHMARK</th>
+                                            <th style="padding: 0.6rem;">DIFFERENCE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="st-results-tbody" style="font-size: 0.88rem;">
+                                        <tr><td colspan="4" style="padding: 1.5rem; text-align: center; color: #9CA3AF;">No test executed yet.</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div style="font-size: 0.76rem; color: #9CA3AF; line-height: 1.4; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 0.75rem;">
+                                🛡️ <strong>Methodology Note:</strong> All strategy trades incorporate exact 2026 NSE delivery-equity transaction costs (STT 0.1% buy/sell, Stamp Duty 0.015% buy, Exchange/SEBI fees + GST, flat DP ₹15.93 sell fee).
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </main>
     </div>
 
-    <script src="app.js?v=20260814_03"></script>
+    <script src="app.js?v=20260814_04"></script>
 </body>
 </html>
