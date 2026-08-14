@@ -254,22 +254,27 @@ def _get_backtest_research_summaries() -> Dict[str, Any]:
 
 
 def start_server(host: str = "0.0.0.0", port: int = 8080) -> ThreadingHTTPServer:
-    """Launch production ThreadingHTTPServer immediately and pre-warm models asynchronously."""
+    """Launch production ThreadingHTTPServer immediately and pre-warm models."""
     import threading
+
+    logger.info("Initializing Production Trading Engine models on startup...")
+    global ENGINE
+    ENGINE = ProductionTradingEngine()
+    logger.info("Trading Engine models ready.")
+
     server_address = (host, port)
     httpd = ThreadingHTTPServer(server_address, AlphaForgeRequestHandler)
 
     def _async_prewarm():
         try:
             from src.data.downloader import refresh_all_datasets
-            logger.info("Checking and refreshing raw OHLCV datasets on server startup...")
+            logger.info("Checking and refreshing raw OHLCV datasets in background...")
             refresh_all_datasets()
+            global ENGINE
+            ENGINE = ProductionTradingEngine()
+            logger.info("Trading Engine models refreshed with latest market data.")
         except Exception as err:
-            logger.warning("Auto dataset refresh skipped / failed (using existing local parquets): %s", str(err))
-
-        logger.info("Pre-warming Trading Engine models in background...")
-        get_engine()
-        logger.info("Trading Engine models ready.")
+            logger.warning("Background dataset refresh skipped / failed (using existing local parquets): %s", str(err))
 
     threading.Thread(target=_async_prewarm, daemon=True).start()
     logger.info("AlphaForge Server running at http://127.0.0.1:%d", port)
