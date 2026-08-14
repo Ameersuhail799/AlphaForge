@@ -340,14 +340,19 @@ function renderLightweightChart(data) {
     let rawSma20 = data.sma20 ? data.sma20.slice(startIdx) : [];
     let rawSma50 = data.sma50 ? data.sma50.slice(startIdx) : [];
 
-    // Forming live price bar
+    // Forming live price bar (only push if today date is strictly greater than latest historical close)
     let isLiveActive = false;
     if (data.live_price_info && data.live_price_info.current_price) {
         const liveP = data.live_price_info.current_price;
         const prevC = data.live_price_info.previous_close || rawClose[rawClose.length - 1];
-        const todayStr = new Date().toISOString().split('T')[0];
+        const now = new Date();
+        const y = now.getFullYear();
+        const m = String(now.getMonth() + 1).padStart(2, '0');
+        const d = String(now.getDate()).padStart(2, '0');
+        const todayStr = `${y}-${m}-${d}`;
 
-        if (rawDates[rawDates.length - 1] !== todayStr) {
+        const lastHistoricalDate = rawDates[rawDates.length - 1];
+        if (lastHistoricalDate && todayStr > lastHistoricalDate) {
             rawDates.push(todayStr);
             rawOpen.push(prevC);
             rawHigh.push(Math.max(liveP, prevC));
@@ -513,7 +518,7 @@ function renderPlainChartJSFallback(data) {
     console.log("[renderPlainChartJSFallback] Executing plain Chart.js fallback...");
     const container = document.getElementById("lightweight-chart-container");
     if (container) {
-        container.innerHTML = `<canvas id="market-chart-canvas"></canvas>`;
+        container.innerHTML = `<div style="position:relative; width:100%; height:380px;"><canvas id="market-chart-canvas"></canvas></div>`;
     }
 
     const canvasEl = document.getElementById("market-chart-canvas");
