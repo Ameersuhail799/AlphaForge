@@ -240,11 +240,11 @@ function renderInteractiveChart(data) {
     const startIdx = Math.max(0, totalBars - barCount);
 
     let labels = data.dates.slice(startIdx);
-    let openPrices = data.open ? data.open.slice(startIdx) : data.close.slice(startIdx);
-    let highPrices = data.high ? data.high.slice(startIdx) : data.close.slice(startIdx);
-    let lowPrices = data.low ? data.low.slice(startIdx) : data.close.slice(startIdx);
+    let openPrices = (data.open && data.open.length === totalBars ? data.open : data.close).slice(startIdx);
+    let highPrices = (data.high && data.high.length === totalBars ? data.high : data.close).slice(startIdx);
+    let lowPrices = (data.low && data.low.length === totalBars ? data.low : data.close).slice(startIdx);
     let closePrices = data.close.slice(startIdx);
-    let volumes = data.volume ? data.volume.slice(startIdx) : labels.map(() => 1000);
+    let volumes = (data.volume && data.volume.length === totalBars ? data.volume : labels.map(() => 1000)).slice(startIdx);
     let sma20Data = data.sma20 ? data.sma20.slice(startIdx) : [];
     let sma50Data = data.sma50 ? data.sma50.slice(startIdx) : [];
 
@@ -281,7 +281,9 @@ function renderInteractiveChart(data) {
     const lastIdx = closePrices.length - 1;
     updateOHLCHeader(labels[lastIdx], openPrices[lastIdx], highPrices[lastIdx], lowPrices[lastIdx], closePrices[lastIdx], volumes[lastIdx]);
 
-    const ctx = document.getElementById("market-chart-canvas").getContext("2d");
+    const canvasEl = document.getElementById("market-chart-canvas");
+    if (!canvasEl) return;
+    const ctx = canvasEl.getContext("2d");
     if (marketChart) marketChart.destroy();
 
     const isBullish = tfReturnPct >= 0;
@@ -342,8 +344,8 @@ function renderInteractiveChart(data) {
         const candleColors = closePrices.map((c, i) => (c >= openPrices[i] ? '#10B981' : '#EF4444'));
         datasets.push({
             type: 'bar',
-            label: 'Candle Body (Open-Close)',
-            data: closePrices.map((c, i) => [openPrices[i], c]),
+            label: 'Candle Body',
+            data: closePrices.map((c, i) => [Math.min(openPrices[i], c), Math.max(openPrices[i], c)]),
             backgroundColor: candleColors,
             borderColor: candleColors,
             borderWidth: 1,
