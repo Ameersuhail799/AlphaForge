@@ -198,6 +198,54 @@ function refreshCurrentAssetView(symbol) {
     loadChartData(symbol);
     loadSignalData(symbol);
     loadLivePrice(symbol);
+    loadHistoricalContext(symbol);
+}
+
+async function loadHistoricalContext(symbol) {
+    try {
+        const res = await fetch(`/api/historical-context?symbol=${symbol}`);
+        const data = await res.json();
+
+        const regimeDescEl = document.getElementById("hc-regime-desc");
+        const occTextEl = document.getElementById("hc-occurrences-text");
+        const insufficientBox = document.getElementById("hc-insufficient-sample-box");
+        const distContainer = document.getElementById("hc-distribution-container");
+
+        if (regimeDescEl) regimeDescEl.innerText = data.regime_description || "Unknown Market Regime";
+        if (occTextEl) occTextEl.innerText = data.message || "";
+
+        if (data.insufficient_sample) {
+            if (insufficientBox) {
+                insufficientBox.innerText = `⚠️ Not enough similar days in history (N=${data.sample_count}) to draw a pattern.`;
+                insufficientBox.style.display = "block";
+            }
+            if (distContainer) distContainer.style.display = "none";
+        } else {
+            if (insufficientBox) insufficientBox.style.display = "none";
+            if (distContainer) distContainer.style.display = "flex";
+
+            const m = data.metrics;
+            const posBadge = document.getElementById("hc-pos-pct-badge");
+            const minEl = document.getElementById("hc-stat-min");
+            const p25El = document.getElementById("hc-stat-p25");
+            const medEl = document.getElementById("hc-stat-median");
+            const p75El = document.getElementById("hc-stat-p75");
+            const maxEl = document.getElementById("hc-stat-max");
+
+            if (posBadge) {
+                posBadge.innerText = `+${m.pct_positive.toFixed(2)}% Positive`;
+                posBadge.style.color = m.pct_positive >= 50 ? "#34D399" : "#F87171";
+            }
+
+            if (minEl) minEl.innerText = `${m.min_ret_pct >= 0 ? '+' : ''}${m.min_ret_pct.toFixed(2)}%`;
+            if (p25El) p25El.innerText = `${m.p25_ret_pct >= 0 ? '+' : ''}${m.p25_ret_pct.toFixed(2)}%`;
+            if (medEl) medEl.innerText = `${m.median_ret_pct >= 0 ? '+' : ''}${m.median_ret_pct.toFixed(2)}%`;
+            if (p75El) p75El.innerText = `${m.p75_ret_pct >= 0 ? '+' : ''}${m.p75_ret_pct.toFixed(2)}%`;
+            if (maxEl) maxEl.innerText = `${m.max_ret_pct >= 0 ? '+' : ''}${m.max_ret_pct.toFixed(2)}%`;
+        }
+    } catch (err) {
+        console.error("Failed to load historical context:", err);
+    }
 }
 
 async function loadLivePrice(symbol) {

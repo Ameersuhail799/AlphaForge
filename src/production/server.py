@@ -152,6 +152,12 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                 m_data = engine.get_asset_market_data(symbol, limit=150)
                 m_data["live_price_info"] = engine.get_live_price_data(symbol)
                 self._send_json(m_data)
+            elif path == "/api/historical-context":
+                from src.research.historical_context import compute_historical_context
+                engine = get_engine()
+                symbol = query.get("symbol", [engine.assets[0]])[0]
+                h_ctx = compute_historical_context(symbol)
+                self._send_json(h_ctx)
             else:
                 # Serve Static Web UI Files
                 target_path = STATIC_DIR / ("index.html" if path == "/" or path == "" else path.lstrip("/"))
