@@ -1,8 +1,10 @@
 /* AlphaForge Dashboard Application Logic & REST Integration */
 
-let currentAsset = "tcs_ns";
-let marketChart = null;
-let livePollInterval = null;
+let currentChartType = "area"; // "area" | "candlestick"
+let currentChartTF = "3M";     // "1M" | "3M" | "6M" | "1Y" | "ALL"
+let showSMAOverlay = true;
+let showVolOverlay = true;
+let currentRawMarketData = null;
 
 document.addEventListener("DOMContentLoaded", () => {
     initApp();
@@ -11,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function initApp() {
     setupTabNavigation();
     setupEventListeners();
+    setupChartControlListeners();
     await loadSupportedAssets();
     await refreshCurrentAssetView(currentAsset);
     await refreshPortfolioView();
@@ -20,6 +23,60 @@ async function initApp() {
     livePollInterval = setInterval(() => {
         loadLivePrice(currentAsset);
     }, 60000);
+}
+
+function setupChartControlListeners() {
+    const typePills = document.querySelectorAll("#chart-type-pills .pill-btn");
+    typePills.forEach(btn => {
+        btn.addEventListener("click", () => {
+            typePills.forEach(b => {
+                b.classList.remove("active");
+                b.style.background = "transparent";
+                b.style.color = "#9CA3AF";
+            });
+            btn.classList.add("active");
+            btn.style.background = "#6366F1";
+            btn.style.color = "#FFF";
+            currentChartType = btn.getAttribute("data-chart-type");
+            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
+        });
+    });
+
+    const tfPills = document.querySelectorAll("#chart-tf-pills .pill-btn");
+    tfPills.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tfPills.forEach(b => {
+                b.classList.remove("active");
+                b.style.background = "transparent";
+                b.style.color = "#9CA3AF";
+            });
+            btn.classList.add("active");
+            btn.style.background = "#6366F1";
+            btn.style.color = "#FFF";
+            currentChartTF = btn.getAttribute("data-tf");
+            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
+        });
+    });
+
+    const smaBtn = document.getElementById("btn-toggle-sma");
+    if (smaBtn) {
+        smaBtn.addEventListener("click", () => {
+            showSMAOverlay = !showSMAOverlay;
+            smaBtn.style.background = showSMAOverlay ? "#6366F1" : "transparent";
+            smaBtn.style.color = showSMAOverlay ? "#FFF" : "#9CA3AF";
+            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
+        });
+    }
+
+    const volBtn = document.getElementById("btn-toggle-vol");
+    if (volBtn) {
+        volBtn.addEventListener("click", () => {
+            showVolOverlay = !showVolOverlay;
+            volBtn.style.background = showVolOverlay ? "#6366F1" : "transparent";
+            volBtn.style.color = showVolOverlay ? "#FFF" : "#9CA3AF";
+            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
+        });
+    }
 }
 
 function setupTabNavigation() {
@@ -163,76 +220,256 @@ async function loadChartData(symbol) {
     try {
         const res = await fetch(`/api/market-data?symbol=${symbol}`);
         const data = await res.json();
-
-        let labels = [...data.dates];
-        let prices = [...data.close];
-        let pointRadii = labels.map(() => 0);
-        let pointColors = labels.map(() => '#06B6D4');
-
-        if (data.live_price_info && data.live_price_info.current_price) {
-            labels.push("LIVE (Forming)");
-            prices.push(data.live_price_info.current_price);
-            pointRadii.push(6);
-            pointColors.push(data.live_price_info.is_market_open ? '#F59E0B' : '#64748B');
-        }
-
-        const ctx = document.getElementById("market-chart-canvas").getContext("2d");
-        if (marketChart) marketChart.destroy();
-
-        marketChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Price Series (₹)',
-                        data: prices,
-                        borderColor: '#06B6D4',
-                        borderWidth: 2,
-                        tension: 0.1,
-                        pointRadius: pointRadii,
-                        pointBackgroundColor: pointColors,
-                        pointBorderColor: '#FFFFFF',
-                        pointBorderWidth: 1.5,
-                    },
-                    {
-                        label: 'SMA 20',
-                        data: data.sma20,
-                        borderColor: '#6366F1',
-                        borderWidth: 1.5,
-                        borderDash: [4, 4],
-                        pointRadius: 0
-                    },
-                    {
-                        label: 'SMA 50',
-                        data: data.sma50,
-                        borderColor: '#F59E0B',
-                        borderWidth: 1.5,
-                        borderDash: [2, 2],
-                        pointRadius: 0
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    x: {
-                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                        ticks: { color: '#9CA3AF', maxTicksLimit: 10 }
-                    },
-                    y: {
-                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                        ticks: { color: '#9CA3AF' }
-                    }
-                }
-            }
-        });
+        renderInteractiveChart(data);
     } catch (err) {
         console.error("Failed to load chart data:", err);
+    }
+}
+
+function renderInteractiveChart(data) {
+    currentRawMarketData = data;
+    const totalBars = data.dates.length;
+    let barCount = totalBars;
+
+    if (currentChartTF === "1M") barCount = 22;
+    else if (currentChartTF === "3M") barCount = 66;
+    else if (currentChartTF === "6M") barCount = 132;
+    else if (currentChartTF === "1Y") barCount = 252;
+    else if (currentChartTF === "ALL") barCount = totalBars;
+
+    const startIdx = Math.max(0, totalBars - barCount);
+
+    let labels = data.dates.slice(startIdx);
+    let openPrices = data.open ? data.open.slice(startIdx) : data.close.slice(startIdx);
+    let highPrices = data.high ? data.high.slice(startIdx) : data.close.slice(startIdx);
+    let lowPrices = data.low ? data.low.slice(startIdx) : data.close.slice(startIdx);
+    let closePrices = data.close.slice(startIdx);
+    let volumes = data.volume ? data.volume.slice(startIdx) : labels.map(() => 1000);
+    let sma20Data = data.sma20 ? data.sma20.slice(startIdx) : [];
+    let sma50Data = data.sma50 ? data.sma50.slice(startIdx) : [];
+
+    let isLiveActive = false;
+    if (data.live_price_info && data.live_price_info.current_price) {
+        const liveP = data.live_price_info.current_price;
+        const prevC = data.live_price_info.previous_close || closePrices[closePrices.length - 1];
+        labels.push("LIVE (Forming)");
+        openPrices.push(prevC);
+        highPrices.push(Math.max(liveP, prevC));
+        lowPrices.push(Math.min(liveP, prevC));
+        closePrices.push(liveP);
+        volumes.push(volumes.length > 0 ? volumes[volumes.length - 1] : 1000);
+        if (sma20Data.length > 0) sma20Data.push(sma20Data[sma20Data.length - 1]);
+        if (sma50Data.length > 0) sma50Data.push(sma50Data[sma50Data.length - 1]);
+        isLiveActive = true;
+    }
+
+    const firstClose = closePrices[0] || 1.0;
+    const latestClose = closePrices[closePrices.length - 1] || 1.0;
+    const tfReturnPct = ((latestClose - firstClose) / firstClose) * 100.0;
+    const tfSign = tfReturnPct >= 0 ? "+" : "";
+
+    const nameEl = document.getElementById("chart-asset-display-name");
+    if (nameEl) nameEl.innerText = `${data.display_name} Chart`;
+
+    const badgeEl = document.getElementById("chart-tf-return-badge");
+    if (badgeEl) {
+        badgeEl.innerText = `${tfSign}${tfReturnPct.toFixed(2)}% (${currentChartTF})`;
+        badgeEl.style.color = tfReturnPct >= 0 ? "#10B981" : "#EF4444";
+        badgeEl.style.backgroundColor = tfReturnPct >= 0 ? "rgba(16, 185, 129, 0.15)" : "rgba(239, 68, 68, 0.15)";
+    }
+
+    const lastIdx = closePrices.length - 1;
+    updateOHLCHeader(labels[lastIdx], openPrices[lastIdx], highPrices[lastIdx], lowPrices[lastIdx], closePrices[lastIdx], volumes[lastIdx]);
+
+    const ctx = document.getElementById("market-chart-canvas").getContext("2d");
+    if (marketChart) marketChart.destroy();
+
+    const isBullish = tfReturnPct >= 0;
+    const primaryColor = isBullish ? "#10B981" : "#EF4444";
+
+    const gradient = ctx.createLinearGradient(0, 0, 0, 320);
+    if (isBullish) {
+        gradient.addColorStop(0, "rgba(16, 185, 129, 0.35)");
+        gradient.addColorStop(0.7, "rgba(16, 185, 129, 0.05)");
+        gradient.addColorStop(1, "rgba(16, 185, 129, 0.0)");
+    } else {
+        gradient.addColorStop(0, "rgba(239, 68, 68, 0.35)");
+        gradient.addColorStop(0.7, "rgba(239, 68, 68, 0.05)");
+        gradient.addColorStop(1, "rgba(239, 68, 68, 0.0)");
+    }
+
+    const volBarColors = closePrices.map((c, i) => {
+        const o = openPrices[i] || c;
+        return c >= o ? "rgba(16, 185, 129, 0.45)" : "rgba(239, 68, 68, 0.45)";
+    });
+
+    const datasets = [];
+
+    if (showVolOverlay) {
+        datasets.push({
+            type: 'bar',
+            label: 'Volume',
+            data: volumes,
+            backgroundColor: volBarColors,
+            borderColor: 'transparent',
+            borderWidth: 0,
+            yAxisID: 'yVolume',
+            order: 3,
+        });
+    }
+
+    if (currentChartType === "area") {
+        const pointRadii = labels.map((l, i) => (i === labels.length - 1 && isLiveActive ? 6 : 0));
+        const pointColors = labels.map((l, i) => (i === labels.length - 1 && isLiveActive ? '#F59E0B' : primaryColor));
+
+        datasets.push({
+            type: 'line',
+            label: 'Close Price (₹)',
+            data: closePrices,
+            borderColor: primaryColor,
+            borderWidth: 2.2,
+            backgroundColor: gradient,
+            fill: true,
+            tension: 0.15,
+            pointRadius: pointRadii,
+            pointBackgroundColor: pointColors,
+            pointBorderColor: '#FFFFFF',
+            pointBorderWidth: 1.5,
+            yAxisID: 'yPrice',
+            order: 1,
+        });
+    } else {
+        const candleColors = closePrices.map((c, i) => (c >= openPrices[i] ? '#10B981' : '#EF4444'));
+        datasets.push({
+            type: 'bar',
+            label: 'Candle Body (Open-Close)',
+            data: closePrices.map((c, i) => [openPrices[i], c]),
+            backgroundColor: candleColors,
+            borderColor: candleColors,
+            borderWidth: 1,
+            barPercentage: 0.6,
+            yAxisID: 'yPrice',
+            order: 1,
+        });
+    }
+
+    if (showSMAOverlay && sma20Data.length > 0) {
+        datasets.push({
+            type: 'line',
+            label: 'SMA 20',
+            data: sma20Data,
+            borderColor: '#6366F1',
+            borderWidth: 1.5,
+            borderDash: [4, 4],
+            pointRadius: 0,
+            fill: false,
+            yAxisID: 'yPrice',
+            order: 2,
+        });
+    }
+
+    if (showSMAOverlay && sma50Data.length > 0) {
+        datasets.push({
+            type: 'line',
+            label: 'SMA 50',
+            data: sma50Data,
+            borderColor: '#F59E0B',
+            borderWidth: 1.5,
+            borderDash: [2, 2],
+            pointRadius: 0,
+            fill: false,
+            yAxisID: 'yPrice',
+            order: 2,
+        });
+    }
+
+    const maxVol = Math.max(...volumes, 1.0);
+
+    marketChart = new Chart(ctx, {
+        data: {
+            labels: labels,
+            datasets: datasets,
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
+            onHover: (event, elements) => {
+                if (elements && elements.length > 0) {
+                    const idx = elements[0].index;
+                    updateOHLCHeader(labels[idx], openPrices[idx], highPrices[idx], lowPrices[idx], closePrices[idx], volumes[idx]);
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    enabled: true,
+                    mode: 'index',
+                    intersect: false,
+                    backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                    titleColor: '#F3F4F6',
+                    bodyColor: '#D1D5DB',
+                    borderColor: 'rgba(255, 255, 255, 0.1)',
+                    borderWidth: 1,
+                    padding: 10,
+                    callbacks: {
+                        label: (ctxItem) => {
+                            const val = ctxItem.raw;
+                            if (ctxItem.dataset.label === 'Volume') {
+                                return `Volume: ${val >= 1e6 ? (val/1e6).toFixed(2)+'M' : (val/1e3).toFixed(1)+'K'}`;
+                            }
+                            if (Array.isArray(val)) {
+                                return `Candle Body: ₹${val[0].toFixed(2)} - ₹${val[1].toFixed(2)}`;
+                            }
+                            return `${ctxItem.dataset.label}: ₹${typeof val === 'number' ? val.toFixed(2) : val}`;
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                    ticks: { color: '#9CA3AF', maxTicksLimit: 12, font: { size: 10 } }
+                },
+                yPrice: {
+                    type: 'linear',
+                    position: 'right',
+                    grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                    ticks: {
+                        color: '#9CA3AF',
+                        font: { size: 10 },
+                        callback: (v) => `₹${v.toLocaleString('en-IN')}`
+                    }
+                },
+                yVolume: {
+                    type: 'linear',
+                    position: 'left',
+                    display: false,
+                    max: maxVol * 4,
+                }
+            }
+        }
+    });
+}
+
+function updateOHLCHeader(dateStr, o, h, l, c, v) {
+    const dEl = document.getElementById("ohlc-date");
+    const oEl = document.getElementById("ohlc-open");
+    const hEl = document.getElementById("ohlc-high");
+    const lEl = document.getElementById("ohlc-low");
+    const cEl = document.getElementById("ohlc-close");
+    const vEl = document.getElementById("ohlc-vol");
+
+    if (dEl) dEl.innerText = dateStr || "-";
+    if (oEl) oEl.innerText = o ? `₹${o.toFixed(2)}` : "-";
+    if (hEl) hEl.innerText = h ? `₹${h.toFixed(2)}` : "-";
+    if (lEl) lEl.innerText = l ? `₹${l.toFixed(2)}` : "-";
+    if (cEl) cEl.innerText = c ? `₹${c.toFixed(2)}` : "-";
+    if (vEl) {
+        vEl.innerText = v ? (v >= 1e6 ? `${(v/1e6).toFixed(2)}M` : `${(v/1e3).toFixed(1)}K`) : "-";
     }
 }
 
