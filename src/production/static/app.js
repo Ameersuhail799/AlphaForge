@@ -299,9 +299,20 @@ function renderChartWithFailsafe(data) {
     }
 }
 
+function createTVSeries(chart, seriesType, options) {
+    if (typeof chart.addSeries === "function" && LightweightCharts[seriesType]) {
+        return chart.addSeries(LightweightCharts[seriesType], options);
+    }
+    const methodName = "add" + seriesType;
+    if (typeof chart[methodName] === "function") {
+        return chart[methodName](options);
+    }
+    throw new Error(`Neither addSeries nor ${methodName} is supported.`);
+}
+
 function renderLightweightChart(data) {
     if (typeof LightweightCharts === "undefined") {
-        throw new Error("TradingView LightweightCharts library is not loaded from CDN.");
+        throw new Error("TradingView LightweightCharts library is not loaded.");
     }
 
     const container = document.getElementById("lightweight-chart-container");
@@ -403,7 +414,7 @@ function renderLightweightChart(data) {
     const mainColor = isUp ? "#10B981" : "#EF4444";
 
     if (currentChartType === "area") {
-        const areaSeries = tvChartInstance.addAreaSeries({
+        const areaSeries = createTVSeries(tvChartInstance, "AreaSeries", {
             topColor: isUp ? 'rgba(16, 185, 129, 0.4)' : 'rgba(239, 68, 68, 0.4)',
             bottomColor: isUp ? 'rgba(16, 185, 129, 0.0)' : 'rgba(239, 68, 68, 0.0)',
             lineColor: mainColor,
@@ -412,7 +423,7 @@ function renderLightweightChart(data) {
         const areaData = rawDates.map((t, i) => ({ time: t, value: rawClose[i] }));
         areaSeries.setData(areaData);
     } else {
-        const candleSeries = tvChartInstance.addCandlestickSeries({
+        const candleSeries = createTVSeries(tvChartInstance, "CandlestickSeries", {
             upColor: '#10B981',
             downColor: '#EF4444',
             borderVisible: false,
@@ -430,7 +441,7 @@ function renderLightweightChart(data) {
     }
 
     // Muted Volume Histogram
-    const volSeries = tvChartInstance.addHistogramSeries({
+    const volSeries = createTVSeries(tvChartInstance, "HistogramSeries", {
         priceFormat: { type: 'volume' },
         priceScaleId: '',
         scaleMargins: { top: 0.8, bottom: 0 },
@@ -448,19 +459,19 @@ function renderLightweightChart(data) {
 
     // SMA Overlays
     if (showSMAOverlay && rawSma20.length > 0) {
-        const sma20Series = tvChartInstance.addLineSeries({
+        const sma20Series = createTVSeries(tvChartInstance, "LineSeries", {
             color: '#6366F1',
             lineWidth: 1,
-            lineStyle: LightweightCharts.LineStyle.Dashed,
+            lineStyle: 2,
         });
         sma20Series.setData(rawDates.map((t, i) => ({ time: t, value: rawSma20[i] })));
     }
 
     if (showSMAOverlay && rawSma50.length > 0) {
-        const sma50Series = tvChartInstance.addLineSeries({
+        const sma50Series = createTVSeries(tvChartInstance, "LineSeries", {
             color: '#F59E0B',
             lineWidth: 1,
-            lineStyle: LightweightCharts.LineStyle.Dotted,
+            lineStyle: 3,
         });
         sma50Series.setData(rawDates.map((t, i) => ({ time: t, value: rawSma50[i] })));
     }
