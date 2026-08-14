@@ -54,7 +54,6 @@ def generate_template_signals(
         period = int(params.get("period", 14))
         buy_threshold = float(params.get("buy_threshold", 30))
         rsi = compute_rsi(close, period=period)
-        # Buy when RSI is below threshold
         signals = (rsi < buy_threshold).astype(int)
 
     elif template == "sma_crossover":
@@ -62,21 +61,18 @@ def generate_template_signals(
         slow = int(params.get("slow", 50))
         sma_fast = close.rolling(window=fast, min_periods=fast).mean()
         sma_slow = close.rolling(window=slow, min_periods=slow).mean()
-        # Buy when fast SMA > slow SMA and fast SMA[t-1] <= slow SMA[t-1] (bullish crossover)
         crossover = (sma_fast > sma_slow) & (sma_fast.shift(1) <= sma_slow.shift(1))
         signals = crossover.astype(int)
 
     elif template == "price_vs_sma":
         period = int(params.get("period", 50))
         sma = close.rolling(window=period, min_periods=period).mean()
-        # Buy when Close crosses above SMA
         cross_above = (close > sma) & (close.shift(1) <= sma.shift(1))
         signals = cross_above.astype(int)
 
     elif template == "volume_breakout":
         multiplier = float(params.get("multiplier", 2.0))
         vol_sma20 = volume.rolling(window=20, min_periods=20).mean()
-        # Buy when volume > multiplier * 20-day SMA volume AND day closes up
         breakout = (volume > multiplier * vol_sma20) & (close > open_p)
         signals = breakout.astype(int)
 
@@ -92,6 +88,7 @@ def run_strategy_backtest(
     params: Optional[Dict[str, Any]] = None,
     exit_days: int = 10,
     initial_cap: float = 100000.0,
+    include_breakdown: bool = True,
 ) -> Dict[str, Any]:
     """Simulate user strategy vs Buy-and-Hold benchmark with realistic 2026 NSE delivery costs.
 
@@ -101,6 +98,7 @@ def run_strategy_backtest(
     - params: Dictionary of parameter values for the selected template.
     - exit_days: User-adjustable exit horizon (1 to 30 trading days).
     - initial_cap: Starting capital (INR 1,00,000).
+    - include_breakdown: Whether to compute per-asset breakdown when asset_selection is 'all_pooled'.
     """
     if params is None:
         params = {}
@@ -222,7 +220,14 @@ def run_strategy_backtest(
                 eq += units_dict[a] * curr_p
             equity_curve.append(eq)
 
-        return _compute_metrics(equity_curve, [], initial_cap, len(common_dates))
+        return _compute_metrics(
+            equity_curve,
+            [],
+            initial_cap,
+            len(common_dates),
+            is_buy_and_hold=True,
+            n_assets=n_assets,
+        )
 
     strat_metrics, strat_eq = _simulate_strategy()
     bh_metrics = _simulate_buy_and_hold()
@@ -238,7 +243,7 @@ def run_strategy_backtest(
 
     asset_display_name = "All 5 Equities Pooled" if asset_selection == "all_pooled" else asset_selection.replace("_ns", "").upper()
 
-    return {
+    response: Dict[str, Any] = {
         "asset_selection": asset_selection,
         "asset_display_name": asset_display_name,
         "template": template,
@@ -255,12 +260,49 @@ def run_strategy_backtest(
         "benchmark_metrics": bh_metrics,
     }
 
+    # FIX 1: Per-Asset Breakdown for All Pooled View
+    if asset_selection == "all_pooled" and include_breakdown:
+        per_asset_breakdown = []
+        for a in ASSET_UNIVERSE:
+            single_res = run_strategy_backtest(
+                asset_selection=a,
+                template=template,
+                params=params,
+                exit_days=exit_days,
+                initial_cap=initial_cap,
+                include_breakdown=False,
+            )
+            s_m = single_res["strategy_metrics"]
+            b_m = single_res["benchmark_metrics"]
+            diff = round(s_m["cagr_pct"] - b_m["cagr_pct"], 2)
+            beat_single = (diff > 0.5)
+            sign = "+" if diff >= 0 else ""
+
+            per_asset_breakdown.append({
+                "asset": a,
+                "asset_display_name": a.replace("_ns", "").upper(),
+                "strategy_cagr_pct": s_m["cagr_pct"],
+                "bh_cagr_pct": b_m["cagr_pct"],
+                "cagr_diff": diff,
+                "beat_bh": beat_single,
+                "strategy_sharpe": s_m["sharpe"],
+                "bh_sharpe": b_m["sharpe"],
+                "total_trades": s_m["total_trades"],
+                "win_rate_pct": s_m["win_rate_pct"],
+                "verdict": f"YES ({sign}{diff:.2f}%)" if beat_single else f"NO ({diff:.2f}%)"
+            })
+        response["per_asset_breakdown"] = per_asset_breakdown
+
+    return response
+
 
 def _compute_metrics(
     equity_curve: List[float],
     trade_ledger: List[Dict[str, Any]],
     initial_cap: float,
     n_days: int,
+    is_buy_and_hold: bool = False,
+    n_assets: int = 1,
 ) -> Dict[str, Any]:
     """Compute standard financial evaluation metrics."""
     eq_arr = np.array(equity_curve)
@@ -271,7 +313,7 @@ def _compute_metrics(
             "sharpe": 0.0,
             "sortino": 0.0,
             "max_dd_pct": 0.0,
-            "total_trades": 0,
+            "total_trades": n_assets if is_buy_and_hold else 0,
             "win_rate_pct": 0.0,
         }
 
@@ -292,8 +334,13 @@ def _compute_metrics(
     downside_std = float(np.std(downside)) if len(downside) > 0 else 1e-8
     sortino = float((mean_d / downside_std) * np.sqrt(252)) if downside_std > 1e-8 else 0.0
 
-    total_trades = len(trade_ledger)
-    win_rate = float(np.mean([1 if tr["is_win"] else 0 for tr in trade_ledger])) * 100.0 if total_trades > 0 else 0.0
+    # FIX 2: Consistency in Buy-and-Hold trade counting (1 entry per allocated asset)
+    if is_buy_and_hold:
+        total_trades = n_assets
+        win_rate = 0.0
+    else:
+        total_trades = len(trade_ledger)
+        win_rate = float(np.mean([1 if tr["is_win"] else 0 for tr in trade_ledger])) * 100.0 if total_trades > 0 else 0.0
 
     return {
         "total_return_pct": round(total_ret_pct, 2),

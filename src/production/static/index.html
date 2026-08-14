@@ -6,9 +6,9 @@
     <title>AlphaForge — AI Trading Intelligence & Paper Trading Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="chart.js?v=20260814_04"></script>
-    <script src="lightweight-charts.js?v=20260814_04"></script>
-    <link rel="stylesheet" href="app.css?v=20260814_04">
+    <script src="chart.js?v=20260814_05"></script>
+    <script src="lightweight-charts.js?v=20260814_05"></script>
+    <link rel="stylesheet" href="app.css?v=20260814_05">
 </head>
 <body>
     <!-- Top Navigation Header -->
@@ -494,6 +494,29 @@
                                 </table>
                             </div>
 
+                            <!-- Per-Asset Breakdown Container (Shown for ALL POOLED view) -->
+                            <div id="st-breakdown-container" style="display: none; margin-top: 0.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 0.85rem;">
+                                <h4 style="font-size: 0.88rem; color: #D1D5DB; margin: 0 0 0.5rem 0; display: flex; align-items: center; gap: 0.4rem;">
+                                    📈 Per-Stock Individual Performance Breakdown
+                                </h4>
+                                <div style="overflow-x: auto;">
+                                    <table class="portfolio-table" style="width: 100%; border-collapse: collapse; font-size: 0.82rem;">
+                                        <thead>
+                                            <tr style="border-bottom: 1px solid var(--border-color); text-align: left; color: var(--text-muted);">
+                                                <th style="padding: 0.4rem;">STOCK</th>
+                                                <th style="padding: 0.4rem; color: #38BDF8;">STRATEGY CAGR</th>
+                                                <th style="padding: 0.4rem; color: #F59E0B;">BUY & HOLD</th>
+                                                <th style="padding: 0.4rem;">CAGR DIFF</th>
+                                                <th style="padding: 0.4rem;">TRADES</th>
+                                                <th style="padding: 0.4rem;">WIN RATE</th>
+                                                <th style="padding: 0.4rem;">BEAT B&H?</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="st-breakdown-tbody"></tbody>
+                                    </table>
+                                </div>
+                            </div>
+
                             <div style="font-size: 0.76rem; color: #9CA3AF; line-height: 1.4; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 0.75rem;">
                                 🛡️ <strong>Methodology Note:</strong> All strategy trades incorporate exact 2026 NSE delivery-equity transaction costs (STT 0.1% buy/sell, Stamp Duty 0.015% buy, Exchange/SEBI fees + GST, flat DP ₹15.93 sell fee).
                             </div>
@@ -504,6 +527,6 @@
         </main>
     </div>
 
-    <script src="app.js?v=20260814_04"></script>
+    <script src="app.js?v=20260814_05"></script>
 </body>
 </html>

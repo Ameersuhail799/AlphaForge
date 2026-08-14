@@ -913,7 +913,7 @@ function renderStrategyTestResults(data) {
         { label: "Sharpe Ratio (Risk-Adjusted)", sVal: sm.sharpe.toFixed(2), bVal: bm.sharpe.toFixed(2), diff: sm.sharpe - bm.sharpe, unit: "" },
         { label: "Sortino Ratio (Downside-Adjusted)", sVal: sm.sortino.toFixed(2), bVal: bm.sortino.toFixed(2), diff: sm.sortino - bm.sortino, unit: "" },
         { label: "Max Drawdown (Peak-to-Trough)", sVal: `${sm.max_dd_pct.toFixed(2)}%`, bVal: `${bm.max_dd_pct.toFixed(2)}%`, diff: bm.max_dd_pct - sm.max_dd_pct, unit: "%", lowerIsBetter: true },
-        { label: "Total Trades Executed", sVal: sm.total_trades, bVal: "1 (Buy & Hold)", diff: null, unit: "" },
+        { label: "Total Trades Executed", sVal: sm.total_trades, bVal: `${bm.total_trades} (Buy & Hold)`, diff: null, unit: "" },
         { label: "Win Rate %", sVal: `${sm.win_rate_pct.toFixed(2)}%`, bVal: "N/A", diff: null, unit: "" },
     ];
 
@@ -940,4 +940,43 @@ function renderStrategyTestResults(data) {
         `;
         tbody.appendChild(tr);
     });
+
+    // Render Per-Asset Breakdown Table if available (ALL POOLED view)
+    const breakdownContainer = document.getElementById("st-breakdown-container");
+    const breakdownTbody = document.getElementById("st-breakdown-tbody");
+
+    if (breakdownContainer && breakdownTbody) {
+        if (data.per_asset_breakdown && data.per_asset_breakdown.length > 0) {
+            breakdownContainer.style.display = "block";
+            breakdownTbody.innerHTML = "";
+
+            data.per_asset_breakdown.forEach(item => {
+                const tr = document.createElement("tr");
+                tr.style.borderBottom = "1px solid rgba(255, 255, 255, 0.05)";
+
+                const diffClass = item.cagr_diff >= 0 ? "positive" : "negative";
+                const sign = item.cagr_diff >= 0 ? "+" : "";
+                const verdictBg = item.beat_bh ? "rgba(16, 185, 129, 0.2)" : "rgba(239, 68, 68, 0.2)";
+                const verdictColor = item.beat_bh ? "#34D399" : "#F87171";
+
+                tr.innerHTML = `
+                    <td style="padding: 0.45rem;"><strong>${item.asset_display_name}</strong></td>
+                    <td style="padding: 0.45rem; color: #38BDF8; font-weight: 600;">${item.strategy_cagr_pct.toFixed(2)}%</td>
+                    <td style="padding: 0.45rem; color: #F59E0B;">${item.bh_cagr_pct.toFixed(2)}%</td>
+                    <td style="padding: 0.45rem;" class="${diffClass}">${sign}${item.cagr_diff.toFixed(2)}%</td>
+                    <td style="padding: 0.45rem;">${item.total_trades}</td>
+                    <td style="padding: 0.45rem;">${item.win_rate_pct.toFixed(2)}%</td>
+                    <td style="padding: 0.45rem;">
+                        <span style="padding: 0.15rem 0.4rem; border-radius: 4px; background: ${verdictBg}; color: ${verdictColor}; font-weight: 700; font-size: 0.75rem;">
+                            ${item.verdict}
+                        </span>
+                    </td>
+                `;
+                breakdownTbody.appendChild(tr);
+            });
+        } else {
+            breakdownContainer.style.display = "none";
+            breakdownTbody.innerHTML = "";
+        }
+    }
 }
