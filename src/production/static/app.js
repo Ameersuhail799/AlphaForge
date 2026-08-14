@@ -14,15 +14,15 @@ async function initApp() {
     setupTabNavigation();
     setupEventListeners();
     setupChartControlListeners();
-    await loadSupportedAssets();
-    await refreshCurrentAssetView(currentAsset);
-    await refreshPortfolioView();
-    await loadBacktestResearchSummaries();
+    loadSupportedAssets();
+    refreshCurrentAssetView(currentAsset);
+    refreshPortfolioView();
+    loadBacktestResearchSummaries();
 
     if (livePollInterval) clearInterval(livePollInterval);
     livePollInterval = setInterval(() => {
         loadLivePrice(currentAsset);
-    }, 60000);
+    }, 30000);
 }
 
 function setupChartControlListeners() {
@@ -131,10 +131,10 @@ async function loadSupportedAssets() {
     }
 }
 
-async function refreshCurrentAssetView(symbol) {
-    await loadLivePrice(symbol);
-    await loadSignalData(symbol);
-    await loadChartData(symbol);
+function refreshCurrentAssetView(symbol) {
+    loadChartData(symbol);
+    loadSignalData(symbol);
+    loadLivePrice(symbol);
 }
 
 async function loadLivePrice(symbol) {

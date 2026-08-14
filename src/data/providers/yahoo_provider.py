@@ -44,6 +44,9 @@ def is_nse_market_open(now_dt: Optional[datetime] = None) -> bool:
     return market_open_num <= time_num <= market_close_num
 
 
+_LIVE_PRICE_CACHE: Dict[str, tuple[Dict[str, Any], float]] = {}
+
+
 class YahooProvider:
     """Yahoo Finance data provider."""
 
@@ -92,6 +95,15 @@ class YahooProvider:
 
     def get_live_price(self, symbol: str, fallback_close: float = 0.0) -> Dict[str, Any]:
         """Fetch current/latest market price for symbol during NSE market hours or return last close."""
+        import time
+
+        cache_key = symbol.lower()
+        now_ts = time.time()
+        if cache_key in _LIVE_PRICE_CACHE:
+            cached_data, cached_time = _LIVE_PRICE_CACHE[cache_key]
+            if now_ts - cached_time < 30.0:  # 30-second TTL cache
+                return cached_data
+
         ticker_sym = symbol.replace("_", ".").upper()
         if not ticker_sym.endswith(".NS"):
             ticker_sym = f"{ticker_sym}.NS"
@@ -124,7 +136,7 @@ class YahooProvider:
 
         status_text = f"Market Open ({now_ist.strftime('%H:%M IST')})" if is_open else f"Market Closed (As of {now_ist.strftime('%d %b')})"
 
-        return {
+        res_dict = {
             "symbol": symbol,
             "ticker": ticker_sym,
             "current_price": round(price, 2),
@@ -136,3 +148,5 @@ class YahooProvider:
             "timestamp_ist": now_ist.strftime("%Y-%m-%d %H:%M:%S IST"),
             "fetch_time_formatted": now_ist.strftime("%H:%M:%S IST"),
         }
+        _LIVE_PRICE_CACHE[cache_key] = (res_dict, now_ts)
+        return res_dict
