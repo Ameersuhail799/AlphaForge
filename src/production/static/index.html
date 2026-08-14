@@ -6,7 +6,7 @@
     <title>AlphaForge — AI Trading Intelligence & Paper Trading Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
     <script src="lightweight-charts.js"></script>
     <link rel="stylesheet" href="app.css">
 </head>
@@ -20,72 +20,71 @@
                 <span class="brand-subtitle">AI Trading Intelligence Platform</span>
             </div>
         </div>
-        <div class="nav-metrics">
-            <div class="metric-chip">
-                <span class="chip-label">Portfolio Equity</span>
+
+        <div class="nav-right">
+            <!-- Global Portfolio Summary Chips -->
+            <div class="nav-chip">
+                <span class="chip-label">PORTFOLIO EQUITY</span>
                 <span class="chip-value" id="nav-portfolio-equity">₹1,00,000.00</span>
             </div>
-            <div class="metric-chip">
-                <span class="chip-label">Cash Balance</span>
+            <div class="nav-chip">
+                <span class="chip-label">CASH BALANCE</span>
                 <span class="chip-value" id="nav-cash-balance">₹1,00,000.00</span>
             </div>
-            <div class="metric-chip">
-                <span class="chip-label">Total P&L</span>
+            <div class="nav-chip">
+                <span class="chip-label">TOTAL P&L</span>
                 <span class="chip-value positive" id="nav-total-pnl">+₹0.00 (0.00%)</span>
             </div>
-            <div class="metric-chip">
-                <span class="chip-label" id="nav-live-symbol-label">LIVE TICK</span>
-                <span class="chip-value" id="nav-live-price">₹3,450.00</span>
+            <div class="nav-chip">
+                <span class="chip-label" id="nav-live-symbol-label">TCS LIVE TICK</span>
+                <span class="chip-value" id="nav-live-price">₹3,450.00 (+0.00%)</span>
             </div>
-            <div class="server-status-pill research-demo" id="market-status-pill">
-                <span class="status-dot" id="market-status-dot"></span>
-                <span id="market-status-text">Market Closed</span>
+            <div class="market-status-indicator" id="market-status-text">
+                ● Market Closed
             </div>
         </div>
     </header>
 
-    <!-- Main Application Container -->
+    <!-- App Container -->
     <div class="app-layout">
         <!-- Sidebar Navigation -->
         <aside class="sidebar">
             <nav class="side-nav">
-                <button class="nav-btn active" data-tab="tab-trading">
-                    <span class="nav-icon">📊</span>
-                    <span>AI Trading Intelligence</span>
+                <button class="nav-btn active" data-tab="tab-intelligence">
+                    <span class="icon">📊</span> AI Trading Intelligence
                 </button>
                 <button class="nav-btn" data-tab="tab-paper-trading">
-                    <span class="nav-icon">💼</span>
-                    <span>Paper Portfolio</span>
+                    <span class="icon">💼</span> Paper Portfolio
                 </button>
                 <button class="nav-btn" data-tab="tab-backtests">
-                    <span class="nav-icon">🔬</span>
-                    <span>Validated Research Edge</span>
+                    <span class="icon">🔬</span> Validated Research Edge
                 </button>
                 <button class="nav-btn" data-tab="tab-risk">
-                    <span class="nav-icon">🛡️</span>
-                    <span>Risk & Capital Controls</span>
+                    <span class="icon">🛡️</span> Risk & Capital Controls
                 </button>
             </nav>
-            <div class="system-badge">
-                <div class="badge-title">Model Version</div>
-                <div class="badge-value">AlphaForge C59_VOL_VOL + RF Dual Model</div>
-                <div class="badge-sub">10-Day Horizon | 2026 NSE Delivery Costs (~0.30% RT)</div>
+
+            <div class="system-status-box">
+                <div class="status-title">MODEL VERSION</div>
+                <div class="status-value">AlphaForge C59_VOL_VOL + RF Dual Model</div>
+                <div class="status-sub">10 Day Horizon | 2026 NSE Delivery Costs (~0.30% RT)</div>
             </div>
         </aside>
 
-        <!-- Main Content View -->
+        <!-- Main Content Area -->
         <main class="main-content">
-            <!-- TAB 1: TRADING INTELLIGENCE & SIGNAL VIEW -->
-            <section id="tab-trading" class="tab-page active">
-                <!-- Main AI Trading Intelligence Honesty Banner -->
-                <div class="glass-card trading-honesty-banner" style="margin-bottom: 1.2rem; border-left: 4px solid #F59E0B; background: rgba(245, 158, 11, 0.08); padding: 1rem 1.25rem;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+            <!-- TAB 1: AI TRADING INTELLIGENCE -->
+            <section id="tab-intelligence" class="tab-page active">
+
+                <!-- Reality Check Honesty Banner (Mandatory Prompt Fix 2) -->
+                <div class="honesty-banner glass-card" style="margin-bottom: 1.25rem; border-left: 4px solid #F59E0B; background: rgba(245, 158, 11, 0.08);">
+                    <div class="banner-content" style="display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;">
                         <div>
-                            <h3 style="color: #F59E0B; margin-bottom: 0.25rem; font-size: 1.05rem; display: flex; align-items: center; gap: 0.5rem;">
-                                <span>⚠️</span> Realistic Performance Reality Check Notice
-                            </h3>
-                            <p style="color: #D1D5DB; font-size: 0.88rem; margin: 0; line-height: 1.4;">
-                                This signal strategy has been rigorously tested against Buy-and-Hold across all 5 assets under realistic 2026 NSE transaction costs and <strong>does not currently beat Buy-and-Hold on CAGR (0 of 5 stocks beat the benchmark)</strong>.
+                            <h4 style="margin: 0 0 0.25rem 0; color: #F59E0B; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.4rem;">
+                                ⚠️ Realistic Performance Reality Check Notice
+                            </h4>
+                            <p style="margin: 0; font-size: 0.85rem; color: #D1D5DB; line-height: 1.4;">
+                                This signal strategy has been rigorously tested against Buy-and-Hold across all 5 assets under realistic 2026 NSE transaction costs and <strong>does not currently beat Buy-and-Hold on CAGR</strong> (0 of 5 stocks beat the benchmark).
                             </p>
                         </div>
                         <button class="btn btn-secondary" style="background: rgba(245, 158, 11, 0.2); border: 1px solid rgba(245, 158, 11, 0.4); color: #F59E0B; padding: 0.5rem 1rem; white-space: nowrap;" onclick="switchToTab('tab-backtests')">
@@ -98,7 +97,11 @@
                 <div class="asset-selector-bar">
                     <div class="selector-label">SELECT ASSET:</div>
                     <div class="asset-tabs" id="asset-tabs-container">
-                        <!-- Rendered via JavaScript -->
+                        <button class="asset-tab-btn active" data-symbol="tcs_ns" onclick="switchAsset('tcs_ns')">TCS (₹2,356.0)</button>
+                        <button class="asset-tab-btn" data-symbol="infy_ns" onclick="switchAsset('infy_ns')">INFY (₹1,169.2)</button>
+                        <button class="asset-tab-btn" data-symbol="reliance_ns" onclick="switchAsset('reliance_ns')">RELIANCE (₹1,308.7)</button>
+                        <button class="asset-tab-btn" data-symbol="icicibank_ns" onclick="switchAsset('icicibank_ns')">ICICIBANK (₹1,412.4)</button>
+                        <button class="asset-tab-btn" data-symbol="hdfcbank_ns" onclick="switchAsset('hdfcbank_ns')">HDFCBANK (₹727.0)</button>
                     </div>
                 </div>
 

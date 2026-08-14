@@ -161,19 +161,33 @@ async function loadSupportedAssets() {
         data.assets.forEach(asset => {
             const btn = document.createElement("button");
             btn.className = `asset-tab-btn ${asset.symbol === currentAsset ? 'active' : ''}`;
+            btn.setAttribute("data-symbol", asset.symbol);
             btn.innerText = `${asset.display_name.split(' ')[0]} (₹${asset.last_price.toFixed(1)})`;
-            btn.addEventListener("click", async () => {
-                document.querySelectorAll(".asset-tab-btn").forEach(b => b.classList.remove("active"));
-                btn.classList.add("active");
-                currentAsset = asset.symbol;
-                await refreshCurrentAssetView(currentAsset);
-            });
+            btn.onclick = () => switchAsset(asset.symbol);
             container.appendChild(btn);
         });
     } catch (err) {
         console.error("Failed to load assets:", err);
     }
 }
+
+function switchAsset(symbol) {
+    currentAsset = symbol;
+    const buttons = document.querySelectorAll(".asset-tab-btn");
+    buttons.forEach(b => {
+        const btnSym = b.getAttribute("data-symbol");
+        const match = (btnSym && btnSym.toLowerCase() === symbol.toLowerCase()) || 
+                      b.innerText.toLowerCase().startsWith(symbol.split('_')[0].toLowerCase());
+        if (match) {
+            b.classList.add("active");
+        } else {
+            b.classList.remove("active");
+        }
+    });
+    refreshCurrentAssetView(symbol);
+}
+
+window.switchAsset = switchAsset;
 
 function refreshCurrentAssetView(symbol) {
     loadChartData(symbol);
