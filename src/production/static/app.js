@@ -1,8 +1,10 @@
 /* AlphaForge Dashboard Application Logic & REST Integration */
 
-let currentAsset = "tcs_ns";
-let marketChart = null;
-let livePollInterval = null;
+let tvChartInstance = null;
+let currentChartType = "area"; // "area" | "candlestick"
+let currentChartTF = "3M";     // "1D" | "1W" | "1M" | "3M" | "6M" | "1Y" | "ALL"
+let showSMAOverlay = true;
+let currentRawMarketData = null;
 
 document.addEventListener("DOMContentLoaded", () => {
     initApp();
@@ -11,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function initApp() {
     setupTabNavigation();
     setupEventListeners();
+    setupChartControlListeners();
     loadSupportedAssets();
     refreshCurrentAssetView(currentAsset);
     refreshPortfolioView();
@@ -20,6 +23,50 @@ async function initApp() {
     livePollInterval = setInterval(() => {
         loadLivePrice(currentAsset);
     }, 30000);
+}
+
+function setupChartControlListeners() {
+    const typePills = document.querySelectorAll("#chart-type-pills .pill-btn");
+    typePills.forEach(btn => {
+        btn.addEventListener("click", () => {
+            typePills.forEach(b => {
+                b.classList.remove("active");
+                b.style.background = "transparent";
+                b.style.color = "#9CA3AF";
+            });
+            btn.classList.add("active");
+            btn.style.background = "#6366F1";
+            btn.style.color = "#FFF";
+            currentChartType = btn.getAttribute("data-chart-type");
+            if (currentRawMarketData) renderChartWithFailsafe(currentRawMarketData);
+        });
+    });
+
+    const tfPills = document.querySelectorAll("#chart-tf-pills .pill-btn");
+    tfPills.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tfPills.forEach(b => {
+                b.classList.remove("active");
+                b.style.background = "transparent";
+                b.style.color = "#9CA3AF";
+            });
+            btn.classList.add("active");
+            btn.style.background = "#6366F1";
+            btn.style.color = "#FFF";
+            currentChartTF = btn.getAttribute("data-tf");
+            if (currentRawMarketData) renderChartWithFailsafe(currentRawMarketData);
+        });
+    });
+
+    const smaBtn = document.getElementById("btn-toggle-sma");
+    if (smaBtn) {
+        smaBtn.addEventListener("click", () => {
+            showSMAOverlay = !showSMAOverlay;
+            smaBtn.style.background = showSMAOverlay ? "#6366F1" : "transparent";
+            smaBtn.style.color = showSMAOverlay ? "#FFF" : "#9CA3AF";
+            if (currentRawMarketData) renderChartWithFailsafe(currentRawMarketData);
+        });
+    }
 }
 
 function setupChartControlListeners() {
@@ -221,84 +268,260 @@ async function loadChartData(symbol) {
             throw new Error(`HTTP Error ${res.status}: ${res.statusText}`);
         }
         const data = await res.json();
-        console.log(`[loadChartData] Response received. Data length: ${data.close ? data.close.length : 0} rows.`);
+        console.log(`[loadChartData] Response received. Total rows: ${data.close ? data.close.length : 0}`);
+        currentRawMarketData = data;
+        renderChartWithFailsafe(data);
+    } catch (err) {
+        console.error("[loadChartData] Critical error fetching chart data:", err);
+    }
+}
 
-        let labels = [...data.dates];
-        let prices = [...data.close];
-        let pointRadii = labels.map(() => 0);
-        let pointColors = labels.map(() => '#06B6D4');
+function renderChartWithFailsafe(data) {
+    try {
+        renderLightweightChart(data);
+    } catch (tvErr) {
+        console.warn("[renderChartWithFailsafe] LightweightCharts renderer threw an exception, executing Chart.js fallback:", tvErr);
+        renderPlainChartJSFallback(data);
+    }
+}
 
-        if (data.live_price_info && data.live_price_info.current_price) {
-            labels.push("LIVE (Forming)");
-            prices.push(data.live_price_info.current_price);
-            pointRadii.push(6);
-            pointColors.push(data.live_price_info.is_market_open ? '#F59E0B' : '#64748B');
+function renderLightweightChart(data) {
+    if (typeof LightweightCharts === "undefined") {
+        throw new Error("TradingView LightweightCharts library is not loaded from CDN.");
+    }
+
+    const container = document.getElementById("lightweight-chart-container");
+    if (!container) throw new Error("Chart container element 'lightweight-chart-container' not found.");
+
+    const totalBars = data.dates.length;
+    let barCount = totalBars;
+
+    if (currentChartTF === "1D") barCount = 1;
+    else if (currentChartTF === "1W") barCount = 5;
+    else if (currentChartTF === "1M") barCount = 22;
+    else if (currentChartTF === "3M") barCount = 66;
+    else if (currentChartTF === "6M") barCount = 132;
+    else if (currentChartTF === "1Y") barCount = 252;
+    else if (currentChartTF === "ALL") barCount = totalBars;
+
+    const startIdx = Math.max(0, totalBars - barCount);
+
+    let rawDates = data.dates.slice(startIdx);
+    let rawOpen = (data.open && data.open.length === totalBars ? data.open : data.close).slice(startIdx);
+    let rawHigh = (data.high && data.high.length === totalBars ? data.high : data.close).slice(startIdx);
+    let rawLow = (data.low && data.low.length === totalBars ? data.low : data.close).slice(startIdx);
+    let rawClose = data.close.slice(startIdx);
+    let rawVol = (data.volume && data.volume.length === totalBars ? data.volume : rawDates.map(() => 1000)).slice(startIdx);
+    let rawSma20 = data.sma20 ? data.sma20.slice(startIdx) : [];
+    let rawSma50 = data.sma50 ? data.sma50.slice(startIdx) : [];
+
+    // Forming live price bar
+    let isLiveActive = false;
+    if (data.live_price_info && data.live_price_info.current_price) {
+        const liveP = data.live_price_info.current_price;
+        const prevC = data.live_price_info.previous_close || rawClose[rawClose.length - 1];
+        const todayStr = new Date().toISOString().split('T')[0];
+
+        if (rawDates[rawDates.length - 1] !== todayStr) {
+            rawDates.push(todayStr);
+            rawOpen.push(prevC);
+            rawHigh.push(Math.max(liveP, prevC));
+            rawLow.push(Math.min(liveP, prevC));
+            rawClose.push(liveP);
+            rawVol.push(rawVol.length > 0 ? rawVol[rawVol.length - 1] : 1000);
+            if (rawSma20.length > 0) rawSma20.push(rawSma20[rawSma20.length - 1]);
+            if (rawSma50.length > 0) rawSma50.push(rawSma50[rawSma50.length - 1]);
+            isLiveActive = true;
         }
+    }
 
-        const canvasEl = document.getElementById("market-chart-canvas");
-        if (!canvasEl) {
-            console.error("[loadChartData] canvas element 'market-chart-canvas' not found!");
+    const firstClose = rawClose[0] || 1.0;
+    const latestClose = rawClose[rawClose.length - 1] || 1.0;
+    const tfReturnPct = ((latestClose - firstClose) / firstClose) * 100.0;
+    const tfSign = tfReturnPct >= 0 ? "+" : "";
+
+    const nameEl = document.getElementById("chart-asset-display-name");
+    if (nameEl) nameEl.innerText = `${data.display_name} Chart`;
+
+    const badgeEl = document.getElementById("chart-tf-return-badge");
+    if (badgeEl) {
+        badgeEl.innerText = `${tfSign}${tfReturnPct.toFixed(2)}% (${currentChartTF})`;
+        badgeEl.style.color = tfReturnPct >= 0 ? "#10B981" : "#EF4444";
+        badgeEl.style.backgroundColor = tfReturnPct >= 0 ? "rgba(16, 185, 129, 0.15)" : "rgba(239, 68, 68, 0.15)";
+    }
+
+    const lastIdx = rawClose.length - 1;
+    updateTVHeader(rawDates[lastIdx], rawOpen[lastIdx], rawHigh[lastIdx], rawLow[lastIdx], rawClose[lastIdx], rawVol[lastIdx]);
+
+    container.innerHTML = `<div id="tv-chart-wrapper" style="width:100%; height:380px;"></div>`;
+    const wrapper = document.getElementById("tv-chart-wrapper");
+
+    if (tvChartInstance) {
+        try { tvChartInstance.remove(); } catch(e) {}
+        tvChartInstance = null;
+    }
+
+    tvChartInstance = LightweightCharts.createChart(wrapper, {
+        width: wrapper.clientWidth || container.clientWidth || 600,
+        height: 380,
+        layout: {
+            background: { type: 'solid', color: 'transparent' },
+            textColor: '#9CA3AF',
+            fontSize: 11,
+        },
+        grid: {
+            vertLines: { color: 'rgba(255, 255, 255, 0.05)' },
+            horzLines: { color: 'rgba(255, 255, 255, 0.05)' },
+        },
+        crosshair: {
+            mode: LightweightCharts.CrosshairMode.Normal,
+        },
+        rightPriceScale: {
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+        },
+        timeScale: {
+            borderColor: 'rgba(255, 255, 255, 0.1)',
+            timeVisible: true,
+        },
+    });
+
+    const isUp = tfReturnPct >= 0;
+    const mainColor = isUp ? "#10B981" : "#EF4444";
+
+    if (currentChartType === "area") {
+        const areaSeries = tvChartInstance.addAreaSeries({
+            topColor: isUp ? 'rgba(16, 185, 129, 0.4)' : 'rgba(239, 68, 68, 0.4)',
+            bottomColor: isUp ? 'rgba(16, 185, 129, 0.0)' : 'rgba(239, 68, 68, 0.0)',
+            lineColor: mainColor,
+            lineWidth: 2,
+        });
+        const areaData = rawDates.map((t, i) => ({ time: t, value: rawClose[i] }));
+        areaSeries.setData(areaData);
+    } else {
+        const candleSeries = tvChartInstance.addCandlestickSeries({
+            upColor: '#10B981',
+            downColor: '#EF4444',
+            borderVisible: false,
+            wickUpColor: '#10B981',
+            wickDownColor: '#EF4444',
+        });
+        const candleData = rawDates.map((t, i) => ({
+            time: t,
+            open: rawOpen[i],
+            high: rawHigh[i],
+            low: rawLow[i],
+            close: rawClose[i],
+        }));
+        candleSeries.setData(candleData);
+    }
+
+    // Muted Volume Histogram
+    const volSeries = tvChartInstance.addHistogramSeries({
+        priceFormat: { type: 'volume' },
+        priceScaleId: '',
+        scaleMargins: { top: 0.8, bottom: 0 },
+    });
+    const volData = rawDates.map((t, i) => {
+        const o = rawOpen[i] || rawClose[i];
+        const c = rawClose[i];
+        return {
+            time: t,
+            value: rawVol[i],
+            color: c >= o ? 'rgba(16, 185, 129, 0.3)' : 'rgba(239, 68, 68, 0.3)',
+        };
+    });
+    volSeries.setData(volData);
+
+    // SMA Overlays
+    if (showSMAOverlay && rawSma20.length > 0) {
+        const sma20Series = tvChartInstance.addLineSeries({
+            color: '#6366F1',
+            lineWidth: 1,
+            lineStyle: LightweightCharts.LineStyle.Dashed,
+        });
+        sma20Series.setData(rawDates.map((t, i) => ({ time: t, value: rawSma20[i] })));
+    }
+
+    if (showSMAOverlay && rawSma50.length > 0) {
+        const sma50Series = tvChartInstance.addLineSeries({
+            color: '#F59E0B',
+            lineWidth: 1,
+            lineStyle: LightweightCharts.LineStyle.Dotted,
+        });
+        sma50Series.setData(rawDates.map((t, i) => ({ time: t, value: rawSma50[i] })));
+    }
+
+    // Crosshair Hover Readout
+    tvChartInstance.subscribeCrosshairMove((param) => {
+        if (!param || !param.time || param.point === undefined || param.point.x < 0 || param.point.y < 0) {
+            updateTVHeader(rawDates[lastIdx], rawOpen[lastIdx], rawHigh[lastIdx], rawLow[lastIdx], rawClose[lastIdx], rawVol[lastIdx]);
             return;
         }
-        const ctx = canvasEl.getContext("2d");
-        if (marketChart) marketChart.destroy();
+        const timeStr = typeof param.time === 'string' ? param.time : `${param.time.year}-${param.time.month}-${param.time.day}`;
+        const matchIdx = rawDates.indexOf(timeStr);
+        if (matchIdx !== -1) {
+            updateTVHeader(timeStr, rawOpen[matchIdx], rawHigh[matchIdx], rawLow[matchIdx], rawClose[matchIdx], rawVol[matchIdx]);
+        }
+    });
 
-        marketChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels,
-                datasets: [
-                    {
-                        label: 'Price Series (₹)',
-                        data: prices,
-                        borderColor: '#06B6D4',
-                        borderWidth: 2,
-                        tension: 0.1,
-                        pointRadius: pointRadii,
-                        pointBackgroundColor: pointColors,
-                        pointBorderColor: '#FFFFFF',
-                        pointBorderWidth: 1.5,
-                    },
-                    {
-                        label: 'SMA 20',
-                        data: data.sma20,
-                        borderColor: '#6366F1',
-                        borderWidth: 1.5,
-                        borderDash: [4, 4],
-                        pointRadius: 0
-                    },
-                    {
-                        label: 'SMA 50',
-                        data: data.sma50,
-                        borderColor: '#F59E0B',
-                        borderWidth: 1.5,
-                        borderDash: [2, 2],
-                        pointRadius: 0
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }
-                },
-                scales: {
-                    x: {
-                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                        ticks: { color: '#9CA3AF', maxTicksLimit: 10 }
-                    },
-                    y: {
-                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                        ticks: { color: '#9CA3AF' }
-                    }
-                }
-            }
-        });
-        console.log("[loadChartData] Plain line chart rendered successfully!");
-    } catch (err) {
-        console.error("[loadChartData] Failed to load chart data:", err);
+    tvChartInstance.timeScale().fitContent();
+    console.log("[renderLightweightChart] TradingView Lightweight Chart rendered successfully with 0 errors!");
+}
+
+function updateTVHeader(d, o, h, l, c, v) {
+    const dEl = document.getElementById("tv-date");
+    const oEl = document.getElementById("tv-open");
+    const hEl = document.getElementById("tv-high");
+    const lEl = document.getElementById("tv-low");
+    const cEl = document.getElementById("tv-close");
+    const vEl = document.getElementById("tv-vol");
+
+    if (dEl) dEl.innerText = d || "-";
+    if (oEl) oEl.innerText = o ? `₹${o.toFixed(2)}` : "-";
+    if (hEl) hEl.innerText = h ? `₹${h.toFixed(2)}` : "-";
+    if (lEl) lEl.innerText = l ? `₹${l.toFixed(2)}` : "-";
+    if (cEl) cEl.innerText = c ? `₹${c.toFixed(2)}` : "-";
+    if (vEl) vEl.innerText = v ? (v >= 1e6 ? `${(v/1e6).toFixed(2)}M` : `${(v/1e3).toFixed(1)}K`) : "-";
+}
+
+function renderPlainChartJSFallback(data) {
+    console.log("[renderPlainChartJSFallback] Executing plain Chart.js fallback...");
+    const container = document.getElementById("lightweight-chart-container");
+    if (container) {
+        container.innerHTML = `<canvas id="market-chart-canvas"></canvas>`;
     }
+
+    const canvasEl = document.getElementById("market-chart-canvas");
+    if (!canvasEl) return;
+    const ctx = canvasEl.getContext("2d");
+    if (marketChart) marketChart.destroy();
+
+    let labels = [...data.dates];
+    let prices = [...data.close];
+
+    marketChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Price (₹)',
+                data: prices,
+                borderColor: '#06B6D4',
+                borderWidth: 2,
+                tension: 0.1,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#9CA3AF' } },
+                y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#9CA3AF' } }
+            }
+        }
+    });
 }
 
 async function handlePaperTrade(action) {

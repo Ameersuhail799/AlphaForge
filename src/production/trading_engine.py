@@ -64,28 +64,32 @@ class ProductionTradingEngine:
             df_full["TARGET_D"] = (ret_10d > 0).astype(int)
             df_full["REALIZED_RET_10D"] = ret_10d
 
-            required_cols = list(C59_COLS) + ["TARGET_D", "REALIZED_RET_10D", "Close", "Open", "High", "Low", "ATR_14", "HIST_VOL_20"]
-            df_clean = df_full.replace([np.inf, -np.inf], np.nan).dropna(subset=required_cols).copy()
+            train_required_cols = list(C59_COLS) + ["TARGET_D", "REALIZED_RET_10D", "Close", "Open", "High", "Low", "ATR_14", "HIST_VOL_20"]
+            df_train = df_full.replace([np.inf, -np.inf], np.nan).dropna(subset=train_required_cols).copy()
 
-            X = df_clean[C59_COLS].copy()
-            y = df_clean["TARGET_D"]
-            r = df_clean["REALIZED_RET_10D"]
+            X_train = df_train[C59_COLS].copy()
+            y_train = df_train["TARGET_D"]
+            r_train = df_train["REALIZED_RET_10D"]
 
             scaler = FeatureScaler(scale=True)
-            X_scaled = scaler.fit_transform_train(X)
+            X_scaled = scaler.fit_transform_train(X_train)
 
             clf = RandomForestClassifier(n_estimators=25, n_jobs=-1, random_state=42)
-            clf.fit(X_scaled, y)
+            clf.fit(X_scaled, y_train)
 
             reg = RandomForestRegressor(n_estimators=25, n_jobs=-1, random_state=42)
-            reg.fit(X_scaled, r)
+            reg.fit(X_scaled, r_train)
+
+            # Store inference dataframe (retains latest completed trading days up to today)
+            infer_required_cols = list(C59_COLS) + ["Close", "Open", "High", "Low", "ATR_14", "HIST_VOL_20"]
+            df_infer = df_full.replace([np.inf, -np.inf], np.nan).dropna(subset=infer_required_cols).copy()
 
             self.clf_models[asset] = clf
             self.reg_models[asset] = reg
             self.scalers[asset] = scaler
-            self.processed_df_dict[asset] = df_clean
+            self.processed_df_dict[asset] = df_infer
 
-            logger.info("Asset %s trained cleanly. Total bars: %d", asset, len(df_clean))
+            logger.info("Asset %s trained cleanly. Total inference bars: %d", asset, len(df_infer))
 
     def get_asset_market_data(self, asset_symbol: str, limit: int = 150) -> Dict[str, Any]:
         """Retrieve market data and indicators for chart plotting."""
