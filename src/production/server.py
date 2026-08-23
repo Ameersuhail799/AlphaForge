@@ -308,9 +308,14 @@ def start_server(host: str = "0.0.0.0", port: int = 8080) -> ThreadingHTTPServer
 
 
 if __name__ == "__main__":
+    import os
+
+    env_host = os.environ.get("HOST", "0.0.0.0")
+    env_port = int(os.environ.get("PORT", "8080"))
+
     parser = argparse.ArgumentParser(description="AlphaForge Production Web Application Server")
-    parser.add_argument("--host", default="0.0.0.0", help="Host address")
-    parser.add_argument("--port", type=int, default=8080, help="Port number")
+    parser.add_argument("--host", default=env_host, help="Host address")
+    parser.add_argument("--port", type=int, default=env_port, help="Port number")
     args = parser.parse_args()
 
     httpd = start_server(args.host, args.port)

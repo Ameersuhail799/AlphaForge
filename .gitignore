@@ -24,6 +24,32 @@ env/
 # Build
 build/
 dist/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Build
+build/
+dist/
 *.egg-info/
 
 # ML Models
@@ -35,6 +61,12 @@ data/raw/*
 data/interim/*
 data/processed/*
 !data/raw/.gitkeep
+!data/raw/tcs_ns.parquet
+!data/raw/infy_ns.parquet
+!data/raw/reliance_ns.parquet
+!data/raw/icicibank_ns.parquet
+!data/raw/hdfcbank_ns.parquet
+!data/raw/metadata/*
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: alphaforge-trading
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m src.production.server
+    envVars:
+      - key: PORT
+        value: 10000
