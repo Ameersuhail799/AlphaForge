@@ -5,7 +5,7 @@ services:
     region: singapore
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python -m src.production.server
+    startCommand: python -m src.production.server --host 0.0.0.0 --port $PORT
     envVars:
       - key: PORT
         value: 10000
