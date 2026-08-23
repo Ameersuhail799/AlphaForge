@@ -1,0 +1,5 @@
+# AlphaForge Local Research & Analysis Development Dependencies
+-r requirements.txt
+scipy>=1.10.0
+matplotlib>=3.7.0
+jugaad-data>=0.35.0
