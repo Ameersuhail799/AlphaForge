@@ -72,50 +72,6 @@ function setupChartControlListeners() {
             if (currentRawMarketData) renderChartWithFailsafe(currentRawMarketData);
         });
     }
-}
-
-function setupChartControlListeners() {
-    const typePills = document.querySelectorAll("#chart-type-pills .pill-btn");
-    typePills.forEach(btn => {
-        btn.addEventListener("click", () => {
-            typePills.forEach(b => {
-                b.classList.remove("active");
-                b.style.background = "transparent";
-                b.style.color = "#9CA3AF";
-            });
-            btn.classList.add("active");
-            btn.style.background = "#6366F1";
-            btn.style.color = "#FFF";
-            currentChartType = btn.getAttribute("data-chart-type");
-            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
-        });
-    });
-
-    const tfPills = document.querySelectorAll("#chart-tf-pills .pill-btn");
-    tfPills.forEach(btn => {
-        btn.addEventListener("click", () => {
-            tfPills.forEach(b => {
-                b.classList.remove("active");
-                b.style.background = "transparent";
-                b.style.color = "#9CA3AF";
-            });
-            btn.classList.add("active");
-            btn.style.background = "#6366F1";
-            btn.style.color = "#FFF";
-            currentChartTF = btn.getAttribute("data-tf");
-            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
-        });
-    });
-
-    const smaBtn = document.getElementById("btn-toggle-sma");
-    if (smaBtn) {
-        smaBtn.addEventListener("click", () => {
-            showSMAOverlay = !showSMAOverlay;
-            smaBtn.style.background = showSMAOverlay ? "#6366F1" : "transparent";
-            smaBtn.style.color = showSMAOverlay ? "#FFF" : "#9CA3AF";
-            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
-        });
-    }
 
     const volBtn = document.getElementById("btn-toggle-vol");
     if (volBtn) {
@@ -123,7 +79,7 @@ function setupChartControlListeners() {
             showVolOverlay = !showVolOverlay;
             volBtn.style.background = showVolOverlay ? "#6366F1" : "transparent";
             volBtn.style.color = showVolOverlay ? "#FFF" : "#9CA3AF";
-            if (currentRawMarketData) renderInteractiveChart(currentRawMarketData);
+            if (currentRawMarketData) renderChartWithFailsafe(currentRawMarketData);
         });
     }
 }
@@ -587,6 +543,9 @@ function updateTVHeader(d, o, h, l, c, v) {
 
 function renderPlainChartJSFallback(data) {
     console.log("[renderPlainChartJSFallback] Executing plain Chart.js fallback...");
+    const nameEl = document.getElementById("chart-asset-display-name");
+    if (nameEl && data.display_name) nameEl.innerText = `${data.display_name} Chart`;
+
     const container = document.getElementById("lightweight-chart-container");
     if (container) {
         container.innerHTML = `<div style="position:relative; width:100%; height:380px;"><canvas id="market-chart-canvas"></canvas></div>`;

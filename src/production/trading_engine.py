@@ -49,6 +49,15 @@ class ProductionTradingEngine:
 
         self._initialize_and_train()
 
+    def normalize_symbol(self, asset_symbol: str) -> str:
+        """Normalize raw symbol string to standard asset key (e.g. 'RELIANCE' -> 'reliance_ns')."""
+        if not asset_symbol:
+            return self.assets[0]
+        s = asset_symbol.lower().strip().replace(".", "_")
+        if not s.endswith("_ns"):
+            s = f"{s}_ns"
+        return s if s in self.processed_df_dict else self.assets[0]
+
     def _initialize_and_train(self) -> None:
         """Fit models on historical dataset for production inference."""
         logger.info("Initializing Production Trading Engine across assets: %s", self.assets)

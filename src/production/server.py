@@ -108,7 +108,8 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                 self._send_json(_get_backtest_research_summaries())
             elif path == "/api/live-price":
                 engine = get_engine()
-                symbol = query.get("symbol", [engine.assets[0]])[0]
+                raw_sym = query.get("symbol", [engine.assets[0]])[0]
+                symbol = engine.normalize_symbol(raw_sym)
                 live_info = engine.get_live_price_data(symbol)
                 self._send_json(live_info)
             elif path == "/api/risk-summary":
@@ -143,19 +144,22 @@ class AlphaForgeRequestHandler(BaseHTTPRequestHandler):
                 self._send_json({"assets": assets_data})
             elif path == "/api/signal":
                 engine = get_engine()
-                symbol = query.get("symbol", [engine.assets[0]])[0]
+                raw_sym = query.get("symbol", [engine.assets[0]])[0]
+                symbol = engine.normalize_symbol(raw_sym)
                 sig = engine.predict_trade_signal(symbol)
                 self._send_json(sig)
             elif path == "/api/market-data":
                 engine = get_engine()
-                symbol = query.get("symbol", [engine.assets[0]])[0]
+                raw_sym = query.get("symbol", [engine.assets[0]])[0]
+                symbol = engine.normalize_symbol(raw_sym)
                 m_data = engine.get_asset_market_data(symbol, limit=150)
                 m_data["live_price_info"] = engine.get_live_price_data(symbol)
                 self._send_json(m_data)
             elif path == "/api/historical-context":
                 from src.research.historical_context import compute_historical_context
                 engine = get_engine()
-                symbol = query.get("symbol", [engine.assets[0]])[0]
+                raw_sym = query.get("symbol", [engine.assets[0]])[0]
+                symbol = engine.normalize_symbol(raw_sym)
                 h_ctx = compute_historical_context(symbol)
                 self._send_json(h_ctx)
             else:
